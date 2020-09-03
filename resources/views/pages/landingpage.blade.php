@@ -564,7 +564,6 @@
         <!-- Main Section -->
     </div>
     <!-- Wrapper-->
-
 @endsection
 @section('footer')
 

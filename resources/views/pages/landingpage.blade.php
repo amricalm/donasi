@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="col-md-11">
-                                <a class="btn btn-primary btn-xlg btn-block" data-wow-delay="0.2s" href="#">DONASI SEKARANG</a>
+                                <a class="btn btn-primary btn-xlg btn-block" data-wow-delay="0.2s" href="{{ url('/donate') }}">DONASI SEKARANG</a>
                             </div>
                             <div class="col-md-11 text-left" style="padding-top: 30px;">
                                 <div class="card bg-light">
@@ -113,7 +113,7 @@
                                         <div class="row">
                                             <div class="col-md-12 text-right">
                                                 <button class="btn waves-effect waves-light btn-primary btn-outline-primary"><i class="icofont icofont-social-facebook"></i> Share ke facebook</button>
-                                                <button class="btn waves-effect waves-light btn-primary">Donasi Sekarang</button>
+                                                <button class="btn waves-effect waves-light btn-primary" onclick="{{ url('/donate') }}">Donasi Sekarang</button>
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@
                                         <p>Amanah ini memang berat. Ratusan juta umat Islam di Indonesia, dari Sabang sampai Merauke, menanti mereka. Banyak umat yang masih terbata-bata, belum bisa membaca Alquran, bahkan banyak pula imam masjid yang sangat memprihatinkan bacaannya. Harapan inilah yang mendorong Qoryan Quran Wanayasa bertekad untuk melangkah dan terus maju berbenah diri, menjalin sinergi kekuatan dengan berbagai elemen masyarakat.</p>
                                         <p>Untuk itu, kami mengajak Anda dan para muhsinin lainnya agar terlibat membangun Qoryah Quran Wanayasa demi mewujudkan Indonesia yang diberkahi dengan cahaya Rabbani.</p>
                                         <p>Mari ! Dukung Qoryah Qur’an Wanayasa Melahirkan <b>“One Hafidz for One Masjid”</b>.</p>
-                                        <a class="btn btn-primary btn-xlg btn-block" data-wow-delay="0.2s" href="#">DONASI SEKARANG</a>
+                                        <a class="btn btn-primary btn-xlg btn-block" data-wow-delay="0.2s" href="{{ url('/donate') }}">DONASI SEKARANG</a>
                                     </div>
                                     <div class="tab-pane" id="fundraiser" role="tabpanel">
                                         <div class="card">

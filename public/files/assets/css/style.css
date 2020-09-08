@@ -44,6 +44,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
     font-family: "Open Sans", sans-serif;
     line-height: 1;
+    background-color: #f5f6f8;
 }
 
 ol, ul {

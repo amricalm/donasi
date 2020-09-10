@@ -19,5 +19,4 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/pages/j-pro/css/font-awesome.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/pages/j-pro/css/j-pro-modern.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/adn.css')}}">
-
         @stack('header')

@@ -9,12 +9,12 @@
     <div class="j-content">
         <div class="j-unit">
             <div class="card mb-6 card-payment p-0">
-                <input type="hidden" name="nominal" value="<?php echo e($nominal); ?>"/>
-                <a href="javascript:Confirmation(this);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="<?php echo e(url('img/payments/mandiri-syariah.png')); ?>">
+                <input type="hidden" name="nominal" value="{{ $nominal }}"/>
+                <a href="javascript:Confirmation('bsm');" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="{{ url('img/payments/mandiri-syariah.png') }}">
                     <div class="flex border-b-custom pb-2 items-center justify-between">
                         <div class="flex">
                             <div class="mr-4">
-                                <img src="<?php echo e(url('img/payments/mandiri-syariah.png')); ?>" class="img-flag inline w-16 order border-gray-300 p-1">
+                                <img src="{{ url('img/payments/mandiri-syariah.png') }}" class="img-flag inline w-16 order border-gray-300 p-1">
                             </div>
                             <h3 class="text-sm text-black">Transfer Mandiri Syariah</h3>
                         </div>
@@ -23,10 +23,10 @@
                         </svg>
                     </div>
                 </a>
-                <a href="javascript:Confirmation(this);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-bniBisnisSyariah" data-label="Transfer BNI Syariah" data-image="<?php echo e(url('img/payments/bni-syariah.png')); ?>">
+                <a href="javascript:Confirmation('bnis');" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-bniBisnisSyariah" data-label="Transfer BNI Syariah" data-image="{{ url('img/payments/bni-syariah.png') }}">
                     <div class="flex border-b-custom pb-2 items-center justify-between">
                         <div class="flex">
-                            <div class="mr-4"><img src="<?php echo e(url('img/payments/bni-syariah.png')); ?>" class="img-flag inline w-16 order border-gray-300 p-1"></div>
+                            <div class="mr-4"><img src="{{ url('img/payments/bni-syariah.png') }}" class="img-flag inline w-16 order border-gray-300 p-1"></div>
                             <h3 class="text-sm text-black">Transfer BNI Syariah</h3>
                         </div>
                         <svg class="icon-check hidden transfer-bniBisnisSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">

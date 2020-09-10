@@ -1,4 +1,5 @@
-<?php $__env->startSection('body'); ?>
+@extends('templates.index')
+@section('body')
 <div id="pcoded" class="pcoded">
     <div class="pcoded-container navbar-wrapper">
         <div class="pcoded-main-container">
@@ -11,7 +12,7 @@
                                     <header id="header" class="bg-header">
                                         <nav class="flex items-center px-2 py-2 text-center">
                                             <a href="/" class="mx-auto">
-                                                <img class="h-6" src="<?php echo e(url('img/logo-qoryah-quran.png')); ?>">
+                                                <img class="h-6" src="{{ url('img/logo-qoryah-quran.png') }}">
                                             </a>
                                         </nav>
                                     </header>
@@ -103,12 +104,12 @@
         </div>
     </div>
 </div>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('footer'); ?>
+@endsection
+@section('footer')
 <script>
     function Donate(nominal){
         $.ajax({
-            url:"<?php echo e(url('donate/payment-method')); ?>/"+nominal,
+            url:"{{url('donate/payment-method')}}/"+nominal,
             type: 'GET',
 
             success: function(data){
@@ -116,7 +117,25 @@
             }
         });
     }
-    function Confirmation(obj){
+    function Confirmation(payMethod){
+        var pay = document.getElementsByClassName('select-type');
+        var payLength = pay.length;
+
+        for(var i=0; i<payLength; i++) {
+            var dataType = pay[i].getAttribute('data-type');
+        }
+
+        if(payMethod) {
+            var pay = document.getElementsByClassName('select-type');
+            var payLength = pay.length;
+
+            for(var i=0; i<payLength; i++) {
+                var dataType = pay[i].getAttribute('data-type');
+            }
+            console.log(dataType);
+        }
+       
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -124,7 +143,7 @@
         });
         var formData = new FormData($("#pay")[0]);
         $.ajax({
-            url:"<?php echo e(url('donate/confirmation')); ?>",
+            url:"{{url('donate/confirmation')}}",
             data: formData,
             type: 'POST',
             processData: false,
@@ -135,6 +154,4 @@
         });
     }
 </script>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('templates.index', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@endsection

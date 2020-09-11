@@ -30,7 +30,7 @@
                                                 <div class="j-unit">
                                                     <h3 class="text-gray-800 font-bold mb-4">Nominal Donasi</h3>
                                                     <div class="j-input">
-                                                        <a href="javascript:Donate(10000);" data-nominal="10.000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
+                                                        <a href="javascript:getPayment(0);" data-nominal="10000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
                                                             <div class="">
                                                                 <span class="text-xs block text-gray-600">Minimal <em class="text-red-500">*</em></span>
                                                                 <span class="text-black font-semibold text-lg">Rp 10.000</span>
@@ -43,7 +43,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="j-input">
-                                                        <a href="javascript:Donate(50000);" data-nominal="50.000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
+                                                        <a href="javascript:getPayment(1);" data-nominal="50000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
                                                             <div class="">
                                                                 <span class="text-black font-semibold text-lg">Rp 50.000</span>
                                                             </div>
@@ -55,7 +55,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="j-input">
-                                                        <a href="javascript:Donate(100000);" data-nominal="100.000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
+                                                        <a href="javascript:getPayment(2);" data-nominal="100000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
                                                             <div class="">
                                                                 <span class="text-xs block text-red-500">Sering dipilih</span>
                                                                 <span class="text-black font-semibold text-lg">Rp 100.000</span>
@@ -68,7 +68,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="j-input">
-                                                        <a href="javascript:Donate(250000);" data-nominal="250.000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
+                                                        <a href="javascript:getPayment(3);" data-nominal="250000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
                                                             <div class="">
                                                                 <span class="text-black font-semibold text-lg">Rp 250.000</span>
                                                             </div>
@@ -89,7 +89,7 @@
                                             </div>
                                             <!-- end /.content -->
                                             <div class="j-footer">
-                                                <button type="button" id="custom-submit" class="rounded btn-primary bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700 btn-block">Lanjutkan Donasi</button>
+                                                <button type="button" id="custom-submit" onclick="javascript:getPayment();" class="rounded btn-primary bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700 btn-block">Lanjutkan Donasi</button>
                                             </div>
                                             <!-- end /.footer -->
                                         </form>
@@ -107,34 +107,34 @@
 @endsection
 @section('footer')
 <script>
-    function Donate(nominal){
+    function getPayment(q){
+        if(q) {
+            var getClassFix = document.getElementsByClassName('fix-nominal');
+            var amount      = getClassFix[q].getAttribute('data-nominal');
+        } else {
+            var amount      = document.getElementById('amount-input').value;
+        }
+        
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $.ajax({
-            url:"{{url('donate/payment-method')}}/"+nominal,
-            type: 'GET',
+            url:"{{url('donate/payment-method')}}",
+            data: {"amount":amount},
+            type: 'POST',
 
             success: function(data){
                 $('#blokDonasi').html(data);
             }
         });
     }
-    function Confirmation(payMethod){
+    function Confirmation(q){
         var pay = document.getElementsByClassName('select-type');
-        var payLength = pay.length;
 
-        for(var i=0; i<payLength; i++) {
-            var dataType = pay[i].getAttribute('data-type');
-        }
-
-        if(payMethod) {
-            var pay = document.getElementsByClassName('select-type');
-            var payLength = pay.length;
-
-            for(var i=0; i<payLength; i++) {
-                var dataType = pay[i].getAttribute('data-type');
-            }
-            console.log(dataType);
-        }
-       
+        var dataType = pay[q].getAttribute('data-type');
+        console.log(dataType);
 
         $.ajaxSetup({
             headers: {

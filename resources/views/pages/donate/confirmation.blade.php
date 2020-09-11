@@ -14,7 +14,7 @@
             <p class="text-black mb-2 text-xs">Nominal Donasi <em class="text-red-500">*</em></p>
             <div class="form-group input-amount mt-2">
                 <span class="font-semibold text-lg text-black mt-1">Rp</span>
-                <input type="text" class="form-control bg-orange-100 focus:bg-white text-right amount pl-10 h-57px text-black border-orange-200 focus:border-orange-600" name="amount" id="amount-input-last" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" required="required" value="{{ $nominal }}">
+                <input type="text" class="form-control bg-orange-100 focus:bg-white text-right amount pl-10 h-57px text-black border-orange-200 focus:border-orange-600" name="amount" id="amount-input-last" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" required="required" value="{{ $amount }}">
             </div>
             <div class="form-group mt-6 select2-method">
                 <p class="text-black mb-2 text-xs">Metode Pembayaran <em class="text-red-500">*</em></p>

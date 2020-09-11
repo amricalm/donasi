@@ -9,8 +9,8 @@
     <div class="j-content">
         <div class="j-unit">
             <div class="card mb-6 card-payment p-0">
-                <input type="hidden" name="nominal" value="<?php echo e($nominal); ?>"/>
-                <a href="javascript:Confirmation('bsm');" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="<?php echo e(url('img/payments/mandiri-syariah.png')); ?>">
+                <input type="hidden" name="amount" value="<?php echo e($amount); ?>"/>
+                <a href="javascript:Confirmation(0);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="<?php echo e(url('img/payments/mandiri-syariah.png')); ?>">
                     <div class="flex border-b-custom pb-2 items-center justify-between">
                         <div class="flex">
                             <div class="mr-4">
@@ -23,7 +23,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="javascript:Confirmation('bnis');" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-bniBisnisSyariah" data-label="Transfer BNI Syariah" data-image="<?php echo e(url('img/payments/bni-syariah.png')); ?>">
+                <a href="javascript:Confirmation(1);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-bniBisnisSyariah" data-label="Transfer BNI Syariah" data-image="<?php echo e(url('img/payments/bni-syariah.png')); ?>">
                     <div class="flex border-b-custom pb-2 items-center justify-between">
                         <div class="flex">
                             <div class="mr-4"><img src="<?php echo e(url('img/payments/bni-syariah.png')); ?>" class="img-flag inline w-16 order border-gray-300 p-1"></div>

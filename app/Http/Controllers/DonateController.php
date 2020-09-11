@@ -20,14 +20,14 @@ class DonateController extends Controller
     {
         return view('pages.donate.index');
     }
-    public function paymentMethod($nominal)
+    public function paymentMethod(Request $request)
     {
-        $app['nominal'] = $nominal;
+        $app['amount'] = $request->amount;
         return view('pages.donate.paymentmethod',$app);
     }
     public function confirmation(Request $request)
     {
-        $app['nominal'] = $request->nominal;
+        $app['amount'] = $request->amount;
         $app['payMethod'] = $request->payMethod;
         return view('pages.donate.confirmation',$app);
     }

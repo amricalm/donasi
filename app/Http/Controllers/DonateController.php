@@ -27,8 +27,11 @@ class DonateController extends Controller
     }
     public function confirmation(Request $request)
     {
-        $app['amount'] = $request->amount;
-        $app['payMethod'] = $request->payMethod;
+        $app['amount']  = $request->amount;
+        $app['payType'] = $request->payType;
+        $app['payLabel']= $request->payLabel;
+        $app['payImage']= $request->payImage;
+
         return view('pages.donate.confirmation',$app);
     }
     public function save(Request $request)
@@ -40,8 +43,14 @@ class DonateController extends Controller
         $donate['Email']    = $request->email;
         $donate['Message']  = $request->message;
         $donate['CreatedDate'] = Carbon::now();
-        Donate::insertGetId($donate);
+        $donate['DonateID'] = Donate::insertGetId($donate);
 
-        return view('pages.donate.index',$donate);
+        return view('pages.donate.summary',$donate);
+    }
+    public function summary($id)
+    {
+        $app['donate'] = DB::table('donate')->where('ID', $id)->first();
+        
+        return view('pages.donate.index',$app);
     }
 }

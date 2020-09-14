@@ -127,6 +127,9 @@
 .border-orange-200 {
     border-color: #feebc8!important;
 }
+.bg-orange-600 {
+    background-color: #fe8057!important;
+}
 .card {
     margin-bottom: 16px;
 }
@@ -192,4 +195,7 @@ body .bg-gray-custom {
 }
 .w-16 {
     width: 64px!important;
+}
+.rounded-full {
+    border-radius: 9999px!important;
 }

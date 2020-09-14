@@ -8,4 +8,5 @@ Route::get('donate', 'DonateController@index');
 Route::post('donate/payment-method','DonateController@paymentMethod');
 Route::post('donate/confirmation','DonateController@confirmation');
 Route::post('donate/save','DonateController@save');
+Route::get('donate/summary/{ID}','DonateController@summary');
 //===================== ROUTE END DONATE ===========================//

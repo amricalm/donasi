@@ -1,15 +1,15 @@
 <div class="mb-4 mx-auto">
     <div class="flex flex-wrap">
         <div class="w-full w-3/4 px-4 sm:px-0">
-            <h3 class="text-black font-semibold truncate">Transfer Bank (Transaksi diverifikasi manual 1x24jam)</h3>
+            <h3 class="text-black font-semibold truncate">Transfer Bank (Transaksi diverifikasi manual 1x24jam) <?php echo e($amount); ?></h3>
         </div>
     </div>
 </div>
-<form class="j-pro" method="post" id="pay">
+<form class="j-pro" method="post">
     <div class="j-content">
         <div class="j-unit">
             <div class="card mb-6 card-payment p-0">
-                <input type="hidden" name="amount" value="<?php echo e($amount); ?>"/>
+                <input type="hidden" name="amount" id="amount" value="<?php echo e($amount); ?>"/>
                 <a href="javascript:Confirmation(0);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="<?php echo e(url('img/payments/mandiri-syariah.png')); ?>">
                     <div class="flex border-b-custom pb-2 items-center justify-between">
                         <div class="flex">

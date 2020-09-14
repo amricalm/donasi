@@ -108,7 +108,7 @@
 @section('footer')
 <script>
     function getPayment(q){
-        if(q) {
+        if(q !== undefined) {
             var getClassFix = document.getElementsByClassName('fix-nominal');
             var amount      = getClassFix[q].getAttribute('data-nominal');
         } else {
@@ -122,35 +122,35 @@
         });
         $.ajax({
             url:"{{url('donate/payment-method')}}",
-            data: {"amount":amount},
+            data: {'amount':amount},
             type: 'POST',
 
             success: function(data){
                 $('#blokDonasi').html(data);
-            }
+            }, error: function(req, err){ console.log('my message' + err); }
         });
     }
     function Confirmation(q){
-        var pay = document.getElementsByClassName('select-type');
+        var amount    = document.getElementById("amount").value;
+        var getClass  = document.getElementsByClassName('select-type');
 
-        var dataType = pay[q].getAttribute('data-type');
-        console.log(dataType);
+        var payType   = getClass[q].getAttribute('data-type');
+        var payLabel  = getClass[q].getAttribute('data-label');
+        var payImage  = getClass[q].getAttribute('data-image');
 
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        var formData = new FormData($("#pay")[0]);
         $.ajax({
             url:"{{url('donate/confirmation')}}",
-            data: formData,
+            data: {'payType':payType,'payLabel':payLabel,'payImage':payImage,'amount':amount},
             type: 'POST',
-            processData: false,
-            contentType: false,
+
             success: function(data){
                 $('#blokDonasi').html(data);
-            }
+            }, error: function(req, err){ console.log('my message' + err); }
         });
     }
 </script>

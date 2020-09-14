@@ -23,9 +23,9 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <div class="mr-4">
-                                <img src="<?php echo e(url('img/payments/bni-syariah.png')); ?>" id="image-transfer" class="img-flag inline w-16 order border-gray-300 p-1">
+                                <img src="<?php echo e($payImage); ?>" id="image-transfer" class="img-flag inline w-16 order border-gray-300 p-1">
                             </div>
-                            <h3 class="text-xs sm:text-base text-black flex-1" id="name-transfer">Transfer BNI Syariah</h3>
+                            <h3 class="text-xs sm:text-base text-black flex-1" id="name-transfer"><?php echo e($payLabel); ?></h3>
                         </div>
                         <a href="javascript:;" onclick="BackTo('payment')" class="rounded-full py-2 px-4 text-white bg-orange-600">Ubah 
                             <svg class="inline-block" width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">

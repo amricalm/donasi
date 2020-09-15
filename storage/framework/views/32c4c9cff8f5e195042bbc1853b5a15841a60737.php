@@ -106,6 +106,30 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer'); ?>
 <script>
+    $(document).ready(function() {
+        $(document).delegate("#save","click",function(){
+            var formData = new FormData($("#form-conf")[0]);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url:"<?php echo e(url('/donate/save')); ?>",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    $('#blokDonasi').html(data);
+                },
+                error: function(req, err){
+                    console.log('my message' + err);
+                }
+            });
+        });
+    });
+
     function getPayment(q){
         if(q !== undefined) {
             var getClassFix = document.getElementsByClassName('fix-nominal');
@@ -126,7 +150,10 @@
 
             success: function(data){
                 $('#blokDonasi').html(data);
-            }, error: function(req, err){ console.log('my message' + err); }
+            }, 
+            error: function(req, err){
+                console.log('my message' + err);
+            }
         });
     }
     function Confirmation(q){

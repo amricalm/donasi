@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-<form action="{{ url('donate/save')}}" method="post" class="j-pro" id="j-pro">
+<form method="post" class="j-pro" id="form-conf">
 {{ csrf_field() }}
     <div class="j-content">
         <div class="j-unit">
@@ -63,6 +63,6 @@
         </div>
     </div>
     <div class="j-footer">
-        <button type="submit" id="custom-submit" class="rounded btn-primary bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700 btn-block">Lanjutkan Donasi</button>
+        <button type="button" id="save" class="rounded btn-primary bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700 btn-block">Lanjutkan Donasi</button>
     </div>
 </form>

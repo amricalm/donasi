@@ -42,6 +42,9 @@
 .color-gray {
     color: #aaa;
 }
+.bg-gray-700 {
+    background-color: #4a5568!important;
+}
 .font-size-14 {
     font-size: 14px;
 }
@@ -97,9 +100,6 @@
 .card .card-block {
     padding: 16px;
 }
-.text-sm {
-    font-size: 14px!important;
-}
 .italic {
     font-style: italic!important;
 }
@@ -120,6 +120,15 @@
 }
 .text-black {
     color: #000!important;
+}
+.text-yellow-600 {
+    color: #ff7600!important;
+}
+.text-yellow-500 {
+    color: #f5774c!important;
+}
+.text-blue-400 {
+    color: #63b3ed!important;
 }
 .bg-orange-100 {
     background-color: #fffaf0!important;
@@ -198,4 +207,38 @@ body .bg-gray-custom {
 }
 .rounded-full {
     border-radius: 9999px!important;
+}
+.sm\:text-sm {
+    font-size: 14px!important;
+}
+.md\:text-3xl {
+    font-size: 30px!important;
+}
+.w-20 {
+    width: 80px!important;
+}
+.flex-grow {
+    -webkit-box-flex: 1!important;
+    flex-grow: 1!important;
+}
+.my-6 {
+    margin-top: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+}
+.border-b-custom {
+    border-bottom: 1px solid #dedede;
+}
+.flex-none {
+    -webkit-box-flex: 0!important;
+    flex: none!important;
+}
+.flex-grow {
+    -webkit-box-flex: 1!important;
+    flex-grow: 1!important;
+}
+.preloader3 {
+    height: 60px;
+}
+.mb-6 {
+    margin-bottom: 24px!important;
 }

@@ -44,6 +44,7 @@ class DonateController extends Controller
         $donate['Message']  = $request->message;
         $donate['CreatedDate'] = Carbon::now();
         $donate['DonateID'] = Donate::insertGetId($donate);
+        $donate['getDonate']= DB::table('mailto')->where('MailID',$donate['DonateID']);
 
         return view('pages.donate.summary',$donate);
     }

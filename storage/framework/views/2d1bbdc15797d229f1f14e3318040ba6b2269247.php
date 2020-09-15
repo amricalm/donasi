@@ -9,7 +9,8 @@
 </div>
 <div class="card">
 <form method="post" class="j-pro" id="j-pro">
-{{ csrf_field() }}
+<?php echo e(csrf_field()); ?>
+
     <div class="j-content">
         <div class="j-unit">
             <div class="text-center">

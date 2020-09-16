@@ -28,61 +28,31 @@
                                             <div class="j-content">
                                                 <div class="j-unit">
                                                     <h3 class="text-gray-800 font-bold mb-4">Nominal Donasi</h3>
-                                                    <div class="j-input">
-                                                        <a href="javascript:getPayment(0);" data-nominal="10000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
-                                                            <div class="">
-                                                                <span class="text-xs block text-gray-600">Minimal <em class="text-red-500">*</em></span>
-                                                                <span class="text-black font-semibold text-lg">Rp 10.000</span>
-                                                            </div>
-                                                            <div>
-                                                                <svg width="18" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M7.5 14.25a.75.75 0 01-.578-1.23L10.282 9l-3.24-4.027a.75.75 0 01.113-1.058.75.75 0 011.095.113l3.623 4.5a.75.75 0 010 .952l-3.75 4.5a.75.75 0 01-.623.27z" fill="#000"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="j-input">
-                                                        <a href="javascript:getPayment(1);" data-nominal="50000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
-                                                            <div class="">
-                                                                <span class="text-black font-semibold text-lg">Rp 50.000</span>
-                                                            </div>
-                                                            <div>
-                                                                <svg width="18" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M7.5 14.25a.75.75 0 01-.578-1.23L10.282 9l-3.24-4.027a.75.75 0 01.113-1.058.75.75 0 011.095.113l3.623 4.5a.75.75 0 010 .952l-3.75 4.5a.75.75 0 01-.623.27z" fill="#000"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="j-input">
-                                                        <a href="javascript:getPayment(2);" data-nominal="100000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
-                                                            <div class="">
-                                                                <span class="text-xs block text-red-500">Sering dipilih</span>
-                                                                <span class="text-black font-semibold text-lg">Rp 100.000</span>
-                                                            </div>
-                                                            <div>
-                                                                <svg width="18" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M7.5 14.25a.75.75 0 01-.578-1.23L10.282 9l-3.24-4.027a.75.75 0 01.113-1.058.75.75 0 011.095.113l3.623 4.5a.75.75 0 010 .952l-3.75 4.5a.75.75 0 01-.623.27z" fill="#000"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="j-input">
-                                                        <a href="javascript:getPayment(3);" data-nominal="250000" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
-                                                            <div class="">
-                                                                <span class="text-black font-semibold text-lg">Rp 250.000</span>
-                                                            </div>
-                                                            <div>
-                                                                <svg width="18" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M7.5 14.25a.75.75 0 01-.578-1.23L10.282 9l-3.24-4.027a.75.75 0 01.113-1.058.75.75 0 011.095.113l3.623 4.5a.75.75 0 010 .952l-3.75 4.5a.75.75 0 01-.623.27z" fill="#000"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </a>
-                                                    </div>
+                                                    <?php $__currentLoopData = $amount; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <div class="j-input">
+                                                            <a href="javascript:getPayment(<?php echo e($row->ID); ?>);" data-nominal="<?php echo e($row->Amount); ?>" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-3 fix-nominal hover:bg-blue-100 rounded">
+                                                                <div class="">
+                                                                    <span class="text-xs block text-gray-600"><?php echo e($row->Information); ?></span>
+                                                                    <span class="text-black font-semibold text-lg" id="fix-nominal">
+                                                                        <?php
+                                                                            $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
+                                                                            echo $format_rupiah;
+                                                                        ?>
+                                                                    </span>
+                                                                </div>
+                                                                <div>
+                                                                    <svg width="18" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M7.5 14.25a.75.75 0 01-.578-1.23L10.282 9l-3.24-4.027a.75.75 0 01.113-1.058.75.75 0 011.095.113l3.623 4.5a.75.75 0 010 .952l-3.75 4.5a.75.75 0 01-.623.27z" fill="#000"></path>
+                                                                    </svg>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     <hr class="mb-6 mt-6">
                                                     <h3 class="text-gray-800 font-bold">Nominal Donasi Lainnya</h3>
                                                     <div class="form-group input-amount mt-2 flex items-center">
                                                         <span class="font-semibold text-lg text-black">Rp</span>
-                                                        <input type="text" class="form-control bg-white text-right amount pl-10 h-57px text-black border-custom bg-gray-custom rounded" name="amount-first" id="amount-input" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" value="">
+                                                        <input type="text" class="form-control bg-white text-right amount pl-10 h-57px text-black border-custom bg-gray-custom rounded" name="amount-first" id="amount-input" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19">
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,7 +103,7 @@
     function getPayment(q){
         if(q !== undefined) {
             var getClassFix = document.getElementsByClassName('fix-nominal');
-            var amount      = getClassFix[q].getAttribute('data-nominal');
+            var amount      = getClassFix[q-1].getAttribute('data-nominal');
         } else {
             var amount      = document.getElementById('amount-input').value;
         }
@@ -156,14 +126,9 @@
             }
         });
     }
-    function Confirmation(q){
+    function Confirmation(payID){
         var amount    = document.getElementById("amount").value;
-        var getClass  = document.getElementsByClassName('select-type');
-
-        var payType   = getClass[q].getAttribute('data-type');
-        var payLabel  = getClass[q].getAttribute('data-label');
-        var payImage  = getClass[q].getAttribute('data-image');
-
+        
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -171,13 +136,42 @@
         });
         $.ajax({
             url:"<?php echo e(url('donate/confirmation')); ?>",
-            data: {'payType':payType,'payLabel':payLabel,'payImage':payImage,'amount':amount},
+            data: {'payID':payID,'amount':amount},
             type: 'POST',
 
             success: function(data){
                 $('#blokDonasi').html(data);
             }, error: function(req, err){ console.log('my message' + err); }
         });
+    }
+
+    var rupiah = document.getElementById('amount-input');
+    rupiah.addEventListener('keyup', function(e){
+        rupiah.value = formatRupiah(this.value);
+    });
+
+    var rupiahLast = document.getElementById('amount-input-last');
+    rupiahLast.addEventListener('keyup', function(e){
+        rupiahLast.value = formatRupiah(this.value);
+    });
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka){
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split   		= number_string.split(','),
+        sisa     		= split[0].length % 3,
+        rupiah     		= split[0].substr(0, sisa),
+        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? rupiah : '');
+        return rupiah;
     }
 </script>
 <?php $__env->stopSection(); ?>

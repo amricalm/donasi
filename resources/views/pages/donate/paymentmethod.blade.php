@@ -14,29 +14,20 @@
 <form class="j-pro" method="post">
             <div class="card-payment p-0">
                 <input type="hidden" name="amount" id="amount" value="{{ $amount }}"/>
-                <a href="javascript:Confirmation(0);" class="pt-3 pr-3 pb-0 pl-3 block hover:bg-blue-100 select-type" data-type="transfer-mandiriBisnisSyariah" data-label="Transfer Mandiri Syariah" data-image="{{ url('img/payments/mandiri-syariah.png') }}">
-                    <div class="flex border-b-custom pb-2 items-center justify-between">
-                        <div class="flex">
-                            <div class="mr-4">
-                                <img src="{{ url('img/payments/mandiri-syariah.png') }}" class="img-flag inline w-16 order border-gray-300 p-1">
+                @foreach($bank as $row)
+                    <a href="javascript:Confirmation({{$row->ID}});" class="pt-3 pr-3 pb-0 pl-3 block hover:bg-blue-100 select-type" data-type="{{$row->Type}}" data-label="{{$row->Label}}" data-image="{{ url('img/payments/'.$row->Image) }}">
+                        <div class="flex border-b-custom pb-2 items-center justify-between">
+                            <div class="flex">
+                                <div class="mr-4">
+                                    <img src="{{ url('img/payments/'.$row->Image) }}" class="img-flag inline w-16 order border-gray-300 p-1">
+                                </div>
+                                <h3 class="text-sm text-black">{{$row->Label}}</h3>
                             </div>
-                            <h3 class="text-sm text-black">Transfer Mandiri Syariah</h3>
+                            <!-- <svg class="icon-check hidden transfer-mandiriSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.806 14.25a.794.794 0 01-.578-.254L3.38 9.903A.793.793 0 014.536 8.82l3.262 3.475 6.658-7.283a.79.79 0 111.171 1.06l-7.235 7.917a.791.791 0 01-.578.262h-.008z" fill="#0084FF" stroke="#0084FF"></path>
+                            </svg> -->
                         </div>
-                        <!-- <svg class="icon-check hidden transfer-mandiriSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.806 14.25a.794.794 0 01-.578-.254L3.38 9.903A.793.793 0 014.536 8.82l3.262 3.475 6.658-7.283a.79.79 0 111.171 1.06l-7.235 7.917a.791.791 0 01-.578.262h-.008z" fill="#0084FF" stroke="#0084FF"></path>
-                        </svg> -->
-                    </div>
-                </a>
-                <a href="javascript:Confirmation(1);" class="pt-3 pr-3 pb-0 pl-3 block hover:bg-blue-100 select-type" data-type="transfer-bniBisnisSyariah" data-label="Transfer BNI Syariah" data-image="{{ url('img/payments/bni-syariah.png') }}">
-                    <div class="flex border-b-custom pb-2 items-center justify-between">
-                        <div class="flex">
-                            <div class="mr-4"><img src="{{ url('img/payments/bni-syariah.png') }}" class="img-flag inline w-16 order border-gray-300 p-1"></div>
-                            <h3 class="text-sm text-black">Transfer BNI Syariah</h3>
-                        </div>
-                        <!-- <svg class="icon-check hidden transfer-bniBisnisSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.806 14.25a.794.794 0 01-.578-.254L3.38 9.903A.793.793 0 014.536 8.82l3.262 3.475 6.658-7.283a.79.79 0 111.171 1.06l-7.235 7.917a.791.791 0 01-.578.262h-.008z" fill="#0084FF" stroke="#0084FF"></path>
-                        </svg> -->
-                    </div>
-                </a>
+                    </a>    
+                @endforeach
             </div>
 </form>

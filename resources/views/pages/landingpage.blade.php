@@ -543,15 +543,10 @@
                     </div>
                 </div>
             </div>
-            <!-- Footer Section -->
-            <div class="footer">
-                <div class="container">
-                    <div class="col-md-12 text-center">
-                        <div class="footer-text">
-                            <p>
-                                Copyright © 2020
-                            </p>
-                        </div>
+            <div class="container">
+                <div class="col-md-12 text-center">
+                    <div class="footer-text">
+                        <p>Copyright © 2020</p>
                     </div>
                 </div>
             </div>
@@ -566,5 +561,4 @@
     <!-- Wrapper-->
 @endsection
 @section('footer')
-
 @endsection

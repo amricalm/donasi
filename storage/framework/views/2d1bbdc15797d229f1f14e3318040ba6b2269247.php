@@ -15,7 +15,12 @@
         <div class="j-unit">
             <div class="text-center">
                     <p class="text-black text-sm">Total Pembayaran Donasi</p>
-                    <h2 class="text-xl md:text-3xl font-bold text-black mb-3 mt-2">Rp 10.<span class="text-yellow-600 font-bold">717</span>&nbsp;
+                    <h2 class="text-xl md:text-3xl font-bold text-black mb-3 mt-2">
+                    <?php
+                        $format_rupiah = "Rp. " . number_format($donate->Amount,0,',','.');
+                        echo $format_rupiah;
+                    ?>
+                    <span class="text-yellow-600 font-bold"></span>&nbsp;
                     <a href="javascript:;" class="copy-amount text-blue-400 text-sm btn-copy font-bold" data-clipboard-text="10717">SALIN</a>
                 </h2>
             </div>
@@ -41,15 +46,20 @@
             <div class="w-full my-6">
                 <p class="mb-2 text-sm text-black">Silahkan Transfer ke:</p>
                 <div class="border rounded border-custom bg-gray-custom p-2 mb-2 text-center flex">
-                    <img class="w-20" src="https://www.amalsholeh.com/assets/images/payments/bni-syariah.png" alt="icon Transfer BNI Syariah">
-                    <div class="flex-grow text-lg font-semibold text-black block">xxxx-xxxx-xx</div>
+                    <img class="w-20" src="<?php echo e(url('img/payments/'.$donate->AccountImage)); ?>" alt="icon Transfer BNI Syariah">
+                    <div class="flex-grow text-lg font-semibold text-black block"><?php echo e($donate->AccountNumber); ?></div>
                     <div class="flex-grow"><a href="javascript:;" class="copy-amount text-blue-600 font-bold text-sm btn-copy" data-clipboard-text="1708201902">SALIN</a></div>
                 </div>
-                <span class="text-xs text-black">an. <span class="font-bold">xxxxxxxxxxxxx</span></span> - <span class="text-xs text-black">KCP Syariah xxxxxxxxxx</span>
+                <span class="text-xs text-black">an. <span class="font-bold"><?php echo e($donate->AccountName); ?></span></span> - <span class="text-xs text-black"><?php echo e($donate->BranchOffice); ?></span>
             </div>
             <h3 class="text-black mb-1 text-sm">Rincian:</h3>
             <div class="table-price bg-gray-custom rounded border-custom text-gray-600 text-xs text-black">
-                <div class="p-3 clear border-b-custom text-black">Jumlah donasi <span class="float-right font-bold" text-black="">Rp 10.000</span></div>
+                <div class="p-3 clear border-b-custom text-black">Jumlah donasi <span class="float-right font-bold" text-black="">
+                    <?php
+                        $format_rupiah = "Rp. " . number_format($donate->Amount,0,',','.');
+                        echo $format_rupiah;
+                    ?>
+                </span></div>
                 <div class="p-3 clear text-black">Kode unik <span class="float-right font-bold text-black">717</span></div>
             </div>
             <p class="text-xs italic color-gray mt-2">*Kode unik akan didonasikan</p>

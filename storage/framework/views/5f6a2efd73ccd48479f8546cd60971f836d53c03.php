@@ -543,7 +543,7 @@
                 </div>
             </div>
             <!-- Footer Section -->
-            <div class="footer">
+            <!-- <div class="footer"> -->
                 <div class="container">
                     <div class="col-md-12 text-center">
                         <div class="footer-text">
@@ -553,7 +553,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
             <!-- Scroll To Top -->
             <a id="back-top" class="back-to-top page-scroll" href="#main">
                 <i class="ion-ios-arrow-thin-up"></i>

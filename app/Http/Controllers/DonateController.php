@@ -34,6 +34,15 @@ class DonateController extends Controller
 
         return view('pages.donate.confirmation',$app);
     }
+    function invoicenumber()
+    {
+            $nomor  = DB::table('donate')
+                    ->selectRaw("MAX(SUBSTRING(Invoice,11)) AS maks")->first();
+            
+            $NoInvMax = $nomor->maks;
+        
+        return $NoInvMax;
+    }
     public function save(Request $request)
     {
         $app['Amount']   = str_replace(".", "", $request->amount);
@@ -43,18 +52,29 @@ class DonateController extends Controller
         $app['Email']    = $request->email;
         $app['Message']  = $request->message;
         $app['CreatedDate'] = Carbon::now();
+        $app['MaxConfDate'] = Carbon::tomorrow()->format('Y-m-d').' '.Carbon::now()->format('H:i:s');
+        $date            = Carbon::today()->format('y/m/d');
+        $invoiceDate     = str_replace("/", "", $date);
+
+        $noSequence      = $this->invoicenumber();
+        $noSequence++;
+        $invoiceNumber   = sprintf("%06s", $noSequence);
+        $app['Invoice']  = 'INV-'.$invoiceDate.''.$invoiceNumber;
+        
         $donateID        = Donate::insertGetId($app);
 
         return $this->summary($donateID);
     }
     public function summary($id)
     {
+        
         $app['donate'] = DB::table('donate')
                         ->join('mbank','AccountNumber','=','Number')
                         ->where('donate.ID', $id)
-                        ->selectRaw('donate.Amount, mbank.Number AS AccountNumber, mbank.Name AS AccountName, mbank.Image AS AccountImage, mbank.BranchOffice')
+                        ->selectRaw('Invoice, Amount, AccountNumber, mbank.Name AS AccountName, Image AS AccountImage, BranchOffice, MaxConfDate')
                         ->first();
-        
+        $MaxConfDate = $app['donate']->MaxConfDate;                 
+        $app['MaxConfDate'] = date_create($MaxConfDate)->format("H:i, d M Y");
         return view('pages.donate.summary',$app);
     }
 }

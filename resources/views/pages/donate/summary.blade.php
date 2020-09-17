@@ -3,7 +3,7 @@
     <div class="flex flex-wrap">
         <div class="w-full w-3/4 px-4 sm:px-0">
         <i class="icofont icofont-clock-time text-yellow-500"></i>
-        <span class="text-black truncate text-sm">Selesaikan pembayaran donasi sebelum <span class="font-bold">besok</span> jam <span class="font-bold">11:34, 16 Sep 2020</span></span>
+        <span class="text-black truncate text-sm">Selesaikan pembayaran donasi sebelum <span class="font-bold">besok</span> jam <span class="font-bold">{{ $MaxConfDate }}</span></span>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="text-center mt-2">
                 <h3 class="text-black mb-1 text-sm">No Pembayaran</h3>
-                <h2 class="font-semibold text-black mb-4">INV-200914440519</h2>
+                <h2 class="font-semibold text-black mb-4">{{ $donate->Invoice }}</h2>
             </div>
             <div class="text-center mt-4">
                 <span class="text-xs text-center italic text-gray-600">Menunggu pembayaran..</span>
@@ -55,14 +55,13 @@
             <div class="table-price bg-gray-custom rounded border-custom text-gray-600 text-xs text-black">
                 <div class="p-3 clear border-b-custom text-black">Jumlah donasi <span class="float-right font-bold" text-black="">
                     @php
-                        $format_rupiah = "Rp. " . number_format($donate->Amount,0,',','.');
+                        $format_rupiah = "Rp " . number_format($donate->Amount,0,',','.');
                         echo $format_rupiah;
                     @endphp
                 </span></div>
                 <div class="p-3 clear text-black">Kode unik <span class="float-right font-bold text-black">717</span></div>
             </div>
             <p class="text-xs italic color-gray mt-2">*Kode unik akan didonasikan</p>
-                    
         </div>
     </div>
 </form>

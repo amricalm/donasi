@@ -9,4 +9,5 @@ class Donate extends Model
     public $timestamps = true;
     protected $table = "donate";
     protected $fillable = ['ID','Amount','Payment','Name','Phone','Email','Message','CreatedDate'];
+    protected $dates = ['dob'];
 }

@@ -542,18 +542,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Footer Section -->
-            <!-- <div class="footer"> -->
-                <div class="container">
-                    <div class="col-md-12 text-center">
-                        <div class="footer-text">
-                            <p>
-                                Copyright © 2020
-                            </p>
-                        </div>
+            <div class="container">
+                <div class="col-md-12 text-center">
+                    <div class="footer-text">
+                        <p>Copyright © 2020</p>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
             <!-- Scroll To Top -->
             <a id="back-top" class="back-to-top page-scroll" href="#main">
                 <i class="ion-ios-arrow-thin-up"></i>
@@ -565,7 +560,6 @@
     <!-- Wrapper-->
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer'); ?>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('templates.index', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

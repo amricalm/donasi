@@ -12,22 +12,22 @@
 </div>
 <h3 class="text-xs text-black mb-3">Transfer Bank (Transaksi diverifikasi manual 1x24jam)</h3>
 <form class="j-pro" method="post">
-            <div class="card-payment p-0">
-                <input type="hidden" name="amount" id="amount" value="{{ $amount }}"/>
-                @foreach($bank as $row)
-                    <a href="javascript:Confirmation({{$row->ID}});" class="pt-3 pr-3 pb-0 pl-3 block hover:bg-blue-100 select-type" data-type="{{$row->Type}}" data-label="{{$row->Label}}" data-image="{{ url('img/payments/'.$row->Image) }}">
-                        <div class="flex border-b-custom pb-2 items-center justify-between">
-                            <div class="flex">
-                                <div class="mr-4">
-                                    <img src="{{ url('img/payments/'.$row->Image) }}" class="img-flag inline w-16 order border-gray-300 p-1">
-                                </div>
-                                <h3 class="text-sm text-black">{{$row->Label}}</h3>
-                            </div>
-                            <!-- <svg class="icon-check hidden transfer-mandiriSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.806 14.25a.794.794 0 01-.578-.254L3.38 9.903A.793.793 0 014.536 8.82l3.262 3.475 6.658-7.283a.79.79 0 111.171 1.06l-7.235 7.917a.791.791 0 01-.578.262h-.008z" fill="#0084FF" stroke="#0084FF"></path>
-                            </svg> -->
+    <div class="card-payment p-0">
+        <input type="hidden" name="amount" id="amount" value="{{ $amount }}"/>
+        @foreach($bank as $row)
+            <a href="javascript:Confirmation({{$row->ID}});" class="pt-3 pr-3 pb-0 pl-3 block hover:bg-blue-100 select-type" data-type="{{$row->Type}}" data-label="{{$row->Label}}" data-image="{{ url('img/payments/'.$row->Image) }}">
+                <div class="flex border-b-custom pb-2 items-center justify-between">
+                    <div class="flex">
+                        <div class="mr-4">
+                            <img src="{{ url('img/payments/'.$row->Image) }}" class="img-flag inline w-16 order border-gray-300 p-1">
                         </div>
-                    </a>    
-                @endforeach
-            </div>
+                        <h3 class="text-sm text-black">{{$row->Label}}</h3>
+                    </div>
+                    <!-- <svg class="icon-check hidden transfer-mandiriSyariah" width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.806 14.25a.794.794 0 01-.578-.254L3.38 9.903A.793.793 0 014.536 8.82l3.262 3.475 6.658-7.283a.79.79 0 111.171 1.06l-7.235 7.917a.791.791 0 01-.578.262h-.008z" fill="#0084FF" stroke="#0084FF"></path>
+                    </svg> -->
+                </div>
+            </a>    
+        @endforeach
+    </div>
 </form>

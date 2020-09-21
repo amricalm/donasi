@@ -11,13 +11,20 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/bootstrap/css/bootstrap.min.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/pages/waves/css/waves.min.css')); ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/icon/feather/css/feather.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/icon/themify-icons/themify-icons.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/icon/icofont/css/icofont.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/icon/font-awesome/css/font-awesome.min.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/pages/prism/prism.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/pretty-checkbox.min.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/style.css')); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/pages/j-pro/css/font-awesome.min.css')); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/pages/j-pro/css/j-pro-modern.css')); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/pages.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/timeline.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/pnotify/css/pnotify.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/pnotify/css/pnotify.brighttheme.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/pnotify/css/pnotify.buttons.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/pnotify/css/pnotify.history.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/pnotify/css/pnotify.mobile.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/pages/pnotify/notify.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/jquery.dataTables.min.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/adn.css')); ?>">
         <?php echo $__env->yieldPushContent('header'); ?>

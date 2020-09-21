@@ -3,7 +3,7 @@
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ (!empty($aktif)) ? '' : 'active'}}">
-                <a href="{{ url('beranda') }}" class="waves-effect waves-dark">
+                <a href="{{ url('home') }}" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                     <span class="pcoded-mtext">Beranda</span>
                 </a>

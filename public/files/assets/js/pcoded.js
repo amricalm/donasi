@@ -8,11 +8,11 @@ $.fn.pcodedmenu = function(settings) {
         SubMenuTrigger: 'click', // value should be hover/click
         activeMenuClass: 'active',
         ThemeBackgroundPattern: 'pattern6', // Value should be
-        HeaderBackground: 'theme4', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
-        LHeaderBackground: 'theme4', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
-        NavbarBackground: 'theme4', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
-        ActiveItemBackground: 'theme4', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
-        SubItemBackground: 'theme4', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
+        HeaderBackground: 'theme5', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
+        LHeaderBackground: 'theme5', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
+        NavbarBackground: 'theme5', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
+        ActiveItemBackground: 'theme5', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
+        SubItemBackground: 'theme5', // Value should be theme1/theme2/theme3/theme4/theme5/theme6/theme7/theme8/theme9
         ActiveItemStyle: 'style0',
         ItemBorder: true,
         freamtype: 'theme1',

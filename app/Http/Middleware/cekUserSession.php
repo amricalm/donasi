@@ -15,7 +15,7 @@ class cekUserSession
     {
         if (!$request->session()->exists('UserID')) {
             // user value cannot be found in session
-            return redirect('aman')->with('Login','Silahkan login kembali!');
+            return redirect('admin-login')->with('Login','Silahkan login kembali!');
         }
 
         return $next($request);

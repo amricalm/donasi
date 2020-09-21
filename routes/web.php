@@ -4,12 +4,12 @@ Route::get('/', 'LandingPageController@index');
 //===================== ROUTE END INDEX ===========================//
 
 //===================== ROUTE LOGIN ===========================//
-Route::get('aman', 'AmanController@index')->name('aman');
-Route::post('aman/validasi', 'AmanController@validasi');
+Route::get('admin-login', 'AdminLoginController@index')->name('admin-login');
+Route::post('admin-login/validasi', 'AdminLoginController@validasi');
 //===================== ROUTE END LOGIN ===========================//
 
 //===================== ROUTE LOGOUT ===========================//
-Route::get('keluar','AmanController@logout')->name('keluar');
+Route::get('logout','AdminLoginController@logout')->name('logout');
 //===================== ROUTE END LOGOUT ===========================//
 
 //===================== ROUTE DONATE ===========================//
@@ -23,8 +23,13 @@ Route::get('donate/summary/{ID}','DonateController@summary');
 //===================== ROUTE CEK USER SESSION ============================================================================//
 Route::group(['middleware' => 'cekUserSession'], function () {
     //===================== ROUTE DASHBOARD ===========================//
-    Route::get('beranda', 'DashboardController@index')->name("beranda");
+    Route::get('home', 'DashboardController@index')->name("home");
     //===================== ROUTE END DASHBOARD ===========================//
+
+    //===================== ROUTE DONATE PLAN ===========================//
+    Route::get('donate-plan', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@index']);
+    Route::get('donate-plan/hapus/{id}', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@hapus']);
+    //===================== ROUTE END DONATE PLAN ===========================//
 
     //===================== ROUTE USER ===========================//
     Route::get('user', ['middleware'=>'cekRole', 'uses'=>'UserController@index']);

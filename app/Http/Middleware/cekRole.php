@@ -43,7 +43,7 @@ class cekRole
         }
         else
         {
-            return redirect('aman')->with('Login','Silahkan login kembali!');
+            return redirect('admin-login')->with('Login','Silahkan login kembali!');
         }
         if(session('UserGroupID')=='9')
         {
@@ -55,7 +55,7 @@ class cekRole
         }
         else
         {
-            return redirect('beranda')->with('alert','Tidak boleh akses halaman tsb! Cek ke Admin!');
+            return redirect('home')->with('alert','Tidak boleh akses halaman tsb! Cek ke Admin!');
         }
     }
 }

@@ -50,7 +50,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('keluar') }}">
+                                            <a href="{{ url('logout') }}">
                                             <i class="feather icon-log-out"></i> Logout
 											</a>
                                         </li>

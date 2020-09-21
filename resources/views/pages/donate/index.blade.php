@@ -1,4 +1,5 @@
 @extends('templates.index')
+@include('templates.komponen.j-pro')
 @section('body')
 <div id="pcoded" class="pcoded">
     <div class="pcoded-container navbar-wrapper">
@@ -12,7 +13,7 @@
                                     <header id="header" class="bg-header">
                                         <nav class="flex items-center px-2 py-2 text-center">
                                             <a href="/" class="mx-auto">
-                                                <img class="h-6" src="{{ url('img/logo-qoryah-quran.png') }}">
+                                                <img class="h-6" src="{{ url('img/logo.png') }}">
                                             </a>
                                         </nav>
                                     </header>

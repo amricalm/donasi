@@ -1,10 +1,11 @@
-@extends('templates.index')
+@extends('templates.indexlanding')
+@include('templates.komponen.j-pro')
 @section('body')
 <div class="wrapper animsition" data-animsition-in-class="fade-in" data-animsition-in-duration="1000" data-animsition-out-class="fade-out" data-animsition-out-duration="1000">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand page-scroll" href="#main"><img src="{{ url('img/logo-qoryah-quran.png') }}" alt="Qoryah Qur'an" /></a>
+                    <a class="navbar-brand page-scroll" href="#main"><img src="{{ url('img/logo.png') }}" alt="Qoryah Qur'an" /></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

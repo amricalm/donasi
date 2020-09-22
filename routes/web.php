@@ -28,6 +28,8 @@ Route::group(['middleware' => 'cekUserSession'], function () {
 
     //===================== ROUTE DONATE PLAN ===========================//
     Route::get('donate-plan', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@index']);
+    Route::get('donate-plan/edit/{id}', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@edit']);
+    Route::post('donate-plan/update', 'DonatePlanController@update');
     Route::get('donate-plan/hapus/{id}', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@hapus']);
     //===================== ROUTE END DONATE PLAN ===========================//
 

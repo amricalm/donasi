@@ -5,7 +5,7 @@
             <li class="<?php echo e((!empty($aktif)) ? '' : 'active'); ?>">
                 <a href="<?php echo e(url('home')); ?>" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                    <span class="pcoded-mtext">Beranda</span>
+                    <span class="pcoded-mtext">Dashboard</span>
                 </a>
             </li>
             <?php for($i=0; $i < count(Session::get('UserMenu')); $i++): ?>

@@ -13,7 +13,7 @@
                         </ul>
                         <ul class="navbar-nav my-2 my-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link page-scroll" href="#main">Home</a>
+                                <a href="#" class="btn waves-effect waves-light btn-primary btn-outline-primary btn-outline-white" href="#main">Login/Register</a>
                             </li>
                         </ul>
                     </div>
@@ -32,9 +32,9 @@
                                 </div>
                             </div>
                             <div class="col-md-11 text-left">
-                                <h1 class="wow fadeInUp" data-wow-delay="0s">Gotong Royong Bangun Pesantren Hafizh Al Quran</h1>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                    Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu <br class="hidden-xs">Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.
+                            <h1 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 leading-normal">Gotong Royong Bangun Pesantren Hafizh Al Quran</h1>
+                                <p class="program-headline text-gray-600 py-2 text-xs sm:text-sm md:text-xl" data-wow-delay="0.2s">
+                                    Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.
                                 </p>
                             </div>
                             <div class="col-md-11">

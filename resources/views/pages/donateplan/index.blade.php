@@ -53,11 +53,11 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th width="21px">No</th>
-                                                                    <th>Nomor Invoice</th>
+                                                                    <th>Invoice</th>
                                                                     <th>Nama Donatur</th>
                                                                     <th>Telepon</th>
-                                                                    <th>Email</th>
-                                                                    <th>Jumlah Donasi</th>
+                                                                    <th>Rekening</th>
+                                                                    <th>Donasi</th>
                                                                     <th width="120px">Opsi</th>
                                                                 </tr>
                                                             </thead>
@@ -68,10 +68,15 @@
                                                                     <td>{{ $row->Invoice }}</td>
                                                                     <td>{{ $row->Name }}</td>
                                                                     <td>{{ $row->Phone }}</td>
-                                                                    <td>{{ $row->Email }}</td>
-                                                                    <td>{{ $row->Amount }}</td>
+                                                                    <td>{{ $row->Bank }} - {{ $row->AccountNumber }}</td>
                                                                     <td>
-                                                                        <!-- <a href="donate-plan/edit/{{ $row->ID }}" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a> -->
+                                                                        @php
+                                                                            $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
+                                                                            echo $format_rupiah;
+                                                                        @endphp
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="donate-plan/edit/{{ $row->ID }}" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a>
                                                                         <button type="button" class="btn btn-mini waves-effect waves-light btn-danger" onclick="return checkdelete({{$row->ID}})" data-toggle="tooltip" data-placement="bottom" title data-original-title="Hapus"><i class="icofont icofont-ui-delete"></i> | Hapus</button>
                                                                     </td>
                                                                 </tr>
@@ -113,12 +118,12 @@ function checkdelete(id)
             }).then((result) => {
             if (result.value) {
                 $.ajax({
-                    url:"{{url('donate-plan/hapus')}}/"+id,
-                    success: function(data){
+                    url:"{{url('donate-plan/hapus')}}/"+id
+                }).done(function(hasil) {
+                    if(hasil.status)
+                    {
+                        respon('success','Berhasil dihapus');
                         window.location.reload();
-                    }, 
-                    error: function(req, err){ 
-                        console.log('my message' + err); 
                     }
                 });
 

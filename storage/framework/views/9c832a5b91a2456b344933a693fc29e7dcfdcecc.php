@@ -31,6 +31,7 @@
         <!-- Main Style css -->
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/style.css')); ?>" media="all" />
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/assets/css/pages.css')); ?>">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700&display=swap">
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/adn.css')); ?>" media="all" />
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/style.css')); ?>" media="all" />
         <?php echo $__env->yieldPushContent('header'); ?>

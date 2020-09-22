@@ -5,7 +5,7 @@
             <li class="{{ (!empty($aktif)) ? '' : 'active'}}">
                 <a href="{{ url('home') }}" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
-                    <span class="pcoded-mtext">Beranda</span>
+                    <span class="pcoded-mtext">Dashboard</span>
                 </a>
             </li>
             @for ($i=0; $i < count(Session::get('UserMenu')); $i++)

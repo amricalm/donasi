@@ -1,4 +1,5 @@
 @extends('templates.index')
+@include('templates.komponen.sweetalert')
 @include('templates.komponen.chart')
 @section('body')
 <div class="loader-bg">
@@ -45,7 +46,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="form-group">
-                                                                test
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>

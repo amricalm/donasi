@@ -13,7 +13,7 @@
         <script type="text/javascript" src="<?php echo e(asset('files/bower_components/jquery-i18next/js/jquery-i18next.min.js')); ?>"></script>
         <?php echo $__env->yieldPushContent('footer'); ?>
         <script type="text/javascript" src="<?php echo e(asset('files/assets/js/pcoded.min.js')); ?>"></script>
-        <script type="text/javascript" src="<?php echo e(asset('files/assets/js/vertical/menu/menu-hori-fixed.js')); ?>"></script>
+        <script type="text/javascript" src="<?php echo e(asset('files/assets/js/dark-light/menu/menu-static.js')); ?>"></script>
         <script type="text/javascript" src="<?php echo e(asset('files/assets/js/jquery.mCustomScrollbar.concat.min.js')); ?>"></script>
         <script type="text/javascript" src="<?php echo e(asset('files/assets/js/script.js')); ?>"></script>
         <script type="text/javascript" src="<?php echo e(asset('files/bower_components/pnotify/js/pnotify.js')); ?>"></script>

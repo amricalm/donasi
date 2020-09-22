@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/sweetalert2/sweetalert2.css')); ?>">
 </head>
 <body>
-    <div id="app">
+    <div id="app" themebg-pattern="theme5">
         <header id="header" class="bg-header">
             <nav class="flex items-center px-2 py-2 text-center">
                 <a href="/" class="mx-auto">

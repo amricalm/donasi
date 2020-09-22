@@ -19,7 +19,7 @@ class DashboardController extends Controller
     {
         if(session('UserID')=='')
         {
-            return redirect('admin')->with('alert','Silahkan login kembali!');
+            return redirect('admin-login')->with('alert','Silahkan login kembali!');
         }
         
         $app['judul'] = 'Dashboard';

@@ -1,3 +1,4 @@
+<?php echo $__env->make('templates.komponen.sweetalert', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('templates.komponen.chart', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->startSection('body'); ?>
 <div class="loader-bg">
@@ -44,7 +45,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="form-group">
-                                                                test
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>

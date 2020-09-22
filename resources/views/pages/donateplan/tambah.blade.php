@@ -23,7 +23,7 @@
                                     </div>
                                     <ul class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="{{ url('/home') }}">
+                                            <a href="{{ url('/dashboard') }}">
                                                 <i class="icofont icofont-home"></i>
                                             </a>
                                         </li>

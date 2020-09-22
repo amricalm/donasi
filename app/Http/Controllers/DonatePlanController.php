@@ -24,14 +24,46 @@ class DonatePlanController extends Controller
         
         $app['judul'] = 'Rencana Donasi';
         $app['aktif'] = 'Rencana Donasi';
-        $app['DonatePlan'] = DB::table('donate')->get()->toArray();
+        $app['DonatePlan'] = DB::table('donate')
+                                ->selectRaw('donate.ID,Invoice,donate.Name,Phone,Amount,donate.AccountNumber,mbank.Bank')
+                                ->join('mbank','donate.AccountNumber','=','mbank.Number')
+                                ->get()->toArray();
 
         return view('pages.donateplan.index',$app);
     }
+    public function edit($id)
+    {
+        $app['judul']   = 'Edit Rencana Donasi';
+        $app['aktif']   = 'Rencana Donasi';
+        $app['bank']    = DB::table('mbank')->get()->toArray();
+        $app['donate']  = DB::table('donate')
+                            ->selectRaw('donate.ID as ID, mbank.Name as AccountName, mbank.Label as AccountLabel,mbank.Image as AccountImage,Invoice,Amount,AccountNumber,donate.Name,Phone,Email,Message,MaxConfDate')
+                            ->join('mbank','donate.AccountNumber','=','mbank.Number')
+                            ->where('donate.ID', $id)
+                            ->first();
+
+        return view('pages.donateplan.edit',$app);
+    }
+    public function update(Request $request) {
+        DB::table('donate')->where('ID',$request->id)->update([
+            'Invoice'       => $request->Invoice,
+            'Amount'        => $request->Amount,
+            'AccountNumber' => $request->AccountNumber,
+            'Name'          => $request->Name,
+            'Phone'         => $request->Phone,
+            'Email'         => $request->Email,
+            'Message'       => $request->Message,
+            'MaxConfDate'   => $request->MaxConfDate,
+        ]);
+
+        $arr = array('status' => 'true', 'msg' => 'Berhasil');
+        return Response()->json($arr);
+    }
     public function hapus($id)
     {
-        $test = DB::table('donate')->where('ID', $id)->delete();
-        dd($test);
-        return redirect('donate-plan');
+        DB::table('donate')->where('ID', $id)->delete();
+        
+        $arr = array('status' => 'true', 'msg' => 'Berhasil');
+        return Response()->json($arr);
     }
 }

@@ -56,8 +56,8 @@
     </header>
 <div class="bg-white">
     <div class="container max-w-56rem px-1 pb-6 px-4 md:pb-10 md:pt-10 mx-auto"><figure class="program-cover progressive mb-5 overflow-hidden">
-        <img src="{{ url('img/banner/banner-qoryah-quran.jpg') }}" data-src="{{ url('img/banner/banner-qoryah-quran.jpg') }}?ar=16:9&amp;w=720&amp;fit=crop&amp;auto=format,compress" alt="Gotong Royong Bangun Pesantren Hafizh Al Quran"><noscript>
-        <img src="{{ url('img/banner/banner-qoryah-quran.jpg') }}?ar=16:9&amp;w=720&amp;fit=crop&amp;auto=format,compress" alt="Cover Gotong Royong Bangun Pesantren Hafizh Al Quran"/></noscript></figure><h1 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 leading-normal">Gotong Royong Bangun Pesantren Hafizh Al Quran</h1>
+        <img src="{{ url('img/landingpage/banner-qoryah-quran.jpg') }}" data-src="{{ url('img/landingpage/banner-qoryah-quran.jpg') }}?ar=16:9&amp;w=720&amp;fit=crop&amp;auto=format,compress" alt="Gotong Royong Bangun Pesantren Hafizh Al Quran"><noscript>
+        <img src="{{ url('img/landingpage/banner-qoryah-quran.jpg') }}?ar=16:9&amp;w=720&amp;fit=crop&amp;auto=format,compress" alt="Cover Gotong Royong Bangun Pesantren Hafizh Al Quran"/></noscript></figure><h1 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 leading-normal">Gotong Royong Bangun Pesantren Hafizh Al Quran</h1>
         <div class="program-head">
             <div class="md:flex md:-mx-4 items-center">
                 <div class="md:w-3/4 md:px-4">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="program-author rounded mt-6 border-custom bg-gray-100 p-4"><h3 class="text-sm text-gray-700 mb-2">Pemilik Program</h3>
                     <div class="flex items-center">
-                        <img class="w-8 h-8 md:w-12 md:h-12 mr-4" src="{{ asset('js/landingpage/xfmMTejjvOEZpVNuEseYF4DwX5ZFatGxuXAx5sKS.png') }}" alt="Avatar Program Badan Wakaf Al Quran">
+                        <img class="w-8 h-8 md:w-12 md:h-12 mr-4" src="{{ asset('img/landingpage/xfmMTejjvOEZpVNuEseYF4DwX5ZFatGxuXAx5sKS.png') }}" alt="Avatar Program Badan Wakaf Al Quran">
                         <div>
                             <p class="text-gray-900 leading-none font-bold mb-1">Badan Wakaf Al Quran 
                             <svg class="inline-block ml-1" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +149,7 @@
 <div class="content-desc text-gray-700 text-sm sm:text-base">
 <p>Seorang santri terlihat berdiri di selasar bangunan berbilik, tatapan matanya mengarah pada petak-petak sawah dan kebun terhampar di depannya. Lisannya tak henti melantunkan ayat-ayat Alquran. Ia adalah salah satu santri yang memilih Al Quran sebagai sahabat hidupnya.&nbsp;</p>
 <p>Banyak lagi santri lainnya yang juga menjadikan Al Quran sebagai sahabatnya, mereka berjuang menghafal Al Quran di bawah bimbingan Seorang Hafifz bersanad di Pesantren Qoryah Quran Wanayasa. Mereka disiapkan menjadi pemimpin qurani dalam program <strong><em>“One Hafidz for One Masjid”</em></strong>. Mereka diharapkan menjadi solusi akan sulitnya mendapatkan seorang imam masjid yang memiliki bacaan Al Quran berkualitas (bersanad).&nbsp;</p><figure>
-<img src="{{ asset('js/landingpage/Z5nFpx3h8WKHE94oj0Nk1KgMXgZ7FCCixZSZ6e1x.jpeg') }}"></figure>
+<img src="{{ asset('img/landingpage/Z5nFpx3h8WKHE94oj0Nk1KgMXgZ7FCCixZSZ6e1x.jpeg') }}"></figure>
 <p>Untuk mewujudkan harapan ini, Qoryah Quran Wanayasa berpegang pada prinsip <strong><em>Ta'a</em></strong><strong><em>w</em></strong><strong><em>wun</em></strong> dan <strong><em>Tabar</em></strong><strong><em>r</em></strong><strong><em>uk</em></strong>. Ta’awwun adalah sinergi berbagai pihak, termasuk orang tua, pesantren dan masyarakat.. Sedangkan "Tabarruk" adalah tradisi pesantren mencari keberkahan kepada Allah SWT melalui aktivitas kebaikan termasuk ber-infaq dan ber-wakaf. Oleh karena itu, siapa saja, termasuk yatim / dhuafa, bisa belajar Al Quran di Qoryah Quran, tanpa khawatir putus pendidikan akibat kesulitan ekonomi.&nbsp;</p>
 <p>Tidak ada kapitalisasi pendidikan, tidak ada akad ijarah antara lembaga dengan santri (via orang tua) yang menjadikan dunia pendidikan mengarah pada akad transaksional seperti halnya jual beli. Tidak ada uang gedung atau uang pangkal, tidak ada biaya jasa pendidikan kecuali infaq dan wakaf yang dilandaskan pada keikhlasan <em>ta’awwun </em>berdasarkan standar rata-rata kebutuhan pendidikan yang telah disepakati.</p>
 <p>Ta'awwun seperti ini ditujukan untuk meraih keberkahan dan pertolongan dari Allah SWT, yaitu berupa lahirnya generasi qurani yang dapat menjadi semburat cahaya cemerlang yang menerangi Indonesia, sebagaimana hadist Rasulullah SAW :</p>
@@ -171,7 +171,7 @@
             <div class="contentfundraiser mb-5">
                 <div class="flex bg-white md:px-4 md:py-4 pb-4 mb-4 md:rounded border-b-custom last:border-b-0 last:mb-0 md:border-custom ">
                                             
-<img class="w-10 h-10 rounded-full mr-4 border border-gray-500" src="{{ asset('js/landingpage/Nndy4VSOfk0EaRJhC2qfxIUPC8J7VKA7ItQGkq0g.png') }}" alt="Avatar of Pendekar Wakaf">
+<img class="w-10 h-10 rounded-full mr-4 border border-gray-500" src="{{ asset('img/landingpage/Nndy4VSOfk0EaRJhC2qfxIUPC8J7VKA7ItQGkq0g.png') }}" alt="Avatar of Pendekar Wakaf">
                     <div class="text-sm">
                                                 <h3 class="text-gray-900 leading-none text-sm md:text-base mb-1">Pendekar Wakaf</h3>
                         <div class="color-gray text-xs md:text-sm mb-1 color-gray">Berhasil mengajak 152 orang untuk berdonasi
@@ -300,7 +300,7 @@
 <p class="text-sm md:text-lg">Pembangunan masjid pesantren berlanjut</p>
 <div class="text-xs md:text-sm content text-gray-600"><ol><li>Alhamdulillah proses pembangunan masjid pesantren mafatih dimulai lagi.&nbsp;</li></ol>
 <p>Pekerjaan yang dilakukan saat ini adalah pemasangan dinding masjid.&nbsp;</p><figure>
-<img src="{{ asset('js/landingpage/KdUJvM996vwfRjN5itl1b1ljbxvClQdfdiBPNTDb.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/KdUJvM996vwfRjN5itl1b1ljbxvClQdfdiBPNTDb.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p><br></p>
 <p>Semoga pembangunan dapat berjalan lancar dan selesai sesuai harapan.</p>
 <p>Ayo donasi wakaf lagi untuk pembangunan pesantren mafatih qoryah quran wanayasa.&nbsp;</p>
@@ -338,12 +338,12 @@
 
 <p>6. Pembuatan saluran air untuk bangunan sementara, toilet dan area cuci.</p>
 <p></p><figure>
-<img src="{{ asset('js/landingpage/r4MdmTmjkWaCwcXg4RNPytWCVN1TGQj1z423hq1L.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/r4MdmTmjkWaCwcXg4RNPytWCVN1TGQj1z423hq1L.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p></p><figure>
-<img src="{{ asset('js/landingpage/0wu6Py0pu62fLOOLJLS1n1nIJZx7C82J16cSfYFA.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/0wu6Py0pu62fLOOLJLS1n1nIJZx7C82J16cSfYFA.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p></p><figure>
-<img src="{{ asset('js/landingpage/VygSPwVtkgrxaKnz5H14NM6tUdb7qyOVnXFE4dIo.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure><figure>
-<img src="{{ asset('js/landingpage/wzwhfvMwQkmvJVPFtYI2AuydnjrFxlmWrRHymu8x.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/VygSPwVtkgrxaKnz5H14NM6tUdb7qyOVnXFE4dIo.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure><figure>
+<img src="{{ asset('img/landingpage/wzwhfvMwQkmvJVPFtYI2AuydnjrFxlmWrRHymu8x.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p></p>
 <p>Kami ucapkan jazakumullah khairan ahsanal jaza' kepada para donatur..&nbsp;</p>
 <p>Wakaf pembebasan lahan, pembangunan masjid dan pembangunan asrama permanen santri masih terbuka.. Kami senantiasa mengajak kaum muslim untuk menyisihkan hartanya untuk investasi pahala di pembangunan pesantresn Qoryah Quran wanayasa ini.&nbsp;</p>
@@ -374,7 +374,7 @@
 
 <p>Baik meja maupun pintu adalah sumbangan dari Bu Yulfi dari Jakarta</p>
 <figure>
-<img src="{{ asset('js/landingpage/6UbQjxuPioyFPfZjllDUWaR3eg1zJGnwdVpK2I5G.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/6UbQjxuPioyFPfZjllDUWaR3eg1zJGnwdVpK2I5G.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p><br></p>
 <p>3. Rangka untuk kamar santri tambahan sudah jadi, tinggal ditutup dengan atap spandek. Seluruh struktur menggunakan baja ringan.</p>
 
@@ -384,7 +384,7 @@
 
 <p>5. Dinding asrama bilik dilapisi triplek agar lebih kuat dan mencegah tikus masuk.</p>
 <figure>
-<img src="{{ asset('js/landingpage/h0GZILVeH6AuYBriBpge4i2ZgT2hLvYYziynAavL.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
+<img src="{{ asset('img/landingpage/h0GZILVeH6AuYBriBpge4i2ZgT2hLvYYziynAavL.jpeg') }}?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p>Sisa pekerjaan:</p>
 
 <p>1. Memasang atap spandek di kamar santri baru</p>
@@ -710,7 +710,7 @@
     </footer>
 @endsection
 @section('footer')
-<script src="{{ asset('js/landingpage/jquery.min.js.download') }}" type="text/javascript"></script><script src="{{ asset('js/landingpage/app.js') }}?id=98121ae5d02262a7fecb" type="text/javascript"></script><script type="text/javascript">$(document).on('click', '.readmore', function(e){$(this).addClass('hidden').closest('.tab-pane').addClass('open');
+<script src="{{ asset('js/landingpage/jquery.min.js') }}" type="text/javascript"></script><script src="{{ asset('js/landingpage/app.js') }}?id=98121ae5d02262a7fecb" type="text/javascript"></script><script type="text/javascript">$(document).on('click', '.readmore', function(e){$(this).addClass('hidden').closest('.tab-pane').addClass('open');
     });
     $(document).on('click', '#showCountDonation', function(e){$(".toggleDonation").toggleClass('hidden')
     $(this).text('Sembunyikan Dana')
@@ -721,7 +721,7 @@
     nextDonaturUrl = "{{ url('/donatur') }}?page=2",
     $donaturList = $('.donatur-list'),$timeline = $('.timeline'),$loader = $('.loader-wrapper');
     var getPosts = function(){$.ajax({
-    url: "{{ url('/posts') }}",
+    // url: "{{ url('/posts') }}",
     })
     .done(function(data){$.each(data.data, function(key, item){$timeline.prepend(
     '<div class=entry>' +

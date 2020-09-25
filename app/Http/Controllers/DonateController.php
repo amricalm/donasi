@@ -63,6 +63,13 @@ class DonateController extends Controller
         
         $donateID        = Donate::insertGetId($app);
 
+        $maxConf = date_create($app['MaxConfDate'])->format("d M Y, H:i");
+        $app['donate'] = DB::table('donate')
+                        ->join('mbank','AccountNumber','=','Number')
+                        ->where('donate.ID', $donateID)
+                        ->selectRaw('Bank,mbank.Name AS AccountName')
+                        ->first();
+        $this->sms($app['Invoice'],$app['Name'],$app['Phone'],$app['Amount'],$app['AccountNumber'],$maxConf,$app['donate']->Bank,$app['donate']->AccountName);
         return $this->summary($donateID);
     }
     public function summary($id)
@@ -76,5 +83,31 @@ class DonateController extends Controller
         $MaxConfDate = $app['donate']->MaxConfDate;                 
         $app['MaxConfDate'] = date_create($MaxConfDate)->format("H:i, d M Y");
         return view('pages.donate.summary',$app);
+    }
+    public function sms($invoice,$name,$phone,$amount,$accountNumber,$maxConf,$bank,$accountName) {
+        $userkey = 'a60f7cc38783';
+        $passkey = 'df5787b62c7c71c92c5a457d';
+        $telepon = $phone;
+        $message = 'Bismillah..
+                    Assalaamualaikum kak '.$name.', 
+                    Silahkan transfer sejumlah Rp '.$amount.' 
+                    ke Bank '.$bank.', no rekening: '.$accountNumber.', an. '.$accountName.'. sebelum '.$maxConf.' WIB';
+        $url = 'https://console.zenziva.net/reguler/api/sendsms/';
+        $curlHandle = curl_init();
+        curl_setopt($curlHandle, CURLOPT_URL, $url);
+        curl_setopt($curlHandle, CURLOPT_HEADER, 0);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($curlHandle, CURLOPT_TIMEOUT,30);
+        curl_setopt($curlHandle, CURLOPT_POST, 1);
+        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
+            'userkey' => $userkey,
+            'passkey' => $passkey,
+            'to' => $telepon,
+            'message' => $message
+        ));
+        $results = json_decode(curl_exec($curlHandle), true);
+        curl_close($curlHandle);
     }
 }

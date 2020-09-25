@@ -1,9 +1,8 @@
-@extends('templates.indexlanding')
-@section('body')
+<?php $__env->startSection('body'); ?>
 <header id="header" class="bg-orange-900">
     <nav class="flex items-center px-4 md:px-16 py-4 text-center">
-    <a href="{{ url('/') }}" class="mx-auto">
-    <img class="h-6" src="{{ url('img/logo.png') }}"></a></nav>
+    <a href="<?php echo e(url('/')); ?>" class="mx-auto">
+    <img class="h-6" src="<?php echo e(url('img/logo.png')); ?>"></a></nav>
 </header>
 <main class="main-content">
     <div class="flex items-center py-4">
@@ -25,15 +24,15 @@
                     <div class="rounded-none p-4 border-t border-b border-l-0 border-r-0 sm:border sm:border-r sm:border-l bg-white">
                         <div id="amount" class="card-body">
                             <h3 class="text-gray-800 font-bold mb-4">Nominal Donasi</h3>
-                            @foreach($amount as $row)
-                            <a href="javascript:getPayment({{$row->ID}});" data-nominal="{{$row->Amount}}" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
+                            <?php $__currentLoopData = $amount; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <a href="javascript:getPayment(<?php echo e($row->ID); ?>);" data-nominal="<?php echo e($row->Amount); ?>" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
                                 <div class="">
-                                    <span class="text-xs block">{{$row->Information}}</span>
+                                    <span class="text-xs block"><?php echo e($row->Information); ?></span>
                                     <span class="text-black font-semibold">
-                                        @php
+                                        <?php
                                             $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
                                             echo $format_rupiah;
-                                        @endphp
+                                        ?>
                                     </span>
                                 </div>
                                 <div>
@@ -42,7 +41,7 @@
                                     </svg>
                                 </div>
                             </a>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <hr class="mb-6 mt-6">
                             <h3 class="text-gray-800 font-bold">Nominal Donasi Lainnya</h3>
                             <div class="form-group input-amount mt-2 flex items-center">
@@ -60,8 +59,8 @@
         </div>
     </div>
 </main>
-@endsection
-@section('footer')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
 <script>
     $(document).ready(function() {
         $(document).delegate("#save","click",function(){
@@ -72,7 +71,7 @@
                 }
             });
             $.ajax({
-                url:"{{ url('/donate/save') }}",
+                url:"<?php echo e(url('/donate/save')); ?>",
                 type: "POST",
                 data: formData,
                 processData: false,
@@ -101,7 +100,7 @@
             }
         });
         $.ajax({
-            url:"{{url('donate/payment-method')}}",
+            url:"<?php echo e(url('donate/payment-method')); ?>",
             data: {'amount':amount},
             type: 'POST',
 
@@ -122,7 +121,7 @@
             }
         });
         $.ajax({
-            url:"{{url('donate/confirmation')}}",
+            url:"<?php echo e(url('donate/confirmation')); ?>",
             data: {'payID':payID,'amount':amount},
             type: 'POST',
 
@@ -160,4 +159,5 @@
         return rupiah;
     }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.indexlanding', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

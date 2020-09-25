@@ -8,14 +8,15 @@
         </div>
     </div>
     <form method="post" class="j-pro" id="form-conf">
-    {{ csrf_field() }}
+    <?php echo e(csrf_field()); ?>
+
         <div class="bg-white p-4 rounded-sm border shadow-sm mb-20">
             <div id="amount" class="card-body">
                 <p class="text-black mb-2 text-xs">Nominal Donasi <em class="text-red-500">*</em></p>
-                <input type="hidden" name="accountnumber" value="{{ $bank[0]->Number }}"/>
+                <input type="hidden" name="accountnumber" value="<?php echo e($bank[0]->Number); ?>"/>
                 <div class="form-group input-amount mt-2">
                     <span class="font-semibold text-lg text-black mt-1">Rp</span>
-                    <input type="text" class="form-control bg-orange-100 focus:bg-white text-right amount pl-10 h-57px text-black border-orange-200 focus:border-orange-600" name="amount" id="amount-input-last" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" required="required" value="{{ $amount }}">
+                    <input type="text" class="form-control bg-orange-100 focus:bg-white text-right amount pl-10 h-57px text-black border-orange-200 focus:border-orange-600" name="amount" id="amount-input-last" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" required="required" value="<?php echo e($amount); ?>">
                 </div>
                 <div class="form-group mt-6 select2-method">
                     <p class="text-black mb-2 text-xs">Metode Pembayaran <em class="text-red-500">*</em></p>
@@ -23,11 +24,11 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <div class="mr-4">
-                                    <img src="{{ url('img/payments/'.$bank[0]->Image) }}" id="image-transfer" class="img-flag inline w-16 order border-gray-300 p-1">
+                                    <img src="<?php echo e(url('img/payments/'.$bank[0]->Image)); ?>" id="image-transfer" class="img-flag inline w-16 order border-gray-300 p-1">
                                 </div>
-                                <h3 class="text-xs sm:text-base text-black flex-1" id="name-transfer">{{ $bank[0]->Label }}</h3>
+                                <h3 class="text-xs sm:text-base text-black flex-1" id="name-transfer"><?php echo e($bank[0]->Label); ?></h3>
                             </div>
-                            <a href="javascript:getPayment({{ $bank[0]->ID }});" onclick="BackTo(&#39;payment&#39;)" class="rounded-full py-2 px-4 text-white bg-orange-600">Ubah 
+                            <a href="javascript:getPayment(<?php echo e($bank[0]->ID); ?>);" onclick="BackTo(&#39;payment&#39;)" class="rounded-full py-2 px-4 text-white bg-orange-600">Ubah 
                                 <svg class="inline-block" width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 11.168a.667.667 0 01-.427-.154l-4-3.333a.668.668 0 01.853-1.027L8 9.641l3.573-2.88a.667.667 0 01.94.1.666.666 0 01-.093.973l-4 3.22a.667.667 0 01-.42.114z" fill="#fff"></path>
                                 </svg>

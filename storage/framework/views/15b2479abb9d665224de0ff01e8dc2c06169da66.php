@@ -1,9 +1,8 @@
-@extends('templates.indexlanding')
-@section('body')
+<?php $__env->startSection('body'); ?>
 <header id="header" class="bg-orange-900">
     <nav class="flex items-center px-4 md:px-16 py-4 text-center">
-    <a href="{{ url('/') }}" class="mx-auto">
-    <img class="h-6" src="{{ url('img/logo.png') }}"></a></nav>
+    <a href="<?php echo e(url('/')); ?>" class="mx-auto">
+    <img class="h-6" src="<?php echo e(url('img/logo.png')); ?>"></a></nav>
 </header>
 <main class="main-content">
     <div class="flex items-center py-4">
@@ -25,15 +24,15 @@
                     <div class="rounded-none p-4 border-t border-b border-l-0 border-r-0 sm:border sm:border-r sm:border-l bg-white">
                         <div id="amount" class="card-body">
                             <h3 class="text-gray-800 font-bold mb-4">Nominal Donasi</h3>
-                            @foreach($amount as $row)
-                            <a href="javascript:getPayment({{$row->ID}});" data-nominal="{{$row->Amount}}" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
+                            <?php $__currentLoopData = $amount; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <a href="javascript:getPayment(<?php echo e($row->ID); ?>);" data-nominal="<?php echo e($row->Amount); ?>" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
                                 <div class="">
-                                    <span class="text-xs block">{{$row->Information}}</span>
+                                    <span class="text-xs block"><?php echo e($row->Information); ?></span>
                                     <span class="text-black font-semibold">
-                                        @php
+                                        <?php
                                             $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
                                             echo $format_rupiah;
-                                        @endphp
+                                        ?>
                                     </span>
                                 </div>
                                 <div>
@@ -42,7 +41,7 @@
                                     </svg>
                                 </div>
                             </a>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <hr class="mb-6 mt-6">
                             <h3 class="text-gray-800 font-bold">Nominal Donasi Lainnya</h3>
                             <div class="form-group input-amount mt-2 flex items-center">
@@ -52,7 +51,7 @@
                         </div>
                     </div>
                     <div class="py-6 px-4">
-                        <button type="button" id="custom-submit" onclick="javascript:getPayment();" class="rounded bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700">Lanjutkan Donasi</button>
+                        <button type="button" id="custom-submit" class="rounded bg-blue-500 hover:bg-blue-600 py-3 px-2 sm:py-6 sm:px-4 text-white font-bold text-center border-b-4 border-blue-700" disabled="">Lanjutkan Donasi</button>
                     </div>
                 </div>
             </form>
@@ -60,8 +59,9 @@
         </div>
     </div>
 </main>
-@endsection
-@section('footer')
+<!-- <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Form Donasi Gotong Royong Bangun Pesantren Hafizh Al Quran - AmalSholeh.com_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe> -->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
 <script>
     $(document).ready(function() {
         $(document).delegate("#save","click",function(){
@@ -72,7 +72,7 @@
                 }
             });
             $.ajax({
-                url:"{{ url('/donate/save') }}",
+                url:"<?php echo e(url('/donate/save')); ?>",
                 type: "POST",
                 data: formData,
                 processData: false,
@@ -101,7 +101,7 @@
             }
         });
         $.ajax({
-            url:"{{url('donate/payment-method')}}",
+            url:"<?php echo e(url('donate/payment-method')); ?>",
             data: {'amount':amount},
             type: 'POST',
 
@@ -122,7 +122,7 @@
             }
         });
         $.ajax({
-            url:"{{url('donate/confirmation')}}",
+            url:"<?php echo e(url('donate/confirmation')); ?>",
             data: {'payID':payID,'amount':amount},
             type: 'POST',
 
@@ -160,4 +160,5 @@
         return rupiah;
     }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.indexlanding', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

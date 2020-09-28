@@ -423,268 +423,41 @@
 <button class="bg-yellow-200 hover:bg-yellow-300 text-yellow-600 font-bold py-2 px-4 text-sm rounded-full readmore">Lihat Semua</button>
     </div>
 </div>
-<div id="tab-donatur" class="tab-pane"><h3 class="md:hidden mb-5 text-xl font-bold">Donatur (3.209)</h3>
-<div class="flex flex-wrap donatur-list">
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Zulhendri</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 100.000</p>
-<p class="text-gray-500 text-xs italic">1 menit yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 100.915</p>
-<p class="text-gray-500 text-xs italic">21 menit yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"mohon doanya agar kami sekeluarga selalu dalam lindungan ALLAH dan kemajuan usaha kami makin maju bisa menjadi pabrik garmnet dan juga terbebas dari hutang keuangan, bisa membangun masjid, bisa sedekah lebih banyak lagi"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 250.051</p>
-<p class="text-gray-500 text-xs italic">2 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 250.043</p>
-<p class="text-gray-500 text-xs italic">2 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.000</p>
-<p class="text-gray-500 text-xs italic">2 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">BU</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.658</p>
-<p class="text-gray-500 text-xs italic">4 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 50.008</p>
-<p class="text-gray-500 text-xs italic">4 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Vita</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.648</p>
-<p class="text-gray-500 text-xs italic">5 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Semoga berguna"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<img class="w-10 h-10 flex-shrink-0 rounded-full mr-4 border border-gray-500" src="<?php echo e(asset('js/landingpage/picture')); ?>" alt="Avatar of Bobby Pramayudha">
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Bobby Pramayudha</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.000</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<img class="w-10 h-10 flex-shrink-0 rounded-full mr-4 border border-gray-500" src="<?php echo e(asset('js/landingpage/picture')); ?>" alt="Avatar of Bobby Pramayudha">
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Bobby Pramayudha</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.000</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Jariyyah an mendiang ayah alm Soerjadi bin Gondosiswojo"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 30.188</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<img class="w-10 h-10 flex-shrink-0 rounded-full mr-4 border border-gray-500" src="<?php echo e(asset('js/landingpage/picture')); ?>" alt="Avatar of Bobby Pramayudha">
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Bobby Pramayudha</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.000</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Jariyyah an mendiang istri alm Hj Henny Tri Susanty binti Eddy Sulaiman"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Agus Siswanto</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 250.046</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Semoga Keluarga saya di berkahi dan di berikan rahmat oleh Allah Swt.
-    Serta Puta Putri saya bisa menjadi Hafizh Al Quran. Amien"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 50.149</p>
-<p class="text-gray-500 text-xs italic">6 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Saya titipkan atas nama ibu saya: Suryatinah binti R. Suhardjo
-    Mohon doanya agar beliau selalu diberikan kesehatan, kebahagiaan, kesembuhan, hidayah dan mendapatkan ridho dr Allah SWT"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Sri Wuryanti</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.627</p>
-<p class="text-gray-500 text-xs italic">7 jam yang lalu</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Mubtadi Djasim Iman</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 250.718</p>
-<p class="text-gray-500 text-xs italic">11 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"semoga Allah swt meridhoi Aamiin3"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">H.DJAFLINUS</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 50.000</p>
-<p class="text-gray-500 text-xs italic">11 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"semoga segera selesai pembangunannya agar setiap orang dapat beribadah"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Erlin cahyani</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 10.000</p>
-<p class="text-gray-500 text-xs italic">13 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Semoga Allah ampuni dosa2 saya dan kluarga. Amin"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Umar said</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 20.000</p>
-<p class="text-gray-500 text-xs italic">16 jam yang lalu</p>
-<p class="text-gray-700 text-xs italic mt-2">"Semoga segala hajat diberi kemudahan"</p>
-</div>
-</div>
-</div>
-<div class="w-full">
-<div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
-<svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
-<path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
-<path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g></svg>
-<div class="text-sm">
-<p class="text-gray-900 leading-none">Hamba Allah</p>
-<p class="text-orange-900 font-bold">Sebesar Rp 150.000</p>
-<p class="text-gray-500 text-xs italic">18 jam yang lalu</p>
-</div>
-</div>
-</div>
-</div>
-<div class="loader-wrapper text-center" style="display: none;">
-<div class="lds-ellipsis">
-<div>
-</div>
-<div>
-</div>
-<div>
-</div>
-<div>
-</div>
-</div>
-</div>
-</div>
+<div id="tab-donatur" class="tab-pane">
+    <h3 class="md:hidden mb-5 text-xl font-bold">Donatur (3.209)</h3>
+    <div class="flex flex-wrap donatur-list">
+        <?php $__currentLoopData = $Donor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="w-full">
+            <div class="flex items-center bg-white shadow-sm rounded-sm mb-2 px-4 py-4 rounded">
+                <svg class="w-10 h-10 flex-shrink-0 rounded-full mr-4" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#6A6E7C">
+                    <path d="M256 274.1c-75.6 0-137.1-61.5-137.1-137.1S180.4 0 256 0s137.1 61.5 137.1 137.1-61.5 137-137.1 137zm0-253.7c-64.3 0-116.6 52.3-116.6 116.6S191.7 253.7 256 253.7s116.6-52.3 116.6-116.6S320.3 20.4 256 20.4z"></path>
+                    <path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g>
+                </svg>
+                <div class="text-sm">
+                    <p class="text-gray-900 leading-none"><?php echo e($row->Name); ?></p>
+                    <p class="text-orange-900 font-bold">Sebesar Rp 
+                        <?php
+                            $format_rupiah = number_format($row->Amount,0,',','.');
+                            echo $format_rupiah;
+                        ?>
+                    </p>
+                    <p class="text-gray-500 text-xs italic"><?php echo e($TimeSince[$key]); ?></p>
+                    <p class="text-gray-700 text-xs italic mt-2">"<?php echo e($row->Message); ?>"</p>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+    <div class="loader-wrapper text-center" style="display: none;">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+
 </div>
 </div>
 </div>

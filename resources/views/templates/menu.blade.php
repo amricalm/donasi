@@ -3,7 +3,11 @@
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ (!empty($aktif)) ? '' : 'active'}}">
-                <a href="{{ url('home') }}" class="waves-effect waves-dark">
+                @if(Session::get('UserGroupID') == 1)
+                    <a href="{{ url('admin-home') }}" class="waves-effect waves-dark">
+                @else
+                    <a href="{{ url('home') }}" class="waves-effect waves-dark">
+                @endif
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>

@@ -4,7 +4,7 @@
     <header id="header" class="bg-orange-900 sticky top-0 px-4 ">
         <nav class="container w-container flex items-center justify-between flex-wrap mx-auto py-4">
         <div class="logo-header flex items-center flex-shrink-0 text-white md:mr-6">
-        <a href="URL::to('/');">
+        <a href="<?php echo e(url('/')); ?>">
         <img class="h-6 md:h-10" src="<?php echo e(url('img/logo.png')); ?>" alt="Logo"></a>
         </div>
         <div class="md:pl-5 md:pr-5 flex-1 search">
@@ -37,7 +37,11 @@
         <div class="hidden lg:text-right lg:block lg:flex lg:items-center w-full lg:w-auto" id="MenuContent">
             <div class="lg:flex-grow md:mx-6"></div>
             <div>
-                <a href="#" class="inline-block text-sm px-4 py-2 leading-none border-2 rounded text-white border-white hover:border-transparent hover:text-orange-900 hover:bg-white mt-4 lg:mt-0">Login / Register</a>
+                <?php if(Session::get('UserID')): ?>
+                    <a href="<?php echo e(url('/home')); ?>" class="inline-block text-sm px-4 py-2 leading-none border-2 rounded text-white border-white hover:border-transparent hover:text-orange-900 hover:bg-white mt-4 lg:mt-0">Dashboard</a>
+                <?php else: ?>
+                    <a href="<?php echo e(url('/login')); ?>" class="inline-block text-sm px-4 py-2 leading-none border-2 rounded text-white border-white hover:border-transparent hover:text-orange-900 hover:bg-white mt-4 lg:mt-0">Login / Register</a>
+                <?php endif; ?>
             </div>
         </div></nav>
 </header>
@@ -59,8 +63,7 @@
         <div class="program-head">
             <div class="md:flex md:-mx-4 items-center">
                 <div class="md:w-3/4 md:px-4">
-                    <p class="program-headline text-gray-600 py-2 text-xs sm:text-sm md:text-xl">Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.</p>
-                </div>
+                    <p class="program-headline text-gray-600 py-2 text-xs sm:text-sm md:text-xl">Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.                </div>
             </div>
             <div class="w-full py-2 md:py-4">
                 <div class="toggleDonation ">
@@ -93,9 +96,7 @@
                             <p class="text-gray-900 leading-none font-bold mb-1">Badan Wakaf Al Quran 
                             <svg class="inline-block ml-1" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#1394f2"></path>
-                            <path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"></path></svg></p>
-                            <p class="text-gray-600 text-sm">Akun terverifikasi</p>
-                        </div>
+                            <path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"></path></svg>                            <p class="text-gray-600 text-sm">Akun terverifikasi                        </div>
                     </div>
                 </div>
             </div>
@@ -145,18 +146,9 @@
 <div id="tab-description" class="tab-pane active">
                         <h3 class="md:hidden mb-5 text-xl font-bold">Keterangan</h3>
 <div class="content-desc text-gray-700 text-sm sm:text-base">
-<p>Seorang santri terlihat berdiri di selasar bangunan berbilik, tatapan matanya mengarah pada petak-petak sawah dan kebun terhampar di depannya. Lisannya tak henti melantunkan ayat-ayat Alquran. Ia adalah salah satu santri yang memilih Al Quran sebagai sahabat hidupnya.&nbsp;</p>
-<p>Banyak lagi santri lainnya yang juga menjadikan Al Quran sebagai sahabatnya, mereka berjuang menghafal Al Quran di bawah bimbingan Seorang Hafifz bersanad di Pesantren Qoryah Quran Wanayasa. Mereka disiapkan menjadi pemimpin qurani dalam program <strong><em>“One Hafidz for One Masjid”</em></strong>. Mereka diharapkan menjadi solusi akan sulitnya mendapatkan seorang imam masjid yang memiliki bacaan Al Quran berkualitas (bersanad).&nbsp;</p><figure>
+<p>Seorang santri terlihat berdiri di selasar bangunan berbilik, tatapan matanya mengarah pada petak-petak sawah dan kebun terhampar di depannya. Lisannya tak henti melantunkan ayat-ayat Alquran. Ia adalah salah satu santri yang memilih Al Quran sebagai sahabat hidupnya.&nbsp;<p>Banyak lagi santri lainnya yang juga menjadikan Al Quran sebagai sahabatnya, mereka berjuang menghafal Al Quran di bawah bimbingan Seorang Hafifz bersanad di Pesantren Qoryah Quran Wanayasa. Mereka disiapkan menjadi pemimpin qurani dalam program <strong><em>“One Hafidz for One Masjid”</em></strong>. Mereka diharapkan menjadi solusi akan sulitnya mendapatkan seorang imam masjid yang memiliki bacaan Al Quran berkualitas (bersanad).&nbsp;</p><figure>
 <img src="<?php echo e(asset('img/landingpage/Z5nFpx3h8WKHE94oj0Nk1KgMXgZ7FCCixZSZ6e1x.jpeg')); ?>"></figure>
-<p>Untuk mewujudkan harapan ini, Qoryah Quran Wanayasa berpegang pada prinsip <strong><em>Ta'a</em></strong><strong><em>w</em></strong><strong><em>wun</em></strong> dan <strong><em>Tabar</em></strong><strong><em>r</em></strong><strong><em>uk</em></strong>. Ta’awwun adalah sinergi berbagai pihak, termasuk orang tua, pesantren dan masyarakat.. Sedangkan "Tabarruk" adalah tradisi pesantren mencari keberkahan kepada Allah SWT melalui aktivitas kebaikan termasuk ber-infaq dan ber-wakaf. Oleh karena itu, siapa saja, termasuk yatim / dhuafa, bisa belajar Al Quran di Qoryah Quran, tanpa khawatir putus pendidikan akibat kesulitan ekonomi.&nbsp;</p>
-<p>Tidak ada kapitalisasi pendidikan, tidak ada akad ijarah antara lembaga dengan santri (via orang tua) yang menjadikan dunia pendidikan mengarah pada akad transaksional seperti halnya jual beli. Tidak ada uang gedung atau uang pangkal, tidak ada biaya jasa pendidikan kecuali infaq dan wakaf yang dilandaskan pada keikhlasan <em>ta’awwun </em>berdasarkan standar rata-rata kebutuhan pendidikan yang telah disepakati.</p>
-<p>Ta'awwun seperti ini ditujukan untuk meraih keberkahan dan pertolongan dari Allah SWT, yaitu berupa lahirnya generasi qurani yang dapat menjadi semburat cahaya cemerlang yang menerangi Indonesia, sebagaimana hadist Rasulullah SAW :</p>
-<p><em>"Sesungguhnya Allah senantiasa menolong hambaNya selama hamba menolong saudaranya"</em> (HR. Muslim).</p>
-<p>Amanah ini memang berat. Ratusan juta umat Islam di Indonesia, dari Sabang sampai Merauke, menanti mereka. Banyak umat yang masih terbata-bata, belum bisa membaca Alquran, bahkan banyak pula imam masjid yang sangat memprihatinkan bacaannya. Harapan inilah yang mendorong Qoryan Quran Wanayasa bertekad untuk melangkah dan terus maju berbenah diri, menjalin sinergi kekuatan dengan berbagai elemen masyarakat.</p>
-<p>Untuk itu, kami mengajak Anda dan para muhsinin lainnya agar terlibat membangun Qoryah Quran Wanayasa demi mewujudkan Indonesia yang diberkahi dengan cahaya Rabbani.</p>
-<p>Mari ! Dukung Qoryah Qur’an Wanayasa Melahirkan <strong><em>“One Hafidz for One Masjid”.</em></strong></p>
-<p></p>
-</div>
+<p>Untuk mewujudkan harapan ini, Qoryah Quran Wanayasa berpegang pada prinsip <strong><em>Ta'a</em></strong><strong><em>w</em></strong><strong><em>wun</em></strong> dan <strong><em>Tabar</em></strong><strong><em>r</em></strong><strong><em>uk</em></strong>. Ta’awwun adalah sinergi berbagai pihak, termasuk orang tua, pesantren dan masyarakat.. Sedangkan "Tabarruk" adalah tradisi pesantren mencari keberkahan kepada Allah SWT melalui aktivitas kebaikan termasuk ber-infaq dan ber-wakaf. Oleh karena itu, siapa saja, termasuk yatim / dhuafa, bisa belajar Al Quran di Qoryah Quran, tanpa khawatir putus pendidikan akibat kesulitan ekonomi.&nbsp;<p>Tidak ada kapitalisasi pendidikan, tidak ada akad ijarah antara lembaga dengan santri (via orang tua) yang menjadikan dunia pendidikan mengarah pada akad transaksional seperti halnya jual beli. Tidak ada uang gedung atau uang pangkal, tidak ada biaya jasa pendidikan kecuali infaq dan wakaf yang dilandaskan pada keikhlasan <em>ta’awwun </em>berdasarkan standar rata-rata kebutuhan pendidikan yang telah disepakati.<p>Ta'awwun seperti ini ditujukan untuk meraih keberkahan dan pertolongan dari Allah SWT, yaitu berupa lahirnya generasi qurani yang dapat menjadi semburat cahaya cemerlang yang menerangi Indonesia, sebagaimana hadist Rasulullah SAW :<p><em>"Sesungguhnya Allah senantiasa menolong hambaNya selama hamba menolong saudaranya"</em> (HR. Muslim).<p>Amanah ini memang berat. Ratusan juta umat Islam di Indonesia, dari Sabang sampai Merauke, menanti mereka. Banyak umat yang masih terbata-bata, belum bisa membaca Alquran, bahkan banyak pula imam masjid yang sangat memprihatinkan bacaannya. Harapan inilah yang mendorong Qoryan Quran Wanayasa bertekad untuk melangkah dan terus maju berbenah diri, menjalin sinergi kekuatan dengan berbagai elemen masyarakat.<p>Untuk itu, kami mengajak Anda dan para muhsinin lainnya agar terlibat membangun Qoryah Quran Wanayasa demi mewujudkan Indonesia yang diberkahi dengan cahaya Rabbani.<p>Mari ! Dukung Qoryah Qur’an Wanayasa Melahirkan <strong><em>“One Hafidz for One Masjid”.</em></strong><p></div>
 <div class="program-cta hidden sm:block py-6">
 <a class="block rounded bg-blue-500 hover:bg-blue-600 py-8 text-white font-bold text-center text-2xl no-underline border-b-8 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?>">Donasi Sekarang</a>
 </div>
@@ -265,7 +257,7 @@
 <div class="w-4/6 md:w-1/2 px-1 md:px-4 text-black text-sm md:text-xl"> Jadi <strong>#JembatanKebaikan</strong> sebagai fundraiser program ini.
 </div>
 <div class="w-2/6 md:w-1/2 px-1 md:px-4">
-<a class="block rounded bg-yellow-500 hover:bg-yellow-600 px-1 py-2 md:px-4 md:py-6 text-white font-bold text-center text-xs md:text-xl no-underline" href="<?php echo e(url('/fundraiser')); ?>">Jadi Fundraiser <span class="hidden md:inline-block">Sekarang Juga</span></a>
+    <a class="block rounded bg-blue-500 hover:bg-blue-600 px-1 py-2 md:px-4 md:py-6 text-white font-bold text-center text-xs md:text-xl no-underline" href="<?php echo e(url('/fundraiser')); ?>">Jadi Fundraiser <span class="hidden md:inline-block">Sekarang Juga</span></a>
 </div>
 </div>
 </div>
@@ -285,136 +277,91 @@
 <div class="title"><span class="text-xs md:text-md">16 Sep 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Pencairan Dana Rp 116.982.200</p>
-<div class="text-xs md:text-sm content text-gray-600">
-<p>Melanjutkan Pembangunan masjid pesantren..&nbsp;</p>
-</div>
+<p class="text-sm md:text-lg">Pencairan Dana Rp 116.982.200<div class="text-xs md:text-sm content text-gray-600">
+<p>Melanjutkan Pembangunan masjid pesantren..&nbsp;</div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">16 Sep 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Pembangunan masjid pesantren berlanjut</p>
-<div class="text-xs md:text-sm content text-gray-600"><ol><li>Alhamdulillah proses pembangunan masjid pesantren mafatih dimulai lagi.&nbsp;</li></ol>
+<p class="text-sm md:text-lg">Pembangunan masjid pesantren berlanjut<div class="text-xs md:text-sm content text-gray-600"><ol><li>Alhamdulillah proses pembangunan masjid pesantren mafatih dimulai lagi.&nbsp;</li></ol>
 <p>Pekerjaan yang dilakukan saat ini adalah pemasangan dinding masjid.&nbsp;</p><figure>
 <img src="<?php echo e(asset('img/landingpage/KdUJvM996vwfRjN5itl1b1ljbxvClQdfdiBPNTDb.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
-<p><br></p>
-<p>Semoga pembangunan dapat berjalan lancar dan selesai sesuai harapan.</p>
-<p>Ayo donasi wakaf lagi untuk pembangunan pesantren mafatih qoryah quran wanayasa.&nbsp;</p>
-<p>Insya Allah tiap satu bata yang anda wakaf kan akan mengalirkan pahala selama masjid bermanfaat untuk ibadah. Aamiin.. </p>
-</div>
+<p><br><p>Semoga pembangunan dapat berjalan lancar dan selesai sesuai harapan.<p>Ayo donasi wakaf lagi untuk pembangunan pesantren mafatih qoryah quran wanayasa.&nbsp;<p>Insya Allah tiap satu bata yang anda wakaf kan akan mengalirkan pahala selama masjid bermanfaat untuk ibadah. Aamiin.. </div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">25 Aug 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Pencairan Dana Rp 150.000.000</p>
-<div class="text-xs md:text-sm content text-gray-600">
-<p>Untuk cicilan pembayaran lahan pesantren bulan agustus 2020</p>
-</div>
+<p class="text-sm md:text-lg">Pencairan Dana Rp 150.000.000<div class="text-xs md:text-sm content text-gray-600">
+<p>Untuk cicilan pembayaran lahan pesantren bulan agustus 2020</div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">14 Aug 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Alhamdulillah pembangunan tambahan asrama santri telah selesai dibangun</p>
-<div class="text-xs md:text-sm content text-gray-600">
-<p>Update Pembangunan Qoryah Qur'an Wanayasa, 10 Agusutus 2018</p>
-
-<p>1. Bangunan sementara asrama pengahafal Al-Qura'an siap digunakan</p>
-
-<p>2. Toilet tambahan </p>
-
-<p>3. Pembuatan area mencuci santri dan jemur pakaian,  tangga dan jalan menujur area mencuci santri</p>
-
-<p>4. Kandang Ayam di kolong asrama</p>
-
-<p>5. Toren baru untuk cadangan air</p>
-
-<p>6. Pembuatan saluran air untuk bangunan sementara, toilet dan area cuci.</p>
-<p></p><figure>
+<p class="text-sm md:text-lg">Alhamdulillah pembangunan tambahan asrama santri telah selesai dibangun<div class="text-xs md:text-sm content text-gray-600">
+<p>Update Pembangunan Qoryah Qur'an Wanayasa, 10 Agusutus 2018
+<p>1. Bangunan sementara asrama pengahafal Al-Qura'an siap digunakan
+<p>2. Toilet tambahan 
+<p>3. Pembuatan area mencuci santri dan jemur pakaian,  tangga dan jalan menujur area mencuci santri
+<p>4. Kandang Ayam di kolong asrama
+<p>5. Toren baru untuk cadangan air
+<p>6. Pembuatan saluran air untuk bangunan sementara, toilet dan area cuci.<p></p><figure>
 <img src="<?php echo e(asset('img/landingpage/r4MdmTmjkWaCwcXg4RNPytWCVN1TGQj1z423hq1L.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p></p><figure>
 <img src="<?php echo e(asset('img/landingpage/0wu6Py0pu62fLOOLJLS1n1nIJZx7C82J16cSfYFA.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
 <p></p><figure>
 <img src="<?php echo e(asset('img/landingpage/VygSPwVtkgrxaKnz5H14NM6tUdb7qyOVnXFE4dIo.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure><figure>
 <img src="<?php echo e(asset('img/landingpage/wzwhfvMwQkmvJVPFtYI2AuydnjrFxlmWrRHymu8x.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
-<p></p>
-<p>Kami ucapkan jazakumullah khairan ahsanal jaza' kepada para donatur..&nbsp;</p>
-<p>Wakaf pembebasan lahan, pembangunan masjid dan pembangunan asrama permanen santri masih terbuka.. Kami senantiasa mengajak kaum muslim untuk menyisihkan hartanya untuk investasi pahala di pembangunan pesantresn Qoryah Quran wanayasa ini.&nbsp;</p>
-</div>
+<p><p>Kami ucapkan jazakumullah khairan ahsanal jaza' kepada para donatur..&nbsp;<p>Wakaf pembebasan lahan, pembangunan masjid dan pembangunan asrama permanen santri masih terbuka.. Kami senantiasa mengajak kaum muslim untuk menyisihkan hartanya untuk investasi pahala di pembangunan pesantresn Qoryah Quran wanayasa ini.&nbsp;</div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">27 Jul 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Pencairan Dana Rp 69.200.000</p>
-<div class="text-xs md:text-sm content text-gray-600">
-<p>Untuk Pembangunan Kamar Santri, perbaikan kamar santri yang rusak dan perbaikan dan tambahan sarana sanitasi pesantren..</p>
-</div>
+<p class="text-sm md:text-lg">Pencairan Dana Rp 69.200.000<div class="text-xs md:text-sm content text-gray-600">
+<p>Untuk Pembangunan Kamar Santri, perbaikan kamar santri yang rusak dan perbaikan dan tambahan sarana sanitasi pesantren..</div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">13 Jul 2020</span>
 </div>
 <div class="body">
-<p class="text-sm md:text-lg">Pembangunan Tambahan Kamar Santri</p>
-<div class="text-xs md:text-sm content text-gray-600">
-<p>Update Pembangunan 8 Juli 2020:</p>
-
-<p>1. Meja stainless untuk dapur telah datang. Asalnya menggunakan meja kayu buatan sendiri, namun agar mudah dibersihkan, tahan lama, dan rapi diputuskan menggunakan stainless.</p>
-
-<p>2. Pintu penutup dapur telah dipasang. Sebelumnya menggunakan triplek yang disandarkan di dinding saja, diganjal dengan lemari es agar tidak jatuh. Sekarang dibuat pintu besi yang ditutup ram nyamuk agar sirkulasi udara dapur bagus namun serangga tidak masuk.</p>
-
-<p>Baik meja maupun pintu adalah sumbangan dari Bu Yulfi dari Jakarta</p>
-<figure>
+<p class="text-sm md:text-lg">Pembangunan Tambahan Kamar Santri<div class="text-xs md:text-sm content text-gray-600">
+<p>Update Pembangunan 8 Juli 2020:
+<p>1. Meja stainless untuk dapur telah datang. Asalnya menggunakan meja kayu buatan sendiri, namun agar mudah dibersihkan, tahan lama, dan rapi diputuskan menggunakan stainless.
+<p>2. Pintu penutup dapur telah dipasang. Sebelumnya menggunakan triplek yang disandarkan di dinding saja, diganjal dengan lemari es agar tidak jatuh. Sekarang dibuat pintu besi yang ditutup ram nyamuk agar sirkulasi udara dapur bagus namun serangga tidak masuk.
+<p>Baik meja maupun pintu adalah sumbangan dari Bu Yulfi dari Jakarta<figure>
 <img src="<?php echo e(asset('img/landingpage/6UbQjxuPioyFPfZjllDUWaR3eg1zJGnwdVpK2I5G.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
-<p><br></p>
-<p>3. Rangka untuk kamar santri tambahan sudah jadi, tinggal ditutup dengan atap spandek. Seluruh struktur menggunakan baja ringan.</p>
-
-<p>4. Pondasi tangga menuju lokasi mencuci </p>
-
-<p>baju dan jemuran baru telah selesai. Tinggal menutup anak tangga dengan paving blok agar tidak membuat alas kaki kotor dengan tanah saat dilalui.</p>
-
-<p>5. Dinding asrama bilik dilapisi triplek agar lebih kuat dan mencegah tikus masuk.</p>
-<figure>
+<p><br><p>3. Rangka untuk kamar santri tambahan sudah jadi, tinggal ditutup dengan atap spandek. Seluruh struktur menggunakan baja ringan.
+<p>4. Pondasi tangga menuju lokasi mencuci 
+<p>baju dan jemuran baru telah selesai. Tinggal menutup anak tangga dengan paving blok agar tidak membuat alas kaki kotor dengan tanah saat dilalui.
+<p>5. Dinding asrama bilik dilapisi triplek agar lebih kuat dan mencegah tikus masuk.<figure>
 <img src="<?php echo e(asset('img/landingpage/h0GZILVeH6AuYBriBpge4i2ZgT2hLvYYziynAavL.jpeg')); ?>?ar=16:9&amp;w=720&amp;auto=format,compress"></figure>
-<p>Sisa pekerjaan:</p>
-
-<p>1. Memasang atap spandek di kamar santri baru</p>
-
-<p>2. Membuat jendela dan ventilasi dapur</p>
-
-<p>3. Membuat kamar mandi tambahan</p>
-
-<p>4. Membuat intalasi air tempat mencuci baju</p>
-
-<p>5. Membuat struktrur jemuran baju</p>
-
-<p>6. Membuat kandang ayam</p>
-
-<p>7. Renovasi-renovasi bangunan lama</p>
-
-<p>Melihat kebutuhan yang ada, saat ini dana yang telah terkumpul masih sangat kurang. Kesempatan bagi yang ingin mengabadikan hartanya bahkan membuatnya berlipat-lipat nilainya.</p>
-
-<p>Ini ada program menarik bagi yang ingin ikut membangun Pesantren Tahfizh:</p>
-
-<p>Gotong Royong Bangun Pesantren Tahfizh Al Quran</p>
-
-<p>Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.<br></p>
-</div>
+<p>Sisa pekerjaan:
+<p>1. Memasang atap spandek di kamar santri baru
+<p>2. Membuat jendela dan ventilasi dapur
+<p>3. Membuat kamar mandi tambahan
+<p>4. Membuat intalasi air tempat mencuci baju
+<p>5. Membuat struktrur jemuran baju
+<p>6. Membuat kandang ayam
+<p>7. Renovasi-renovasi bangunan lama
+<p>Melihat kebutuhan yang ada, saat ini dana yang telah terkumpul masih sangat kurang. Kesempatan bagi yang ingin mengabadikan hartanya bahkan membuatnya berlipat-lipat nilainya.
+<p>Ini ada program menarik bagi yang ingin ikut membangun Pesantren Tahfizh:
+<p>Gotong Royong Bangun Pesantren Tahfizh Al Quran
+<p>Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa.<br></div>
 </div>
 </div>
 <div class="entry">
 <div class="title"><span class="text-xs md:text-md">07 May 2020</span>
 </div>
 <div class="body">
-<p>Program dirilis</p>
-</div>
+<p>Program dirilis</div>
 </div>
 </div>
         
@@ -434,16 +381,12 @@
                     <path d="M493.9 512c-5.6 0-10.2-4.6-10.2-10.2 0-125.5-102.1-227.6-227.6-227.6S28.5 376.3 28.5 501.8c0 5.6-4.6 10.2-10.2 10.2s-10.2-4.6-10.2-10.2c0-66.3 25.8-128.6 72.7-175.4s109.2-72.7 175.4-72.7 128.6 25.8 175.4 72.7 72.7 109.2 72.7 175.4c-.2 5.6-4.8 10.2-10.4 10.2z"></path></g>
                 </svg>
                 <div class="text-sm">
-                    <p class="text-gray-900 leading-none"><?php echo e($row->Name); ?></p>
-                    <p class="text-orange-900 font-bold">Sebesar Rp 
+                    <p class="text-gray-900 leading-none"><?php echo e($row->Name); ?>                    <p class="text-orange-900 font-bold">Sebesar Rp 
                         <?php
                             $format_rupiah = number_format($row->Amount,0,',','.');
                             echo $format_rupiah;
                         ?>
-                    </p>
-                    <p class="text-gray-500 text-xs italic"><?php echo e($TimeSince[$key]); ?></p>
-                    <p class="text-gray-700 text-xs italic mt-2">"<?php echo e($row->Message); ?>"</p>
-                </div>
+                                        <p class="text-gray-500 text-xs italic"><?php echo e($TimeSince[$key]); ?>                    <p class="text-gray-700 text-xs italic mt-2">"<?php echo e($row->Message); ?>"                </div>
             </div>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -477,169 +420,220 @@
 </div></main>
     <footer class="container lg:max-w-5xl px-2 pb-4 md:px-4 md:pb-10 mx-auto text-center text-xs pt-10 ">
         
-<p class="mb-4">© 2020 </p>
-    </footer>
+<p class="mb-4">© 2020     </footer>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer'); ?>
-<script src="<?php echo e(asset('js/landingpage/jquery.min.js')); ?>" type="text/javascript"></script><script src="<?php echo e(asset('js/landingpage/app.js')); ?>?id=98121ae5d02262a7fecb" type="text/javascript"></script><script type="text/javascript">$(document).on('click', '.readmore', function(e){$(this).addClass('hidden').closest('.tab-pane').addClass('open');
+<script type="text/javascript">
+    $(document).on('click', '.readmore', function(e){
+        $(this).addClass('hidden').closest('.tab-pane').addClass('open');
     });
-    $(document).on('click', '#showCountDonation', function(e){$(".toggleDonation").toggleClass('hidden')
-    $(this).text('Sembunyikan Dana')
-    if($(".toggleDonation").hasClass('hidden')){$(this).text('Lihat Dana Terkumpul')
-    }});
+    $(document).on('click', '#showCountDonation', function(e){
+        $(".toggleDonation").toggleClass('hidden')
+        $(this).text('Sembunyikan Dana')
+        if($(".toggleDonation").hasClass('hidden')){
+            $(this).text('Lihat Dana Terkumpul')
+        }
+    });
     let elCtaDonate = document.getElementById("cta-donate"),pageState = true,
     pagingState = true,
     nextDonaturUrl = "<?php echo e(url('/donatur')); ?>?page=2",
     $donaturList = $('.donatur-list'),$timeline = $('.timeline'),$loader = $('.loader-wrapper');
-    var getPosts = function(){$.ajax({
-    // url: "<?php echo e(url('/posts')); ?>",
-    })
-    .done(function(data){$.each(data.data, function(key, item){$timeline.prepend(
-    '<div class=entry>' +
-    '<div class=title>' +
-    '<span class="text-xs md:text-md">' + item.date + '</span>' +
-    '</div>' +
-    '<div class=body>' +
-    '<p class="text-sm md:text-lg">' + item.title + '</p>' +
-    '<div class="text-xs md:text-sm content text-gray-600">' + item.content + '</div>' +
-    '</div>' +
-    '</div>'
-    );
-    })
-    });
+    var getPosts = function(){
+        $.ajax({
+        // url: "<?php echo e(url('/posts')); ?>",
+        })
+        .done(function(data){
+            $.each(data.data, function(key, item){
+                $timeline.prepend(
+                '<div class=entry>' +
+                    '<div class=title>' +
+                        '<span class="text-xs md:text-md">' + item.date + '</span>' +
+                        '</div>' +
+                        '<div class=body>' +
+                        '<p class="text-sm md:text-lg">' + item.title + '</p>' +
+                        '<div class="text-xs md:text-sm content text-gray-600">' + item.content + '</div>' +
+                    '</div>' +
+                '</div>'
+                );
+            })
+        });
     };
-    window.addEventListener("load", function(){setTimeout(getPosts, 5000);
+    window.addEventListener("load", function(){
+        setTimeout(getPosts, 5000);
     });
-    $(window).scroll(function(){let screen = $(this).scrollTop(),screenDoc = $(document).height();
-    if (screen >= 10){$("#header-program-title").addClass("header-sticky shadow-lg");
-    }else {
-    $("#header-program-title").removeClass("header-sticky shadow-lg");
-    }if (screen > elCtaDonate.offsetTop && pageState){$('.program-cta-footer').addClass('button-float');
-    pageState = false
-    }else if (screen < elCtaDonate.offsetTop){pageState = true;
-    $('.program-cta-footer').removeClass('button-float');
-    }else {
-    pageState = false;
-    }if (screen >= (screenDoc - 1000) && pagingState){pagingState = false;
-    if (nextDonaturUrl != null){$.ajax({
-    url: nextDonaturUrl,
-    beforeSend: function( xhr ){$loader.show();
-    }})
-    .done(function( data ){nextDonaturUrl = data.next_page_url;
-    donaturs = data.data;
-    $.each(donaturs, function(key, item){if (item.message != null){message = '<p class="text-gray-700 text-xs italic mt-2">"' + item.message + '"</p>';
-    }else {
-    message = '';
-    }$donaturList.append(
-    '<div class=w-full>'+
-    '<div class="flex bg-gray-100 px-4 py-4 rounded">' +
-    item.avatar_url +
-    '<div class=text-sm>' +
-    '<p class="text-gray-900 leading-none">' + item.user_name + '</p>' +
-    '<p class="text-orange-900 font-bold">Sebesar ' + item.amount + '</p>' +
-    '<p class="text-gray-500 text-xs italic">' + item.transfered_at + '</p>' +
-    message +
-    '</div>' +
-    '</div>' +
-    '</div>');
-    });
-    $loader.hide();
-    pagingState = true;
-    });
-    }else {
-    $loader.hide();
-    pagingState = false;
-    }}else if (screen < (screenDoc - 1000) && !pagingState){$loader.hide();
-    pagingState = true;
-    }});
-    function CopytoClipboard(){var copyText = document.getElementById("copy");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
-    /* Alert the copied text */
-    swal({
-    icon: 'success',
-    title: 'Berhasil Disalin',
-    text: 'Mulai sebarkan di facebook, WhatsApp, dan Instagram.',
-    button: false,
-    timer: 3000
+    $(window).scroll(
+        function(){
+            let screen = $(this).scrollTop(),screenDoc = $(document).height();
+            
+            if (screen >= 10){$("#header-program-title").addClass("header-sticky shadow-lg");
+            } else {
+                $("#header-program-title").removeClass("header-sticky shadow-lg");
+            }
+
+            if (screen > elCtaDonate.offsetTop && pageState){
+                $('.program-cta-footer').addClass('button-float');
+                pageState = false
+            } else if (screen < elCtaDonate.offsetTop){pageState = true;
+                $('.program-cta-footer').removeClass('button-float');
+            } else {
+                pageState = false;
+            }
+            
+            if (screen >= (screenDoc - 1000) && pagingState){
+                pagingState = false;
+                if (nextDonaturUrl != null){
+                    $.ajax({
+                        url: nextDonaturUrl,
+                        beforeSend: function( xhr ){
+                            $loader.show();
+                        }
+                    }).done(function( data ) {
+                        nextDonaturUrl = data.next_page_url;
+                        donaturs = data.data;
+                        $.each(donaturs, function(key, item){
+                            if (item.message != null){
+                                message = '<p class="text-gray-700 text-xs italic mt-2">"' + item.message + '"</p>';
+                            } else {
+                                message = '';
+                            }
+                            $donaturList.append (
+                                '<div class=w-full>'+
+                                    '<div class="flex bg-gray-100 px-4 py-4 rounded">' +
+                                        item.avatar_url +
+                                        '<div class=text-sm>' +
+                                            '<p class="text-gray-900 leading-none">' + item.user_name + '</p>' +
+                                            '<p class="text-orange-900 font-bold">Sebesar ' + item.amount + '</p>' +
+                                            '<p class="text-gray-500 text-xs italic">' + item.transfered_at + '</p>' +
+                                            message +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>'
+                            );
+                        });
+                        $loader.hide();
+                        pagingState = true;
+                    });
+                } else {
+                    $loader.hide();
+                    pagingState = false;
+                }
+            } else if (screen < (screenDoc - 1000) && !pagingState){
+                $loader.hide();
+                pagingState = true;
+            }
+        });
+    function CopytoClipboard(){
+        var copyText = document.getElementById("copy");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        /* Alert the copied text */
+        swal({
+            icon: 'success',
+            title: 'Berhasil Disalin',
+            text: 'Mulai sebarkan di facebook, WhatsApp, dan Instagram.',
+            button: false,
+            timer: 3000
+        })
+    }
+</script>
+<script>
+    function toggleSearch(state){
+        if (state == 'open'){$('.backdrop').removeClass('hidden').addClass('block');
+        $('.search-list-container').removeClass('hidden').addClass('block');
+        } else {
+            $('.backdrop').addClass('hidden').removeClass('block');
+            $('.search-list-container').addClass('hidden').removeClass('block');
+        }
+    }
+    $(document).ready(function(){
+        let HistorySearch = JSON.parse(localStorage.getItem('HistorySearch'));
+        if(HistorySearch != null){
+            $("#SearchHistory").show()
+            $.each(HistorySearch, function(key, item){
+                $("#SearchHistory").append(`
+                    <div class="search-item flex mb-3 cursor-pointer" onclick='location.href="/${item.slug}"'>
+                        <div class="w-1/4 rounded h-14">
+                            <img src="${ item.image_url }?w=313&h=157" placeholder="${ item.image_url }" class="rounded h-14"/>
+                        </div>
+                        <div class="pl-4 w-3/4">
+                            <h3 class="text-sm font-semibold">${ item.name }</h3>
+                            <div class="text-gray-500 text-xs">${ item.user_name }
+                                <svg class="inline-block ml-1" width=13 height=13 fill=none xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#FE8057"/>
+                                <path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>`)
+            });
+        }
+        $(".button-search").on('click',function(){
+            $(".search").removeClass("w-1/2").addClass("w-full")
+            $(".menuToggle").addClass("hidden")
+            $(".logo-header").addClass("hidden")
+            $(".search-responsive").show()
+            $(this).hide()
+        })
+        $(".closeSearch").on('click',function(){
+            $(".search").addClass("w-1/2").removeClass("w-full")
+            $(".menuToggle").removeClass("hidden")
+            $(".logo-header").removeClass("hidden")
+            $(".search-responsive").hide()
+            $(".button-search").show()
+            $("#search-bar").val('')
+        })
+        $('#search-bar').on('keypress',function(e){
+            if(e.which == 13){
+                e.preventDefault();
+                var search = $(this).val();
+                search = search.replace(/<\/?[^>]+(>|$)/g, "");
+                $("#titleSearch").html("Pencarian dengan kata kunci <b>"+search+"</b>")
+                $("#SearchKey").show();
+                if(search.length>1){
+                    $.ajax({
+                        url : window.location.origin+'?search='+search
+                    }).done(function (data){
+                        let $SearchKey = $("#SearchKey"),programsSearch = data.search_results;
+                        $SearchKey.find('.search-item').remove()
+                        if(programsSearch.length > 0){$(".notfound").remove();
+                        localStorage.removeItem('HistorySearch')
+                        localStorage.setItem('HistorySearch', JSON.stringify(programsSearch))
+                        $.each(programsSearch, function(key, item){
+                            $SearchKey.append(`
+                                <div class="search-item flex mb-3 cursor-pointer" onclick='location.href="/${item.slug}"'>
+                                    <div class="w-1/4 rounded h-14">
+                                        <img src="${ item.image_url }?w=313&h=157" placeholder="${ item.image_url }" class="rounded h-14"/>
+                                    </div>
+                                    <div class="pl-4 w-3/4"><h3 class="text-sm font-semibold">${ item.name }</h3>
+                                        <div class="text-gray-500 text-xs">${ item.user_name }
+                                            <svg class="inline-block ml-1" width=13 height=13 fill=none xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#FE8057"/>
+                                            <path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+                        });
+                        } else {
+                            $SearchKey.html('<p class="text-center text-xs text-black notfound mb-6">Program Kebaikan yang anda cari tidak ditemukan</p>');
+                        }
+                    }).fail(function (){
+                        $SearchKey.html('<p class="text-center text-xs text-black notfound mb-6">Program Kebaikan yang anda cari tidak ditemukan</p>');
+                    });
+                }
+            }
+        });
+        $(document).on('focus', '.search-input-header', function(e){
+            toggleSearch('open');
+            $('html, body').animate({scrollTop: $('#header').offset().top - 20}, 'slow');
+        });
+        $(document).on('click', '.backdrop, .closeSearch', function(e){
+            toggleSearch('closed');
+        });
     })
-    }</script><script>function toggleSearch(state){if (state == 'open'){$('.backdrop').removeClass('hidden').addClass('block');
-    $('.search-list-container').removeClass('hidden').addClass('block');
-    }else {
-    $('.backdrop').addClass('hidden').removeClass('block');
-    $('.search-list-container').addClass('hidden').removeClass('block');
-    }}$(document).ready(function(){let HistorySearch = JSON.parse(localStorage.getItem('HistorySearch'));
-    if(HistorySearch != null){$("#SearchHistory").show()
-    $.each(HistorySearch, function(key, item){$("#SearchHistory").append(`
-<div class="search-item flex mb-3 cursor-pointer" onclick='location.href="/${item.slug}"'>
-<div class="w-1/4 rounded h-14">
-<img src="${ item.image_url }?w=313&h=157" placeholder="${ item.image_url }" class="rounded h-14"/>
-</div>
-<div class="pl-4 w-3/4"><h3 class="text-sm font-semibold">${ item.name }</h3>
-<div class="text-gray-500 text-xs">${ item.user_name }
-<svg class="inline-block ml-1" width=13 height=13 fill=none xmlns="http://www.w3.org/2000/svg">
-<path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#FE8057"/>
-<path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"/></svg>
-</div>
-</div>
-</div>
-</div>`)
-    });
-    }$(".button-search").on('click',function(){$(".search").removeClass("w-1/2").addClass("w-full")
-    $(".menuToggle").addClass("hidden")
-    $(".logo-header").addClass("hidden")
-    $(".search-responsive").show()
-    $(this).hide()
-    })
-    $(".closeSearch").on('click',function(){$(".search").addClass("w-1/2").removeClass("w-full")
-    $(".menuToggle").removeClass("hidden")
-    $(".logo-header").removeClass("hidden")
-    $(".search-responsive").hide()
-    $(".button-search").show()
-    $("#search-bar").val('')
-    })
-    $('#search-bar').on('keypress',function(e){if(e.which == 13){e.preventDefault();
-    var search = $(this).val();
-    search = search.replace(/<\/?[^>]+(>|$)/g, "");
-    $("#titleSearch").html("Pencarian dengan kata kunci <b>"+search+"</b>")
-    $("#SearchKey").show();
-    if(search.length>1){$.ajax({
-    url : window.location.origin+'?search='+search
-    }).done(function (data){let $SearchKey = $("#SearchKey"),programsSearch = data.search_results;
-    $SearchKey.find('.search-item').remove()
-    if(programsSearch.length > 0){$(".notfound").remove();
-    localStorage.removeItem('HistorySearch')
-    localStorage.setItem('HistorySearch', JSON.stringify(programsSearch))
-    $.each(programsSearch, function(key, item){$SearchKey.append(`
-<div class="search-item flex mb-3 cursor-pointer" onclick='location.href="/${item.slug}"'>
-<div class="w-1/4 rounded h-14">
-<img src="${ item.image_url }?w=313&h=157" placeholder="${ item.image_url }" class="rounded h-14"/>
-</div>
-<div class="pl-4 w-3/4"><h3 class="text-sm font-semibold">${ item.name }</h3>
-<div class="text-gray-500 text-xs">${ item.user_name }
-<svg class="inline-block ml-1" width=13 height=13 fill=none xmlns="http://www.w3.org/2000/svg">
-<path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#FE8057"/>
-<path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"/></svg>
-</div>
-</div>
-</div>
-</div>`)
-    });
-    }else{
-    $SearchKey.html('<p class="text-center text-xs text-black notfound mb-6">Program Kebaikan yang anda cari tidak ditemukan</p>');
-    }}).fail(function (){$SearchKey.html('<p class="text-center text-xs text-black notfound mb-6">Program Kebaikan yang anda cari tidak ditemukan</p>');
-    });
-    }}});
-    $(document).on('focus', '.search-input-header', function(e){toggleSearch('open');
-    $('html, body').animate({
-    scrollTop: $('#header').offset().top - 20
-    }, 'slow');
-    });
-    $(document).on('click', '.backdrop, .closeSearch', function(e){toggleSearch('closed');
-    });
-    })</script>
-    <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="<?php echo e(asset('js/landingpage/box-469cf41adb11dc78be68c1ae7f9457a4.html')); ?>" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
-    <?php $__env->stopSection(); ?>
+</script>
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="<?php echo e(asset('js/landingpage/box-469cf41adb11dc78be68c1ae7f9457a4.html')); ?>" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.indexlanding', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

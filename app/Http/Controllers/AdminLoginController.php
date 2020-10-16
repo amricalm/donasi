@@ -21,11 +21,11 @@ class AdminLoginController extends Controller
 	{
         if(!empty(session('UserID')))
         {
-            return redirect()->route('home');
+            return redirect()->route('admin-home');
         }
         else
         {
-            return view('pages/adminlogin');
+            return view('pages.login.adminlogin');
         }
     }
     public function logout()
@@ -113,7 +113,7 @@ class AdminLoginController extends Controller
                 $sess['UserDeleted'] = $user[0]->Deleted;
                 $sess['UserMenu'] = $semuamenu;
                 session($sess);
-                return redirect()->route('home');
+                return redirect()->route('admin-home');
             }
             else {
                 return redirect()->back()->with('alert', 'Password tidak dikenal!');

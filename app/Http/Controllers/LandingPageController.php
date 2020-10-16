@@ -19,6 +19,7 @@ class LandingPageController extends Controller
     {
         $app['Donor'] = DB::table('donate')
                         ->selectRaw('ID, Name, Amount, CreatedDate, Message')
+                        ->orderByDesc('CreatedDate')
                         ->get()->toArray();
         
         $TimeSince = array();

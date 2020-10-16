@@ -1,4 +1,5 @@
 <script type="text/javascript" src="{{ asset('files/bower_components/jquery/js/jquery.min.js')}}"></script>
+<script src="{{ asset('js/landingpage/app.js') }}?id=98121ae5d02262a7fecb" type="text/javascript"></script>
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/f.txt') }}"></script>
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/js') }}"></script>
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/analytics.js') }}"></script>

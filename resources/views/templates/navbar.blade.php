@@ -4,7 +4,7 @@
                         <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
                             <i class="feather icon-toggle-right"></i>
                         </a>
-                            <a href="index.html">
+                            <a href="{{ url('/') }}">
                             <img class="img-fluid" src="{{ url('img/logo.png') }}" alt="Theme-Logo" />
                         </a>
                             <a class="mobile-options waves-effect waves-light">
@@ -50,7 +50,11 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('logout') }}">
+                                            @if(Session::get('UserGroupID') == 1)
+                                                <a href="{{ url('admin-logout') }}">
+                                            @else
+                                                <a href="{{ url('logout') }}">
+                                            @endif
                                             <i class="feather icon-log-out"></i> Logout
 											</a>
                                         </li>

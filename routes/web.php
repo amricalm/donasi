@@ -1,15 +1,24 @@
 <?php
 //===================== ROUTE INDEX ===========================//
-Route::get('/', 'LandingPageController@index');
+Route::get('/', 'LandingPageController@index')->name("landingpage");
+Route::get('/cookie', function () {
+    return Cookie::get('referral');
+});
 //===================== ROUTE END INDEX ===========================//
 
 //===================== ROUTE LOGIN ===========================//
 Route::get('admin-login', 'AdminLoginController@index')->name('admin-login');
 Route::post('admin-login/validasi', 'AdminLoginController@validasi');
+Route::get('login', 'LoginController@index')->name('login');
+Route::post('login/validasi', 'LoginController@validasi');
+Route::get('register', 'LoginController@register')->name('register');
+Route::post('register/validation', 'LoginController@regValidation');
+Route::get('ceksesi','LoginController@ceksesi')->name('ceksesi');
 //===================== ROUTE END LOGIN ===========================//
 
 //===================== ROUTE LOGOUT ===========================//
-Route::get('logout','AdminLoginController@logout')->name('logout');
+Route::get('admin-logout','AdminLoginController@logout')->name('admin-logout');
+Route::get('logout','LoginController@logout')->name('logout');
 //===================== ROUTE END LOGOUT ===========================//
 
 //===================== ROUTE DONATE ===========================//
@@ -20,9 +29,14 @@ Route::post('donate/save','DonateController@save');
 Route::get('donate/summary/{ID}','DonateController@summary');
 //===================== ROUTE END DONATE ===========================//
 
+//===================== ROUTE FUNDRAISER ===========================//
+Route::get('fundraiser', 'FundraiserController@index')->name("fundraiser");
+//===================== ROUTE END FUNDRAISER ===========================//
+
 //===================== ROUTE CEK USER SESSION ============================================================================//
 Route::group(['middleware' => 'cekUserSession'], function () {
     //===================== ROUTE DASHBOARD ===========================//
+    Route::get('admin-home', 'DashboardAdminController@index')->name("admin-home");
     Route::get('home', 'DashboardController@index')->name("home");
     //===================== ROUTE END DASHBOARD ===========================//
 

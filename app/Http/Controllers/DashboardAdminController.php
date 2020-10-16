@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Sitadok\VarGlobal;
 
-class DashboardController extends Controller
+class DashboardAdminController extends Controller
 {
     var $global;
     public function __construct()
@@ -24,7 +24,7 @@ class DashboardController extends Controller
         
         $app['judul'] = 'Dashboard';
         $app['aktif'] = 'Dashboard';
-        return view('pages.dashboard.dashboard',$app);
+        return view('pages.dashboard.admindashboard',$app);
     }
 
     public function show(Request $request, $id)

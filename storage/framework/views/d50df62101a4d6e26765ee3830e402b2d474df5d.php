@@ -3,7 +3,11 @@
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
             <li class="<?php echo e((!empty($aktif)) ? '' : 'active'); ?>">
-                <a href="<?php echo e(url('home')); ?>" class="waves-effect waves-dark">
+                <?php if(Session::get('UserGroupID') == 1): ?>
+                    <a href="<?php echo e(url('admin-home')); ?>" class="waves-effect waves-dark">
+                <?php else: ?>
+                    <a href="<?php echo e(url('home')); ?>" class="waves-effect waves-dark">
+                <?php endif; ?>
                     <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>

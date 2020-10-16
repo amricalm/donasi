@@ -23,7 +23,7 @@ class VarGlobal extends Model
     const DIREKSI = 1;
     const SEKDIR = 2;
     const KABAG = 3;
-    const KASUBAG =4;
+    const KASUBAG = 4;
     const STAFF = 5;
     const KASUBAG_SEKPER = 7;
     const KABAG_SEKPER = 6;

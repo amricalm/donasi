@@ -11,7 +11,6 @@
                 <input type="hidden" name="total" value="" id="nominal">
                 <input type="hidden" name="type" value="" id="type">
                 <input type="hidden" name="program" value="wakafpesantrenhafizh">
-                <input type="hidden" name="ref" value="">
                 <div id="NominalArea">
                     <div class="mb-4 mx-auto">
                         <div class="flex flex-wrap">
@@ -59,6 +58,7 @@
         </div>
     </div>
 </main>
+<div id="popup" class="popper bg-green-200 fixed text-green-700 rounded border border-green-400 py-2 px-4" x-placement="top" style="position: absolute; display: none; will-change: transform; top: 0px; left: 0px;"><span>Berhasil disalin!</span></div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer'); ?>
 <script>
@@ -93,6 +93,24 @@
         } else {
             var amount      = document.getElementById('amount-input').value;
         }
+
+        //ambil URL
+        var url = window.location.toString();
+        //ambil bagian parameternya
+        url.match(/\?(.+)$/);
+        var params = RegExp.$1;
+        // pisahkan parameter URL ke associative array
+        var params = params.split("&");
+        var queryStringList = {};
+        for(var i=0;i<params.length;i++)
+        {   var tmp = params[i].split("=");
+            queryStringList[tmp[0]] = unescape(tmp[1]);
+        }
+        // tampilkan isi associative array
+        for(var i in queryStringList)
+        {   
+            var ref = queryStringList[i].replace(/[+]/g, " ");
+        }
         
         $.ajaxSetup({
             headers: {
@@ -101,7 +119,7 @@
         });
         $.ajax({
             url:"<?php echo e(url('donate/payment-method')); ?>",
-            data: {'amount':amount},
+            data: {'amount':amount,'ref':ref},
             type: 'POST',
 
             success: function(data){
@@ -114,6 +132,7 @@
     }
     function Confirmation(payID){
         var amount    = document.getElementById("amount").value;
+        var ref       = document.getElementById("ref").value;
         
         $.ajaxSetup({
             headers: {
@@ -122,7 +141,7 @@
         });
         $.ajax({
             url:"<?php echo e(url('donate/confirmation')); ?>",
-            data: {'payID':payID,'amount':amount},
+            data: {'payID':payID,'amount':amount,'ref':ref},
             type: 'POST',
 
             success: function(data){
@@ -158,6 +177,25 @@
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return rupiah;
     }
+
+    var btnCopy = new ClipboardJS('.btn-copy');
+    var popup = $('#popup');
+    var popper = new Popper(btnCopy, popup,{placement: 'top',});
+    popup.hide();
+    btnCopy.on('success', function(e){
+        popup.show();
+        setTimeout(function(){popup.hide(); }, 2000);
+        e.clearSelection();
+    });
+    /* function getStatus(){
+        $.ajax({ url: "https://www.amalsholeh.com/status/GOMd536ZXoD7",})
+        .done(function(data){if (data.status == 'paid'){// location.reload();
+            window.location.replace(data.redirect);
+        }});
+    };
+    setInterval(function(){ 
+        getStatus(); 
+    }, 5000); */
 </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates.indexlanding', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

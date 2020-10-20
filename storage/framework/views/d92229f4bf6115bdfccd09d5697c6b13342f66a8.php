@@ -37,28 +37,41 @@
                     </div>
                 </div>
                 <div class="donate-form-login">
-                    <p class="text-black text-sm text-center mb-6">
-                        <a href="#" class="text-blue-500 underline">Login</a> atau lengkapi data berikut
-                    </p>
-                    <div class="form-group">
-                        <p class="text-black mb-2 text-xs">Nama Lengkap <em class="text-red-500">*</em></p>
-                        <input type="text" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="name" required="" placeholder="Nama lengkap" autocomplete="off">
-                        <div class="mt-4 mb-6 text-gray-500">
-                            <label class="inline-flex items-center">
-                                <input name="anonymous" type="checkbox" class="form-checkbox">
-                                <span class="ml-2 text-gray-600 text-xs">Sembunyikan nama saya (Hamba Allah)</span>
-                            </label>
+                    <?php if(!empty(Session::get('UserID'))): ?>
+                        <p class="mb-3 text-black text-sm">
+                            <strong class="block"><?php echo e(Session::get('UserName')); ?></strong>
+                            <span class="color text-xs"><?php echo e(Session::get('UserEmail')); ?> - <?php echo e(Session::get('UserPhone')); ?></span>
+                        </p>
+                        <input type="hidden" name="donorID" value="<?php echo e(Session::get('UserID')); ?>">
+                        <input type="hidden" name="name" value="<?php echo e(Session::get('UserName')); ?>">
+                        <input type="hidden" name="phone" value="<?php echo e(Session::get('UserPhone')); ?>">
+                        <input type="hidden" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo e(Session::get('UserEmail')); ?>">
+                        <input type="hidden" name="ref" value="<?php echo e($ref); ?>">
+                    <?php else: ?>
+                        <input type="hidden" name="ref" value="<?php echo e($ref); ?>">
+                        <p class="text-black text-sm text-center mb-6">
+                            <a href="<?php echo e(url('/login')); ?>" class="text-blue-500 underline">Login</a> atau lengkapi data berikut
+                        </p>
+                        <div class="form-group">
+                            <p class="text-black mb-2 text-xs">Nama Lengkap <em class="text-red-500">*</em></p>
+                            <input type="text" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="name" required="" placeholder="Nama lengkap" autocomplete="off">
+                            <div class="mt-4 mb-6 text-gray-500">
+                                <label class="inline-flex items-center">
+                                    <input name="anonymous" type="checkbox" class="form-checkbox">
+                                    <span class="ml-2 text-gray-600 text-xs">Sembunyikan nama saya (Hamba Allah)</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group mb-6">
-                        <p class="text-black mb-2 text-xs">No. Handphone <em class="text-red-500">*</em></p>
-                        <input type="number" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="phone" required="" placeholder="Tuliskan No. Handphone aktif anda">
-                    </div>
-                    <div class="form-group mb-6">
-                        <p class="text-black mb-2 text-xs">Email <em class="text-xs color-gray italic">(Opsional)</em></p>
-                        <span class="text-xs italic text-gray-600 block mb-2">Kirim <span class="text-gray-800">bukti donasi dan kabar perkembangan program</span> melalui email saya.</span>
-                        <input type="email" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="email" placeholder="Tuliskan alamat email aktif anda" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="">
-                    </div>
+                        <div class="form-group mb-6">
+                            <p class="text-black mb-2 text-xs">No. Handphone <em class="text-red-500">*</em></p>
+                            <input type="number" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="phone" required="" placeholder="Tuliskan No. Handphone aktif anda">
+                        </div>
+                        <div class="form-group mb-6">
+                            <p class="text-black mb-2 text-xs">Email <em class="text-xs color-gray italic">(Opsional)</em></p>
+                            <span class="text-xs italic text-gray-600 block mb-2">Kirim <span class="text-gray-800">bukti donasi dan kabar perkembangan program</span> melalui email saya.</span>
+                            <input type="email" class="form-control focus:bg-white text-black border-orange-200 focus:border-orange-600 text-sm h-57px bg-orange-100 placeholder-gray-500" name="email" placeholder="Tuliskan alamat email aktif anda" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="">
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="form-group">
                     <p class="text-black mb-2 text-xs">Pesan dan Doa <em class="text-xs color-gray italic">(Opsional)</em></p>

@@ -8,13 +8,15 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Sitadok\VarGlobal;
 use App\Donate;
 
 class DonateController extends Controller
 {
     public function __construct()
     {
-
+        $varglobal = new VarGlobal();
+        $this->global = $varglobal;
     }
     public function index()
     {
@@ -24,12 +26,14 @@ class DonateController extends Controller
     public function paymentMethod(Request $request)
     {
         $app['amount']  = $request->amount;
+        $app['ref']     = $request->ref != 'undefined' ? $request->ref : '';
         $app['bank']    = DB::table('mbank')->get()->toArray();
         return view('pages.donate.paymentmethod',$app);
     }
     public function confirmation(Request $request)
     {
         $app['amount']  = $request->amount;
+        $app['ref']     = $request->ref;
         $app['bank']    = DB::table('mbank')->where('ID', $request->payID)->get()->toArray();
 
         return view('pages.donate.confirmation',$app);
@@ -47,6 +51,7 @@ class DonateController extends Controller
     {
         $app['Amount']   = str_replace(".", "", $request->amount);
         $app['AccountNumber']  = $request->accountnumber;
+        $app['DonorID']  = isset($request->donorID) ? $request->donorID :'';
         $app['Name']     = $request->name;
         $app['Phone']    = $request->phone;
         $app['Email']    = $request->email;
@@ -55,12 +60,16 @@ class DonateController extends Controller
         $app['MaxConfDate'] = Carbon::tomorrow()->format('Y-m-d').' '.Carbon::now()->format('H:i:s');
         $date            = Carbon::today()->format('y/m/d');
         $invoiceDate     = str_replace("/", "", $date);
+        $ref             = isset($request->ref) ? $request->ref :'';
+        $app['ReferrerCode'] = $this->global->CheckReferral($ref) ? $ref :'';
 
+        //Invoice
         $noSequence      = $this->invoicenumber();
         $noSequence++;
         $invoiceNumber   = sprintf("%06s", $noSequence);
         $app['Invoice']  = 'INV-'.$invoiceDate.''.$invoiceNumber;
         
+        //Simpan
         $donateID        = Donate::insertGetId($app);
 
         $maxConf = date_create($app['MaxConfDate'])->format("d M Y, H:i");

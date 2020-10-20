@@ -3,6 +3,7 @@
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/f.txt') }}"></script>
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/js') }}"></script>
 <script type="text/javascript" async="" src="{{ asset('js/landingpage/analytics.js') }}"></script>
+<script type="text/javascript" async="" src="{{ asset('js/landingpage/clipboard.min.js') }}"></script>
 <script src="{{ asset('js/landingpage/260149045112323') }}" async=""></script>
 <script src="{{ asset('js/landingpage/524472591656390') }}" async=""></script>
 <script async="" src="{{ asset('js/landingpage/fbevents.js') }}"></script>

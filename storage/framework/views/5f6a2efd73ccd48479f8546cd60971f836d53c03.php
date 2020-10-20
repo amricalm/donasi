@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div id="cta-donate" class="program-cta py-2 mt-2">
-                    <a class="block rounded bg-blue-500 hover:bg-blue-600 py-4 md:py-8 text-white font-bold text-center text-sm md:text-2xl border-b-4 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?>">Donasi Sekarang</a>
+                    <a class="block rounded bg-blue-500 hover:bg-blue-600 py-4 md:py-8 text-white font-bold text-center text-sm md:text-2xl border-b-4 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?><?php echo e($Referrer); ?>">Donasi Sekarang</a>
                 </div>
                 <div class="program-author rounded mt-6 border-custom bg-gray-100 p-4"><h3 class="text-sm text-gray-700 mb-2">Pemilik Program</h3>
                     <div class="flex items-center">
@@ -132,7 +132,7 @@
                         <svg class="inline-block" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.333 2.334A.333.333 0 0011 2.001H9.333a3.18 3.18 0 00-3.333 3v1.8H4.333A.333.333 0 004 7.134v1.734a.333.333 0 00.333.333H6v4.467a.333.333 0 00.333.333h2a.333.333 0 00.334-.333V9.2h1.746a.333.333 0 00.327-.247l.48-1.733a.333.333 0 00-.32-.42H8.667v-1.8a.667.667 0 01.666-.6H11a.333.333 0 00.333-.333V2.334z" fill="#4267B2"></path></svg> Share ke facebook</a>
                     </div>
-                    <a class="rounded bg-blue-500 hover:bg-blue-600 py-2 px-6 text-white text-center text-sm hidden md:inline-block pulse" href="<?php echo e(url('/donate')); ?>">Donasi Sekarang</a>
+                    <a class="rounded bg-blue-500 hover:bg-blue-600 py-2 px-6 text-white text-center text-sm hidden md:inline-block pulse" href="<?php echo e(url('/donate')); ?><?php echo e($Referrer); ?>">Donasi Sekarang</a>
                 </div>
 </div>
     </div>
@@ -150,7 +150,7 @@
 <img src="<?php echo e(asset('img/landingpage/Z5nFpx3h8WKHE94oj0Nk1KgMXgZ7FCCixZSZ6e1x.jpeg')); ?>"></figure>
 <p>Untuk mewujudkan harapan ini, Qoryah Quran Wanayasa berpegang pada prinsip <strong><em>Ta'a</em></strong><strong><em>w</em></strong><strong><em>wun</em></strong> dan <strong><em>Tabar</em></strong><strong><em>r</em></strong><strong><em>uk</em></strong>. Ta’awwun adalah sinergi berbagai pihak, termasuk orang tua, pesantren dan masyarakat.. Sedangkan "Tabarruk" adalah tradisi pesantren mencari keberkahan kepada Allah SWT melalui aktivitas kebaikan termasuk ber-infaq dan ber-wakaf. Oleh karena itu, siapa saja, termasuk yatim / dhuafa, bisa belajar Al Quran di Qoryah Quran, tanpa khawatir putus pendidikan akibat kesulitan ekonomi.&nbsp;<p>Tidak ada kapitalisasi pendidikan, tidak ada akad ijarah antara lembaga dengan santri (via orang tua) yang menjadikan dunia pendidikan mengarah pada akad transaksional seperti halnya jual beli. Tidak ada uang gedung atau uang pangkal, tidak ada biaya jasa pendidikan kecuali infaq dan wakaf yang dilandaskan pada keikhlasan <em>ta’awwun </em>berdasarkan standar rata-rata kebutuhan pendidikan yang telah disepakati.<p>Ta'awwun seperti ini ditujukan untuk meraih keberkahan dan pertolongan dari Allah SWT, yaitu berupa lahirnya generasi qurani yang dapat menjadi semburat cahaya cemerlang yang menerangi Indonesia, sebagaimana hadist Rasulullah SAW :<p><em>"Sesungguhnya Allah senantiasa menolong hambaNya selama hamba menolong saudaranya"</em> (HR. Muslim).<p>Amanah ini memang berat. Ratusan juta umat Islam di Indonesia, dari Sabang sampai Merauke, menanti mereka. Banyak umat yang masih terbata-bata, belum bisa membaca Alquran, bahkan banyak pula imam masjid yang sangat memprihatinkan bacaannya. Harapan inilah yang mendorong Qoryan Quran Wanayasa bertekad untuk melangkah dan terus maju berbenah diri, menjalin sinergi kekuatan dengan berbagai elemen masyarakat.<p>Untuk itu, kami mengajak Anda dan para muhsinin lainnya agar terlibat membangun Qoryah Quran Wanayasa demi mewujudkan Indonesia yang diberkahi dengan cahaya Rabbani.<p>Mari ! Dukung Qoryah Qur’an Wanayasa Melahirkan <strong><em>“One Hafidz for One Masjid”.</em></strong><p></div>
 <div class="program-cta hidden sm:block py-6">
-<a class="block rounded bg-blue-500 hover:bg-blue-600 py-8 text-white font-bold text-center text-2xl no-underline border-b-8 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?>">Donasi Sekarang</a>
+<a class="block rounded bg-blue-500 hover:bg-blue-600 py-8 text-white font-bold text-center text-2xl no-underline border-b-8 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?><?php echo e($Referrer); ?>">Donasi Sekarang</a>
 </div>
 </div>
 <div id="tab-fundraiser" class="tab-pane">
@@ -415,7 +415,7 @@
 <path d="M4.272 13.462l.247.138c1.013.635 2.191 1.02 3.423 1.02 3.588 0 6.573-3.006 6.573-6.675 0-3.67-2.985-6.566-6.6-6.566a6.546 6.546 0 00-6.546 6.566c0 1.269.356 2.51 1.014 3.559l.164.248-.63 2.317 2.355-.607z" fill="#38A169"></path>
 <path d="M5.806 4.248l-.52-.027a.62.62 0 00-.438.165c-.247.22-.658.635-.767 1.186-.192.828.11 1.821.821 2.814.713.993 2.082 2.593 4.492 3.283.767.22 1.37.083 1.862-.22.384-.249.63-.635.713-1.049l.082-.386a.278.278 0 00-.137-.304l-1.726-.8a.26.26 0 00-.328.083l-.685.883c-.055.055-.137.083-.22.055-.465-.165-2.026-.828-2.875-2.483-.027-.082-.027-.165.028-.22l.657-.745c.055-.083.082-.193.055-.276l-.795-1.793a.239.239 0 00-.219-.166z" fill="#FEFEFE"></path></g><defs><clippath id="clip0">
 <path fill="#fff" d="M0 0h15.885v16H0z"></path></clippath></defs></svg> Share</a>
-<a class="block flex-1 ml-2 rounded bg-blue-500 hover:bg-blue-600 py-2 text-sm text-white font-bold text-center border-b-2 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?>">Donasi Sekarang</a>
+<a class="block flex-1 ml-2 rounded bg-blue-500 hover:bg-blue-600 py-2 text-sm text-white font-bold text-center border-b-2 border-blue-700 uppercase pulse" href="<?php echo e(url('/donate')); ?><?php echo e($Referrer); ?>">Donasi Sekarang</a>
 </div>
 </div></main>
     <footer class="container lg:max-w-5xl px-2 pb-4 md:px-4 md:pb-10 mx-auto text-center text-xs pt-10 ">

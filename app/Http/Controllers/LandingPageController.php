@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cookie;
+use App\Http\Middleware\CheckReferral;
 use App\Sitadok\VarGlobal;
 
 class LandingPageController extends Controller
@@ -17,6 +19,16 @@ class LandingPageController extends Controller
     }
     public function index()
     {
+        // $referred_by = Cookie::get('referral');
+        if(request()->filled('ref')) {
+            $reqRef = request()->ref;
+            if($this->global->CheckReferral($reqRef)) {
+                $ref = $reqRef;
+            }
+        }else{
+            $ref = '';
+        }
+        $app['Referrer']  = !empty($ref) ? '/?ref='.$ref : '';
         $app['Donor'] = DB::table('donate')
                         ->selectRaw('ID, Name, Amount, CreatedDate, Message')
                         ->orderByDesc('CreatedDate')

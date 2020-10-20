@@ -14,6 +14,7 @@
     <h3 class="text-xs text-black mb-4">Transfer Bank (Transaksi diverifikasi manual 1x24jam)</h3>
     <div class="card mb-6 card-payment p-0">
         <input type="hidden" name="amount" id="amount" value="{{ $amount }}"/>
+        <input type="hidden" name="ref" id="ref" value="{{ $ref }}"/>
         @foreach($bank as $row)
         <a href="javascript:Confirmation({{$row->ID}});" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="{{$row->Type}}" data-label="{{$row->Label}}" data-image="{{ url('img/payments/'.$row->Image) }}">
             <div class="flex border-b-custom pb-2 items-center justify-between">

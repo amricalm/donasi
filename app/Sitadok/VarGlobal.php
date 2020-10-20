@@ -506,6 +506,20 @@ class VarGlobal extends Model
         return $print . ' yang lalu';
     }
 
+    public function CheckReferral($ref)
+    {
+        $q = DB::table('donor')
+                ->whereraw("FundraiserCode='" . $ref."'")
+                ->value('FundraiserCode');
+                        
+        $hasil = false;
+        if($q == $ref)
+        {
+            $hasil = true;
+        }
+        return $hasil;
+    }
+
 }
 
 

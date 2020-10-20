@@ -14,6 +14,7 @@
     <h3 class="text-xs text-black mb-4">Transfer Bank (Transaksi diverifikasi manual 1x24jam)</h3>
     <div class="card mb-6 card-payment p-0">
         <input type="hidden" name="amount" id="amount" value="<?php echo e($amount); ?>"/>
+        <input type="hidden" name="ref" id="ref" value="<?php echo e($ref); ?>"/>
         <?php $__currentLoopData = $bank; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <a href="javascript:Confirmation(<?php echo e($row->ID); ?>);" class="p-3 pb-0 block hover:bg-blue-100 select-type" data-type="<?php echo e($row->Type); ?>" data-label="<?php echo e($row->Label); ?>" data-image="<?php echo e(url('img/payments/'.$row->Image)); ?>">
             <div class="flex border-b-custom pb-2 items-center justify-between">

@@ -39,8 +39,8 @@ class Cookie extends Facade
      *
      * @return string
      */
-    protected static function get FacadeAccessor()
-    {
-        return 'cookie';
-    }
+    // protected static function get FacadeAccessor()
+    // {
+    //     return 'cookie';
+    // }
 }

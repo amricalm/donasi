@@ -1,9 +1,7 @@
 <?php
 //===================== ROUTE INDEX ===========================//
 Route::get('/', 'LandingPageController@index')->name("landingpage");
-Route::get('/cookie', function () {
-    return Cookie::get('referral');
-});
+// Route::get('/', ['middleware'=>'CheckReferral', 'uses'=>'LandingPageController@index'])->name("landingpage");
 //===================== ROUTE END INDEX ===========================//
 
 //===================== ROUTE LOGIN ===========================//

@@ -38,6 +38,13 @@ Route::group(['middleware' => 'cekUserSession'], function () {
     Route::get('home', 'DashboardController@index')->name("home");
     //===================== ROUTE END DASHBOARD ===========================//
 
+    //===================== ROUTE USER DONATIONS ===========================//
+    Route::get('donations', ['middleware'=>'cekRole', 'uses'=>'DonationsController@index']);
+    Route::get('donations/edit/{id}', ['middleware'=>'cekRole', 'uses'=>'DonationsController@edit']);
+    Route::post('donations/update', 'DonationsController@update');
+    Route::get('donations/hapus/{id}', ['middleware'=>'cekRole', 'uses'=>'DonationsController@hapus']);
+    //===================== ROUTE END USER DONATIONS ===========================//
+    
     //===================== ROUTE DONATE PLAN ===========================//
     Route::get('donate-plan', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@index']);
     Route::get('donate-plan/edit/{id}', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@edit']);

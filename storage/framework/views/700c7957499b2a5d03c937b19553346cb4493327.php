@@ -1,5 +1,6 @@
 <?php echo $__env->make('templates.komponen.sweetalert', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('templates.komponen.chart', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('templates.komponen.widget', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->startSection('body'); ?>
 <div class="loader-bg">
     <div class="loader-bar"></div>
@@ -45,7 +46,26 @@
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="form-group">
-                                                                
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-xl-6">
+                                                                            <div class="card bg-c-blue order-card">
+                                                                                <div class="card-block">
+                                                                                    <h2><?php echo e($donate->CountInv); ?></h2>
+                                                                                    <h6>Donasi</h6>
+                                                                                    <i class="card-icon feather icon-heart"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-xl-6">
+                                                                            <div class="card bg-c-green order-card">
+                                                                                <div class="card-block">
+                                                                                    <h2>Rp. 0</h2>
+                                                                                    <h6>Donasi disalurkan</h6>
+                                                                                    <i class="card-icon feather icon-users"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

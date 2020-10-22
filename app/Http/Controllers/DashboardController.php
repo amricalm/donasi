@@ -24,6 +24,11 @@ class DashboardController extends Controller
         
         $app['judul'] = 'Dashboard';
         $app['aktif'] = 'Dashboard';
+
+        $app['donate']  = DB::table('donate')
+                            ->selectRaw("count(Invoice) as CountInv")
+                            ->whereRaw('DonorID='.Session::get('UserID'))
+                            ->first();
         return view('pages.dashboard.dashboard',$app);
     }
 

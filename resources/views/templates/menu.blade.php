@@ -1,6 +1,7 @@
 <!-- [ navigation menu ] start -->
 <nav class="pcoded-navbar">
     <div class="pcoded-inner-navbar main-menu">
+        <div class="pcoded-navigation-label" menu-title-theme="theme9">Menu Utama</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="{{ (!empty($aktif)) ? '' : 'active'}}">
                 @if(Session::get('UserGroupID') == 1)

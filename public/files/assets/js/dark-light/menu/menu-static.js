@@ -4,7 +4,7 @@ $(document).ready(function() {
     var noofdays = 1;                       //  total no of days cookie will store
     var Navbarbg = "theme1";           //  navbar color                themelight1 / theme1
     var headerbg = "theme5";                //  header color                theme1 / theme2 / theme3 / theme4 / theme5 / theme6
-    var menucaption = "theme5";             //  menu caption color          theme1 / theme2 / theme3 / theme4 / theme5 / theme6 / theme7 / theme8 / theme9
+    var menucaption = "theme9";             //  menu caption color          theme1 / theme2 / theme3 / theme4 / theme5 / theme6 / theme7 / theme8 / theme9
     var bgpattern = "theme5";               //  background color            theme1 / theme2 / theme3 / theme4 / theme5 / theme6
     var activeitemtheme = "theme5";         //  menu active color           theme1 / theme2 / theme3 / theme4 / theme5 / theme6 / theme7 / theme8 / theme9 / theme10 / theme11 / theme12
     var frametype = "theme5";               //  preset frame color          theme1 / theme2 / theme3 / theme4 / theme5 / theme6

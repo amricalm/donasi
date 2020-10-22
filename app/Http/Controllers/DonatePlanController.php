@@ -25,7 +25,7 @@ class DonatePlanController extends Controller
         $app['judul'] = 'Rencana Donasi';
         $app['aktif'] = 'Rencana Donasi';
         $app['DonatePlan'] = DB::table('donate')
-                                ->selectRaw('donate.ID,Invoice,donate.Name,Phone,Amount,donate.AccountNumber,mbank.Bank')
+                                ->selectRaw('donate.ID,Invoice,donate.Name,Phone,AmountUnique,donate.AccountNumber,mbank.Bank')
                                 ->join('mbank','donate.AccountNumber','=','mbank.Number')
                                 ->get()->toArray();
 

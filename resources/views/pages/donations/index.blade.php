@@ -68,7 +68,7 @@
                                                                     <td>{{ $row->Bank }} - {{ $row->AccountNumber }}</td>
                                                                     <td>
                                                                         @php
-                                                                            $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
+                                                                            $format_rupiah = "Rp " . number_format($row->AmountUnique,0,',','.');
                                                                             echo $format_rupiah;
                                                                         @endphp
                                                                     </td>

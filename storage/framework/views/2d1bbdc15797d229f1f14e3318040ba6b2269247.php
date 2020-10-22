@@ -14,7 +14,7 @@
                     <p class="text-black text-sm">Total Pembayaran Donasi</p>
                     <h2 class="text-xl md:text-3xl font-bold text-black mb-3 mt-2">
                         <?php
-                            $format_rupiah = "Rp. " . number_format($donate->Amount,0,',','.');
+                            $format_rupiah = "Rp ".number_format($donate->AmountUnique,0,',','.');
                             echo $format_rupiah;
                         ?>    
                         &nbsp;<a href="javascript:;" class="copy-amount text-blue-400 text-sm btn-copy" data-clipboard-text="<?php echo e($donate->Amount); ?>">SALIN</a>
@@ -67,7 +67,7 @@
                         </span>
                     </div>
                     <div class="p-4 clear text-black">Kode unik 
-                        <span class="float-right font-bold text-black">815</span>
+                        <span class="float-right font-bold text-black"><?php echo e($donate->Unique); ?></span>
                     </div>
                 </div>
                 <p class="text-xs italic color-gray mt-2">*Kode unik akan didonasikan</p>

@@ -8,6 +8,6 @@ class Donate extends Model
 
     public $timestamps = true;
     protected $table = "donate";
-    protected $fillable = ['ID','Invoice','DonorID','AccountNumber','Amount','Name','Phone','Email','Message','ReferrerID','CreatedDate'];
+    protected $fillable = ['ID','Invoice','DonorID','AccountNumber','Amount','Name','Phone','Email','Message','ReferrerID','CreatedDate','Unique','AmountUnique'];
     protected $dates = ['dob'];
 }

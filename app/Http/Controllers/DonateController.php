@@ -50,6 +50,8 @@ class DonateController extends Controller
     public function save(Request $request)
     {
         $app['Amount']   = str_replace(".", "", $request->amount);
+        $app['Unique']   = $this->random_number(3);
+        $app['AmountUnique']   = substr($app['Amount'],0,3)."".$app['Unique'];
         $app['AccountNumber']  = $request->accountnumber;
         $app['DonorID']  = isset($request->donorID) ? $request->donorID :'';
         $app['Name']     = $request->name;
@@ -87,7 +89,7 @@ class DonateController extends Controller
         $app['donate'] = DB::table('donate')
                         ->join('mbank','AccountNumber','=','Number')
                         ->where('donate.ID', $id)
-                        ->selectRaw('Invoice, Amount, AccountNumber, mbank.Name AS AccountName, Image AS AccountImage, BranchOffice, MaxConfDate')
+                        ->selectRaw('Invoice, Amount, donate.Unique, donate.AmountUnique, AccountNumber, mbank.Name AS AccountName, Image AS AccountImage, BranchOffice, MaxConfDate')
                         ->first();
         $MaxConfDate = $app['donate']->MaxConfDate;                 
         $app['MaxConfDate'] = date_create($MaxConfDate)->format("H:i, d M Y");
@@ -118,5 +120,10 @@ class DonateController extends Controller
         ));
         $results = json_decode(curl_exec($curlHandle), true);
         curl_close($curlHandle);
+    }
+    function random_number($length_of_number) 
+    { 
+        $str_result = '0123456789';
+        return substr(str_shuffle($str_result), 0, $length_of_number); 
     }
 }

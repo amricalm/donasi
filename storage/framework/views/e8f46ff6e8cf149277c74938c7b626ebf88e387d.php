@@ -112,7 +112,7 @@
                         </defs>
                     </svg> Link diklik
                 </div>
-                <div class="w-1/3 text-right">2</div>
+                <div class="w-1/3 text-right"><?php echo e($donate->Hits); ?></div>
             </li>
             <li class="flex p-4 border-b-custom">
                 <div class="w-2/3">
@@ -129,7 +129,7 @@
                         </defs>
                     </svg> User mengisi form
                 </div>
-                <div class="w-1/3 text-right">0</div>
+                <div class="w-1/3 text-right"><?php echo e($donate->CountFormInput); ?></div>
             </li>
             <li class="flex p-4">
                 <div class="w-2/3">

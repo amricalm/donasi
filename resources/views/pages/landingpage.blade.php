@@ -91,16 +91,6 @@
                 <div id="cta-donate" class="program-cta py-2 mt-2">
                     <a class="block rounded bg-blue-500 hover:bg-blue-600 py-4 md:py-8 text-white font-bold text-center text-sm md:text-2xl border-b-4 border-blue-700 uppercase pulse" href="{{ url('/donate') }}{{ $Referrer }}">Donasi Sekarang</a>
                 </div>
-                <div class="program-author rounded mt-6 border-custom bg-gray-100 p-4"><h3 class="text-sm text-gray-700 mb-2">Pemilik Program</h3>
-                    <div class="flex items-center">
-                        <img class="w-8 h-8 md:w-12 md:h-12 mr-4" src="{{ asset('img/landingpage/xfmMTejjvOEZpVNuEseYF4DwX5ZFatGxuXAx5sKS.png') }}" alt="Avatar Program Badan Wakaf Al Quran">
-                        <div>
-                            <p class="text-gray-900 leading-none font-bold mb-1">Badan Wakaf Al Quran 
-                            <svg class="inline-block ml-1" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.5 0A6.507 6.507 0 000 6.5C0 10.084 2.916 13 6.5 13S13 10.084 13 6.5 10.084 0 6.5 0z" fill="#1394f2"></path>
-                            <path d="M9.588 4.814l-3.596 3.48a.561.561 0 01-.39.156.561.561 0 01-.392-.157l-1.798-1.74a.522.522 0 010-.756.566.566 0 01.782 0l1.407 1.361 3.205-3.1a.566.566 0 01.782 0 .523.523 0 010 .756z" fill="#FAFAFA"></path></svg>                            <p class="text-gray-600 text-sm">Akun terverifikasi                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

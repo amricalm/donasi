@@ -67,7 +67,7 @@
                         </span>
                     </div>
                     <div class="p-4 clear text-black">Kode unik 
-                        <span class="float-right font-bold text-black"><?php echo e($donate->Unique); ?></span>
+                        <span class="float-right font-bold text-black"><?php echo e($donate->Uniques); ?></span>
                     </div>
                 </div>
                 <p class="text-xs italic color-gray mt-2">*Kode unik akan didonasikan</p>

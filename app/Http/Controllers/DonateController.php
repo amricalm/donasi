@@ -50,8 +50,8 @@ class DonateController extends Controller
     public function save(Request $request)
     {
         $app['Amount']   = str_replace(".", "", $request->amount);
-        $app['Unique']   = $this->random_number(3);
-        $app['AmountUnique']   = substr($app['Amount'],0,3)."".$app['Unique'];
+        $app['Uniques']   = $this->random_number(3);
+        $app['AmountUnique']   = substr($app['Amount'],0,3)."".$app['Uniques'];
         $app['AccountNumber']  = $request->accountnumber;
         $app['DonorID']  = isset($request->donorID) ? $request->donorID :'';
         $app['Name']     = $request->name;
@@ -63,7 +63,7 @@ class DonateController extends Controller
         $date            = Carbon::today()->format('y/m/d');
         $invoiceDate     = str_replace("/", "", $date);
         $ref             = isset($request->ref) ? $request->ref :'';
-        $app['ReferrerCode'] = $this->global->CheckReferral($ref) ? $ref :'';
+        $app['FundraiserCode'] = $this->global->CheckReferral($ref) ? $ref :'';
 
         //Invoice
         $noSequence      = $this->invoicenumber();
@@ -89,7 +89,7 @@ class DonateController extends Controller
         $app['donate'] = DB::table('donate')
                         ->join('mbank','AccountNumber','=','Number')
                         ->where('donate.ID', $id)
-                        ->selectRaw('Invoice, Amount, donate.Unique, donate.AmountUnique, AccountNumber, mbank.Name AS AccountName, Image AS AccountImage, BranchOffice, MaxConfDate')
+                        ->selectRaw('Invoice, Amount, donate.Uniques, donate.AmountUnique, AccountNumber, mbank.Name AS AccountName, Image AS AccountImage, BranchOffice, MaxConfDate')
                         ->first();
         $MaxConfDate = $app['donate']->MaxConfDate;                 
         $app['MaxConfDate'] = date_create($MaxConfDate)->format("H:i, d M Y");

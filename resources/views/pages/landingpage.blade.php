@@ -70,7 +70,11 @@
             <div class="w-full py-2 md:py-4">
                 <div class="toggleDonation ">
                     <div class="program-collected flex text-xs sm:text-md md:text-2xl">
-                        <div class="program-collected_amount inline-block md:block font-bold xs:leading-none text-orange-900 md:text-orange-900 mr-5">Rp 372.108.449
+                        <div class="program-collected_amount inline-block md:block font-bold xs:leading-none text-orange-900 md:text-orange-900 mr-5">
+                            @php
+                                $format_rupiah = "Rp " . number_format($CountDonations->AmountUnique,0,',','.');
+                                echo $format_rupiah;
+                            @endphp
                         </div><span class="text-gray-800"> donasi terus dikumpul
                         </span>
                     </div>
@@ -80,7 +84,7 @@
                         </div>
                         <div class="p-card__count mt-1">
                             <div class="p-card__countitem">
-                                <div class="p-card__stats"><span class="text-xs md:text-xl color-gray">Donasi</span><span class="font-bold text-black text-sm md:text-3xl">3.209</span></div>
+                                <div class="p-card__stats"><span class="text-xs md:text-xl color-gray">Donasi</span><span class="font-bold text-black text-sm md:text-3xl">{{ $CountDonations->Donate }}</span></div>
                             </div>
                             <div class="p-card__countitem text-right">
                                 <div class="p-card__stats"><span class="text-xs md:text-xl color-gray">Sisa hari</span><span class=" text-black text-sm md:text-3xl font-bold">∞</span></div>
@@ -363,7 +367,7 @@
     </div>
 </div>
 <div id="tab-donatur" class="tab-pane">
-    <h3 class="md:hidden mb-5 text-xl font-bold">Donatur (3.209)</h3>
+    <h3 class="md:hidden mb-5 text-xl font-bold">Donatur ({{ $CountDonations->Donate }})</h3>
     <div class="flex flex-wrap donatur-list">
         @foreach($Donor as $key => $row)
         <div class="w-full">

@@ -8,8 +8,8 @@
 #5 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2084): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
 #6 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Concerns\\BuildsQueries.php(77): Illuminate\\Database\\Query\\Builder->get(Array)
 #7 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2069): Illuminate\\Database\\Query\\Builder->first(Array)
-#8 C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php(513): Illuminate\\Database\\Query\\Builder->value('FundraiserCode')
-#9 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS86')
+#8 C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php(513): Illuminate\\Database\\Query\\Builder->value('FundraiserCode')
+#9 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS86')
 #10 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #11 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #12 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -64,9 +64,9 @@
 #61 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #62 {main}
 "} 
-[2020-10-19 14:32:19] local.ERROR: Call to a member function whereraw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereraw() on string at C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php:513)
+[2020-10-19 14:32:19] local.ERROR: Call to a member function whereraw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereraw() on string at C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php:513)
 [stacktrace]
-#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS86')
+#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS86')
 #1 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #2 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #3 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -121,9 +121,9 @@
 #52 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #53 {main}
 "} 
-[2020-10-19 14:32:29] local.ERROR: Call to a member function whereRaw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereRaw() on string at C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php:513)
+[2020-10-19 14:32:29] local.ERROR: Call to a member function whereRaw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereRaw() on string at C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php:513)
 [stacktrace]
-#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS86')
+#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS86')
 #1 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #2 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #3 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -186,8 +186,8 @@
 #3 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2083): Illuminate\\Database\\Query\\Builder->runSelect()
 #4 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2569): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
 #5 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2084): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
-#6 C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php(513): Illuminate\\Database\\Query\\Builder->get()
-#7 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS86')
+#6 C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php(513): Illuminate\\Database\\Query\\Builder->get()
+#7 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS86')
 #8 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #9 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #10 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -242,9 +242,9 @@
 #59 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #60 {main}
 "} 
-[2020-10-19 14:39:21] local.ERROR: Call to a member function whereRaw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereRaw() on string at C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php:513)
+[2020-10-19 14:39:21] local.ERROR: Call to a member function whereRaw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereRaw() on string at C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php:513)
 [stacktrace]
-#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS97')
+#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS97')
 #1 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #2 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #3 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -299,9 +299,9 @@
 #52 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #53 {main}
 "} 
-[2020-10-19 14:39:30] local.ERROR: Call to a member function whereraw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereraw() on string at C:\\xampp\\htdocs\\donasi\\app\\Sitadok\\VarGlobal.php:513)
+[2020-10-19 14:39:30] local.ERROR: Call to a member function whereraw() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function whereraw() on string at C:\\xampp\\htdocs\\donasi\\app\\Donasi\\VarGlobal.php:513)
 [stacktrace]
-#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Sitadok\\VarGlobal->CheckReferral('MFDS97')
+#0 C:\\xampp\\htdocs\\donasi\\app\\Http\\Controllers\\LandingPageController.php(22): App\\Donasi\\VarGlobal->CheckReferral('MFDS97')
 #1 [internal function]: App\\Http\\Controllers\\LandingPageController->index()
 #2 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #3 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
@@ -1123,7 +1123,8 @@
 #53 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #54 {main}
 "} 
-[2020-10-19 16:06:29] local.ERROR: Undefined variable: ReferrerID (View: C:\xampp\htdocs\donasi\resources\views\pages\donate\index.blade.php) {"exception":"[object] (ErrorException(code: 0): Undefined variable: ReferrerID (View: C:\\xampp\\htdocs\\donasi\esources\\views\\pages\\donate\\index.blade.php) at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14, ErrorException(code: 0): Undefined variable: ReferrerID at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14)
+[2020-10-19 16:06:29] local.ERROR: Undefined variable: ReferrerID (View: C:\xampp\htdocs\donasi\resources\views\pages\donate\index.blade.php) {"exception":"[object] (ErrorException(code: 0): Undefined variable: ReferrerID (View: C:\\xampp\\htdocs\\donasi\
+esources\\views\\pages\\donate\\index.blade.php) at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14, ErrorException(code: 0): Undefined variable: ReferrerID at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -1183,7 +1184,8 @@
 #55 C:\\xampp\\htdocs\\donasi\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2020-10-19 16:06:42] local.ERROR: Undefined variable: ReferrerID (View: C:\xampp\htdocs\donasi\resources\views\pages\donate\index.blade.php) {"exception":"[object] (ErrorException(code: 0): Undefined variable: ReferrerID (View: C:\\xampp\\htdocs\\donasi\esources\\views\\pages\\donate\\index.blade.php) at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14, ErrorException(code: 0): Undefined variable: ReferrerID at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14)
+[2020-10-19 16:06:42] local.ERROR: Undefined variable: ReferrerID (View: C:\xampp\htdocs\donasi\resources\views\pages\donate\index.blade.php) {"exception":"[object] (ErrorException(code: 0): Undefined variable: ReferrerID (View: C:\\xampp\\htdocs\\donasi\
+esources\\views\\pages\\donate\\index.blade.php) at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14, ErrorException(code: 0): Undefined variable: ReferrerID at C:\\xampp\\htdocs\\donasi\\storage\\framework\\views\\32c4c9cff8f5e195042bbc1853b5a15841a60737.php:14)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\donasi\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)

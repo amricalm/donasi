@@ -13,6 +13,7 @@
     </div>
     <h3 class="text-xs text-black mb-4">Transfer Bank (Transaksi diverifikasi manual 1x24jam)</h3>
     <div class="card mb-6 card-payment p-0">
+        <input type="hidden" name="program" id="program" value="<?php echo e($program); ?>"/>
         <input type="hidden" name="amount" id="amount" value="<?php echo e($amount); ?>"/>
         <input type="hidden" name="ref" id="ref" value="<?php echo e($ref); ?>"/>
         <?php $__currentLoopData = $bank; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

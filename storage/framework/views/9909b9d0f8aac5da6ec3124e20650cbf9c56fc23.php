@@ -1,9 +1,9 @@
-@component('templates.widgets')
-    @slot('header')
-    @endslot
-    @slot('footer')
-        <script type="text/javascript" src="{{ asset('files/assets/pages/wysiwyg-editor/js/tinymce.min.js')}}"></script>
-        {{-- <script type="text/javascript" src="{{ asset('files/assets/pages/wysiwyg-editor/wysiwyg-editor.js')}}"></script> --}}
+<?php $__env->startComponent('templates.widgets'); ?>
+    <?php $__env->slot('header'); ?>
+    <?php $__env->endSlot(); ?>
+    <?php $__env->slot('footer'); ?>
+        <script type="text/javascript" src="<?php echo e(asset('files/assets/pages/wysiwyg-editor/js/tinymce.min.js')); ?>"></script>
+        
         <script type="text/javascript">
             var editor_config = {
                 path_absolute : "/donasi/public/",
@@ -39,6 +39,6 @@
                 }
             };
         </script>
-    @endslot
-@endcomponent
+    <?php $__env->endSlot(); ?>
+<?php echo $__env->renderComponent(); ?>
 

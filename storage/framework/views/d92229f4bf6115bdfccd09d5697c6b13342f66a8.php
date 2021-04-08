@@ -14,6 +14,7 @@
             <div id="amount" class="card-body">
                 <p class="text-black mb-2 text-xs">Nominal Donasi <em class="text-red-500">*</em></p>
                 <input type="hidden" name="accountnumber" value="<?php echo e($bank[0]->Number); ?>"/>
+                <input type="hidden" name="program" value="<?php echo e($program); ?>"/>
                 <div class="form-group input-amount mt-2">
                     <span class="font-semibold text-lg text-black mt-1">Rp</span>
                     <input type="text" class="form-control bg-orange-100 focus:bg-white text-right amount pl-10 h-57px text-black border-orange-200 focus:border-orange-600" name="amount" id="amount-input-last" placeholder="0" data-mask="000.000.000.000.000" data-mask-reverse="true" autocomplete="off" maxlength="19" required="required" value="<?php echo e($amount); ?>">

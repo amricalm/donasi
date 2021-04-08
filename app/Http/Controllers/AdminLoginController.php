@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
-use App\Sitadok\VarGlobal;
+use App\Donasi\VarGlobal;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Redirect;
 use App\User;

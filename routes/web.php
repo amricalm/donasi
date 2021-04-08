@@ -1,7 +1,14 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Program;
 //===================== ROUTE INDEX ===========================//
 Route::get('/', 'LandingPageController@index')->name("landingpage");
-// Route::get('/', ['middleware'=>'CheckReferral', 'uses'=>'LandingPageController@index'])->name("landingpage");
+
+$program    = new Program();
+$this->program = $program;
+if( $this->program->checkProgram(last(request()->segments())) ) {
+    Route::get('/{url?}', 'LandingPageController@program')->name("program");
+}
 //===================== ROUTE END INDEX ===========================//
 
 //===================== ROUTE LOGIN ===========================//
@@ -20,7 +27,7 @@ Route::get('logout','LoginController@logout')->name('logout');
 //===================== ROUTE END LOGOUT ===========================//
 
 //===================== ROUTE DONATE ===========================//
-Route::get('donate', 'DonateController@index');
+Route::get('donate/{url?}', 'DonateController@index');
 Route::post('donate/payment-method','DonateController@paymentMethod');
 Route::post('donate/confirmation','DonateController@confirmation');
 Route::post('donate/save','DonateController@save');
@@ -33,6 +40,14 @@ Route::get('fundraiser', 'FundraiserController@index')->name("fundraiser");
 
 //===================== ROUTE CEK USER SESSION ============================================================================//
 Route::group(['middleware' => 'cekUserSession'], function () {
+
+
+    //==== ROUTE JANGAN DIHAPUS - ROUTE UNTUK TINYMCE - FILEMANAGER =====//
+    Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
+    //==== ROUTE END JANGAN DIHAPUS - ROUTE UNTUK TINYMCE - FILEMANAGER =====//
+
     //===================== ROUTE DASHBOARD ===========================//
     Route::get('admin-home', 'DashboardAdminController@index')->name("admin-home");
     Route::get('home', 'DashboardController@index')->name("home");
@@ -48,6 +63,15 @@ Route::group(['middleware' => 'cekUserSession'], function () {
     Route::post('donate-plan/update', 'DonatePlanController@update');
     Route::get('donate-plan/hapus/{id}', ['middleware'=>'cekRole', 'uses'=>'DonatePlanController@hapus']);
     //===================== ROUTE END DONATE PLAN ===========================//
+    
+    //===================== ROUTE PROGRAM ===========================//
+    Route::get('program', ['middleware'=>'cekRole', 'uses'=>'ProgramController@index']);
+    Route::get('program/tambah', ['middleware'=>'cekRole', 'uses'=>'ProgramController@tambah']);
+    Route::post('program/simpan', 'ProgramController@save');
+    Route::get('program/edit/{id}', ['middleware'=>'cekRole', 'uses'=>'ProgramController@edit']);
+    Route::post('program/update', 'ProgramController@update');
+    Route::get('program/hapus/{id}', ['middleware'=>'cekRole', 'uses'=>'ProgramController@hapus']);
+    //===================== ROUTE END PROGRAM ===========================//
 
     //===================== ROUTE USER ===========================//
     Route::get('user', ['middleware'=>'cekRole', 'uses'=>'UserController@index']);

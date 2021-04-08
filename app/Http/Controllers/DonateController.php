@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use App\Sitadok\VarGlobal;
+use App\Donasi\VarGlobal;
 use App\Donate;
 
 class DonateController extends Controller
@@ -18,13 +18,18 @@ class DonateController extends Controller
         $varglobal = new VarGlobal();
         $this->global = $varglobal;
     }
-    public function index()
+    public function index($url)
     {
-        $app['amount']    = DB::table('mamount')->get()->toArray();
+        $app['amount']  = DB::table('mamount')->get()->toArray();
+        $app['program'] = DB::table('mprogram')
+                        ->selectRaw('ID, Name')
+                        ->whereRaw('Url ="'.$url.'"')
+                        ->first();
         return view('pages.donate.index',$app);
     }
     public function paymentMethod(Request $request)
     {
+        $app['program'] = $request->program;
         $app['amount']  = $request->amount;
         $app['ref']     = $request->ref != 'undefined' ? $request->ref : '';
         $app['bank']    = DB::table('mbank')->get()->toArray();
@@ -32,10 +37,11 @@ class DonateController extends Controller
     }
     public function confirmation(Request $request)
     {
+        $app['program'] = $request->program;
         $app['amount']  = $request->amount;
         $app['ref']     = $request->ref;
         $app['bank']    = DB::table('mbank')->where('ID', $request->payID)->get()->toArray();
-
+        
         return view('pages.donate.confirmation',$app);
     }
     function invoicenumber()
@@ -51,13 +57,14 @@ class DonateController extends Controller
     {
         $app['Amount']   = str_replace(".", "", $request->amount);
         $app['Uniques']   = $this->random_number(3);
-        $app['AmountUnique']   = substr($app['Amount'],0,3)."".$app['Uniques'];
+        $app['AmountUnique']   = substr($app['Amount'],0,-3)."".$app['Uniques'];
         $app['AccountNumber']  = $request->accountnumber;
         $app['DonorID']  = isset($request->donorID) ? $request->donorID :'';
         $app['Name']     = $request->name;
         $app['Phone']    = $request->phone;
         $app['Email']    = $request->email;
         $app['Message']  = $request->message;
+        $app['ProgramID']   = $request->program;
         $app['CreatedDate'] = Carbon::now();
         $app['MaxConfDate'] = Carbon::tomorrow()->format('Y-m-d').' '.Carbon::now()->format('H:i:s');
         $date            = Carbon::today()->format('y/m/d');

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Sitadok\VarGlobal;
+use App\Donasi\VarGlobal;
 
 class FundraiserController extends Controller
 {

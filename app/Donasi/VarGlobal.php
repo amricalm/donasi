@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sitadok;
+namespace App\Donasi;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -162,9 +162,9 @@ class Notifikasi extends Mailable
     }
     public function build()
     {
-        return $this->from('sitadok@ptpn12.com')
+        return $this->from('amri.m99@gmail.com')
                    ->view('pages.notifikasi.notifikasi_email')
-                   ->subject('SITADOK (Notifikasi Surat)')
+                   ->subject('DONASI (Notifikasi Donasi)')
                    ->with(
                     [
                         'name' => $this->nama,

@@ -18,7 +18,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-8">
                                     <div class="page-header-title">
-                                        <h4 class="m-b-10">Rencana Donasi</h4>
+                                        <h4 class="m-b-10">Program</h4>
                                     </div>
                                     <ul class="breadcrumb">
                                         <li class="breadcrumb-item">
@@ -27,7 +27,7 @@
                                             </a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a>Rencana Donasi</a>
+                                            <a>Program</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -44,7 +44,7 @@
                                         <div class="col-sm-12">
                                             <div class="card">
                                                 <div class="card-header icon-list-demo">
-                                                    <!-- <a href="<?php echo e(url('/donate-plan/tambah')); ?>" class="btn btn-sm waves-effect waves-light btn-primary" data-toggle="tooltip" data-placement="bottom" title data-original-title="Tambah"><i class="icofont icofont-ui-add"></i> | Tambah</a>  -->
+                                                    <a href="<?php echo e(url('/program/tambah')); ?>" class="btn btn-sm waves-effect waves-light btn-primary" data-toggle="tooltip" data-placement="bottom" title data-original-title="Tambah"><i class="icofont icofont-ui-add"></i> | Tambah</a> 
                                                 </div>
                                                 <div class="card-block">
                                                     <div class="dt-responsive table-responsive">
@@ -52,30 +52,19 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th width="21px">No</th>
-                                                                    <th>Invoice</th>
-                                                                    <th>Nama Donatur</th>
-                                                                    <th>Telepon</th>
-                                                                    <th>Rekening</th>
-                                                                    <th>Donasi</th>
+                                                                    <th>Nama Program</th>
+                                                                    <th>Url</th>
                                                                     <th width="120px">Opsi</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $DonatePlan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $Program; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><?php echo e($loop->iteration); ?></td>                                                                    
-                                                                    <td><?php echo e($row->Invoice); ?></td>
                                                                     <td><?php echo e($row->Name); ?></td>
-                                                                    <td><?php echo e($row->Phone); ?></td>
-                                                                    <td><?php echo e($row->Bank); ?> - <?php echo e($row->AccountNumber); ?></td>
+                                                                    <td><?php echo e($row->Url); ?></td>
                                                                     <td>
-                                                                        <?php
-                                                                            $format_rupiah = "Rp " . number_format($row->AmountUnique,0,',','.');
-                                                                            echo $format_rupiah;
-                                                                        ?>
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="donate-plan/edit/<?php echo e($row->ID); ?>" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a>
+                                                                        <a href="program/edit/<?php echo e($row->ID); ?>" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a>
                                                                         <button type="button" class="btn btn-mini waves-effect waves-light btn-danger" onclick="return checkdelete(<?php echo e($row->ID); ?>)" data-toggle="tooltip" data-placement="bottom" title data-original-title="Hapus"><i class="icofont icofont-ui-delete"></i> | Hapus</button>
                                                                     </td>
                                                                 </tr>
@@ -103,7 +92,7 @@
 $(document).ready( function () {
     $('.table').DataTable();
 } );
-function checkdelete(id)
+function checkdelete(ID)
 {   
     Swal.fire({
             title: 'Yakin?',
@@ -117,7 +106,7 @@ function checkdelete(id)
             }).then((result) => {
             if (result.value) {
                 $.ajax({
-                    url:"<?php echo e(url('donate-plan/hapus')); ?>/"+id
+                    url:"<?php echo e(url('program/hapus')); ?>/"+ID
                 }).done(function(hasil) {
                     if(hasil.status)
                     {

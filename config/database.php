@@ -55,7 +55,7 @@ return [
             'strict' => false,
             'engine' => null,
             'dump' => [
-                   'dump_binary_path' => 'C:/xampp/mysql/bin', // only the path, so without `mysqldump` or `pg_dump`
+                   'dump_binary_path' => 'D:/xampp7/mysql/bin', // only the path, so without `mysqldump` or `pg_dump`
                    'use_single_transaction',
                    'timeout' => 60*10,
             ],

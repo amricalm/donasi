@@ -54,6 +54,10 @@ class ProgramController extends Controller
         $app->Description  = $request->input('Description');
         $app->Url          = $request->input('Url');
         $app->Banner       = $request->input('Banner');
+        $app->Active       = $request->input('Active');
+        $app->DonationTarget = $request->input('DonationTarget');
+        $app->StartDate    = $request->StartDate != '' ? Carbon::createFromFormat('d-m-Y', $request->input('StartDate'))->format('Y-m-d') : '';
+        $app->EndDate      = $request->EndDate != '' ? Carbon::createFromFormat('d-m-Y', $request->input('EndDate'))->format('Y-m-d') : '';
         $app->CreatedBy    = Session::get("UserID");
         $app->UpdatedBy    = Session::get("UserID");
 
@@ -76,6 +80,7 @@ class ProgramController extends Controller
         $app['judul']   = 'Edit Program';
         $app['aktif']   = 'Program';
         $app['program']  = DB::table('mprogram')
+                            ->selectRaw('mprogram.*, DATE_FORMAT(StartDate, "%d-%m-%Y") AS StartDatedmY, DATE_FORMAT(EndDate, "%d-%m-%Y") AS EndDatedmY')
                             ->where('ID', $id)
                             ->first();
 
@@ -100,6 +105,10 @@ class ProgramController extends Controller
             'Summary'       => $request->Summary,
             'Description'   => $request->Description,
             'Url'           => $request->Url,
+            'Active'        => $request->Active,
+            'DonationTarget'=> $request->DonationTarget,
+            'StartDate'     => $request->StartDate != '' ? Carbon::createFromFormat('d-m-Y', $request->StartDate)->format('Y-m-d') : '',
+            'EndDate'       => $request->EndDate != '' ? Carbon::createFromFormat('d-m-Y', $request->EndDate)->format('Y-m-d') : '',
             'Banner'        => $fotoname,
             'UpdatedBy'     => Session::get("UserID"),
             'UpdatedDate'   => Carbon::now(),

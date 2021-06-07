@@ -1,4 +1,4 @@
-@extends('templates.indexlanding')
+@extends('templates.indexprogram')
 @section('body')
 <header id="header" class="bg-orange-900">
     <nav class="flex items-center px-4 md:px-16 py-4 text-center">
@@ -11,13 +11,13 @@
             <form method="POST" class="j-pro" id="j-pro">
                 <input type="hidden" name="total" value="" id="nominal">
                 <input type="hidden" name="type" value="" id="type">
-                <input type="hidden" name="program" value="{{ $program->ID }}" id="program">
+                <input type="hidden" name="program" value="{{ $program!='' ? $program->ID : '' }}" id="program">
                 <div id="NominalArea">
                     <div class="mb-4 mx-auto">
                         <div class="flex flex-wrap">
                             <div class="w-full w-3/4 px-4 sm:px-0">
                                 <p class="text-gray-600 text-sm">Anda akan berdonasi untuk program:</p>
-                                <h3 class="text-black font-semibold truncate">{{ $program->Name }}</h3>
+                                <h3 class="text-black font-semibold truncate">{{ $program!='' ? $program->Name : ''  }}</h3>
                             </div>
                         </div>
                     </div>

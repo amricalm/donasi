@@ -1,12 +1,102 @@
-<script type="text/javascript" src="{{ asset('files/bower_components/jquery/js/jquery.min.js')}}"></script>
-<script src="{{ asset('js/landingpage/app.js') }}?id=98121ae5d02262a7fecb" type="text/javascript"></script>
-<script type="text/javascript" async="" src="{{ asset('js/landingpage/f.txt') }}"></script>
-<script type="text/javascript" async="" src="{{ asset('js/landingpage/js') }}"></script>
-<script type="text/javascript" async="" src="{{ asset('js/landingpage/analytics.js') }}"></script>
-<script type="text/javascript" async="" src="{{ asset('js/landingpage/clipboard.min.js') }}"></script>
-<script src="{{ asset('js/landingpage/260149045112323') }}" async=""></script>
-<script src="{{ asset('js/landingpage/524472591656390') }}" async=""></script>
-<script async="" src="{{ asset('js/landingpage/fbevents.js') }}"></script>
-<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebPage","name":"Over 9000 Thousand!","description":"Sisihkan Harta Anda Sebesar Rp. 60.000 per Orang\/bulan, Insya Allah akan Mampu Wujudkan Pesantren Wakaf Penghafal Al Quran di Wanayasa."}</script>
-@stack('footer')
-@yield('footer')
+        <script type="text/javascript" src="{{ asset('js/landing/vendor/modernizr-3.5.0.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/vendor/jquery-1.12.4.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/popper.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/owl.carousel.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/isotope.pkgd.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/ajax-form.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/waypoints.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.counterup.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/imagesloaded.pkgd.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/scrollIt.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.scrollUp.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/wow.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/nice-select.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.slicknav.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.magnific-popup.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/plugins.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/gijgo.min.js')}}"></script>
+        <!--contact js-->
+        <script type="text/javascript" src="{{ asset('js/landing/contact.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.ajaxchimp.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.form.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/jquery.validate.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/mail-script.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/main.js')}}"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/landing/slick.min.js')}}"></script>
+        @stack('footer')
+        <script>
+            $(document).ready(function(){
+                $('.center').slick({
+                    dots: true,
+                    centerMode: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    centerPadding: '240px',
+                    focusOnSelect: true,
+                    pauseOnHover:true,
+                    pauseOnFocus: true,
+                    responsive: [
+                        {
+                        breakpoint: 1024,
+                        settings: {
+                            dots: true,
+                            centerMode: true,
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 5000,
+                            centerPadding: '0px',
+                            focusOnSelect: true,
+                            pauseOnHover:true,
+                            pauseOnFocus: true,
+                            prevArrow: false,
+                            nextArrow: false
+                        }
+                        },
+                        {
+                        breakpoint: 600,
+                        settings: {
+                            dots: true,
+                            centerMode: true,
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 5000,
+                            centerPadding: '0px',
+                            focusOnSelect: true,
+                            pauseOnHover:true,
+                            pauseOnFocus: true,
+                            prevArrow: false,
+                            nextArrow: false,
+                        }
+                        },
+                        {
+                        breakpoint: 480,
+                        settings: {
+                            dots: true,
+                            centerMode: true,
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 5000,
+                            centerPadding: '0px',
+                            focusOnSelect: true,
+                            pauseOnHover:true,
+                            pauseOnFocus: true,
+                            prevArrow: false,
+                            nextArrow: false,
+                        }
+                        }
+                    ]
+                });
+            });
+        </script>
+        @yield('footer')

@@ -3,7 +3,7 @@
         <div class="flex flex-wrap">
             <div class="w-full">
                 <p class="text-gray-600 text-sm">Anda akan berdonasi untuk program:</p>
-                <h3 class="text-black font-semibold truncate">Gotong Royong Bangun Pesantren Hafizh Al Quran</h3>
+                <h3 class="text-black font-semibold truncate">{{ Session::get('ProgramName') }}</h3>
             </div>
         </div>
     </div>

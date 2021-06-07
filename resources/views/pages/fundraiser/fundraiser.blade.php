@@ -1,5 +1,5 @@
 
-@extends('templates.indexlanding')
+@extends('templates.indexprogram')
 @section('body')
 <body class="detail-program">
     <div class="backdrop hidden"></div>
@@ -90,10 +90,10 @@
             </svg>
         </div>
         <!--End Icon-->
-        <h3 class="text-black text-2xl mb-4">Terima kasih telah menjadi fundraiser dari program <strong>Gotong Royong Bangun Pesantren Hafizh Al Quran</strong></h3>
+        <h3 class="text-black text-2xl mb-4">Terima kasih telah menjadi fundraiser dari program <strong>{{ $donate->Program }}</strong></h3>
         <div class="color-gray text-lg mb-4">Silahkan <span class="text-pink-900 font-bold">salin kode dibawah ini</span> untuk disebarkan</div>
         <div class="form-group">
-            <input class="bg-gray-custom border-custom p-5 text-center mb-3 w-full text-black" value="{{ url('/') }}?ref={{ Session::get('UserFundraiserCode') }}" placeholder="" id="InputCopy" readonly="">
+            <input class="bg-gray-custom border-custom p-5 text-center mb-3 w-full text-black" value="{{ url('/') }}/{{ $donate->ProgramUrl }}?ref={{ Session::get('UserFundraiserCode') }}" placeholder="" id="InputCopy" readonly="">
         </div>
         <button type="button" onclick="CopytoClipboard()" class="block rounded bg-pink-900 py-5 text-white font-bold text-center text-base no-underline w-full">Salin Kode</button>
         <hr class="mt-12 mb-12">

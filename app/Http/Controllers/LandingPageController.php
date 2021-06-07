@@ -11,6 +11,7 @@ use App\Http\Middleware\CheckReferral;
 use Illuminate\Support\Facades\URL;
 use App\Donasi\VarGlobal;
 use App\Donate;
+use App\Program;
 
 class LandingPageController extends Controller
 {
@@ -18,62 +19,49 @@ class LandingPageController extends Controller
     {
         $varglobal = new VarGlobal();
         $donate    = new Donate();
+        $program   = new Program();
         
         $this->global = $varglobal;
         $this->donate = $donate;
+        $this->program = $program;
 
     }
     public function index()
     {
-        // $referred_by = Cookie::get('referral');
         $referred_by1 = request()->server();
         $referred_by2 = URL::previous();
-        // if($referred_by1 != url::) {
-
-        // }
-        // dd($referred_by2, $referred_by1);
         
         $ref = $this->global->HitsReferral();
-        $app['Referrer']  = !empty($ref) ? '/?ref='.$ref : '';
-        $app['CountDonations'] = $this->donate->countVerifiedDonations();
-        $app['Donor'] = DB::table('donate')
-                        ->selectRaw('ID, Name, Amount, CreatedDate, Message')
-                        ->orderByDesc('CreatedDate')
-                        ->get()->toArray();
+        $app['Referrer']        = !empty($ref) ? '/?ref='.$ref : '';
+        $app['Program']         = $this->program->GetAllActiveProgram();
+        $app['ProgramCounter']  = $this->program->ProgramCounter();
 
-        $TimeSince = array();
-        for($i=0;$i<count($app['Donor']);$i++)
-        {
-            $TimeSince[] = $this->global->time_since(strtotime($app['Donor'][$i]->CreatedDate));
-        }
-        $app['TimeSince'] = $TimeSince;
         return view('pages.landingpage',$app);
     }
 
     public function program($url)
     {
-        // $referred_by = Cookie::get('referral');
         $referred_by1 = request()->server();
         $referred_by2 = URL::previous();
-        // if($referred_by1 != url::) {
-
-        // }
-        // dd($referred_by2, $referred_by1);
         
-        $ref = $this->global->HitsReferral();
-        $app['Referrer']  = !empty($ref) ? '/?ref='.$ref : '';
-        $app['CountDonations'] = $this->donate->countVerifiedDonations($url);
-        $app['Donor'] = DB::table('donate')
-                        ->selectRaw('ID, Name, Amount, CreatedDate, Message')
-                        ->orderByDesc('CreatedDate')
-                        ->get()->toArray();
+        $ref                    = $this->global->HitsReferral();
+        $app['Referrer']        = !empty($ref) ? '/?ref='.$ref : '';
+        $checkProgram           = $this->program->checkProgram($url);
+        $app['Donor']           = $this->program->GetDonor($checkProgram->ID);
+        $app['Fundraiser']      = $this->program->GetFundraiser($checkProgram->ID);
+        $app['Program']         = $this->program->GetProgram($url);
+        $app['ProgramCounter']  = $this->program->ProgramCounter();
+                        
+        if(session('ProgramID') != $app['Program']->ID) {
+            session()->flush();
+        }
+        $sess['ProgramID'] = $app['Program']->ID;
+        $sess['ProgramName'] = $app['Program']->Name;
+        if(!empty($ref)) {
+            $sess['FundraiserCode'] = $ref;
+        }
+        session($sess);
         
-        $app['Program'] = DB::table('mprogram')
-                        ->selectRaw('ID, Name,Summary,Description,Url,Banner')
-                        ->whereRaw('Url ="'.$url.'"')
-                        ->orderByDesc('CreatedDate')
-                        ->first();
-
         $TimeSince = array();
         for($i=0;$i<count($app['Donor']);$i++)
         {
@@ -82,7 +70,7 @@ class LandingPageController extends Controller
         $app['TimeSince'] = $TimeSince;
 
         if(!empty($app['Program'])) {
-            return view('pages.landingpageprogram',$app);
+            return view('pages.program',$app);
         } else {
             return redirect('/'.$url);
         }

@@ -1,5 +1,7 @@
 @extends('templates.index')
 @include('templates.komponen.sweetalert')
+@include('templates.komponen.tinymce')
+@include('templates.komponen.tanggal')
 @section('body')
 <div class="loader-bg">
     <div class="loader-bar"></div>
@@ -69,10 +71,63 @@
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Deskripsi</label>
                                                     </div>
+                                                    <!-- <div class="col-md-12">
+                                                        <label>Deskripsi</label>
+                                                        <div class="form-group form-editor-tinymce">
+                                                        <textarea id="editor2" name="Description" class="form-control my-editor">{{ $program->Description }}</textarea>
+                                                        </div>
+                                                    </div> -->
                                                     <div class="form-group form-primary form-static-label">
                                                         <input type="text" name="Url" class="form-control" value="{{ $program->Url }}">
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Url</label>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-8">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input type="number" id="DonationTarget" name="DonationTarget" class="form-control" value="{{ $program->DonationTarget }}" autocomplete="off">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Target Donasi</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="checkbox-fade fade-in-primary">
+                                                                <label>
+                                                                    <input type="checkbox" id="unlimitedDonations">
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                    </span>
+                                                                    <span>Donasi Tidak Terbatas</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input name="StartDate" id="dropper-animation" class="form-control tanggal" value="{{ $program->StartDatedmY }}" type="text" autocomplete="off" />
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Program Dimulai</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input name="EndDate" id="dropper-animation" class="form-control tanggal" value="{{ $program->EndDatedmY }}" type="text" autocomplete="off" />
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Program Ditutup</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="checkbox-fade fade-in-primary">
+                                                                <label>
+                                                                    <input type="checkbox" id="unlimited">
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                    </span>
+                                                                    <span>Program tidak terbatas waktu</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-1">
@@ -91,6 +146,15 @@
                                                                 <span><code id="fo_warning"></code></span>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-group form-primary form-static-label">
+                                                        <select type="text" name="Active" class="form-control" value="{{ $program->Active }}">
+                                                            <option value=""  {{ $program->Active == '' ? 'selected' : '' }}></option>
+                                                            <option value="1" {{ $program->Active == 1 ? 'selected' : '' }}>Aktif</option>
+                                                            <option value="0" {{ $program->Active == 0 ? 'selected' : '' }}>Tidak Aktif</option>
+                                                        </select>
+                                                        <span class="form-bar"></span>
+                                                        <label class="float-label">Status Program</label>
                                                     </div>
                                                     <div class="card-footer">
                                                         <button id="simpan" type="button" class="btn btn-primary float-right" data-toggle="tooltip" data-placement="bottom" title data-original-title="Simpan"><i class="icofont icofont-save"></i> | Simpan</button>
@@ -143,7 +207,42 @@
                 }
             });
         });
+
+        $('.tanggal').datepicker({
+            autoclose: true,
+            format:"dd-mm-yyyy"
+        });
+
+        var valDonationTarget = document.getElementById('DonationTarget').value;
+        if(valDonationTarget == '') {
+            document.getElementById('unlimitedDonations').checked = true;
+            document.getElementsByName('DonationTarget')[0].value='';
+            document.getElementsByName('DonationTarget')[0].disabled = true;
+        }
+
+        var valStartDate = document.getElementsByName('StartDate')[0].value;
+        var valEndDate = document.getElementsByName('EndDate')[0].value;
+        if(valStartDate == "00-00-0000" || valEndDate == "00-00-0000") {
+            document.getElementById('unlimited').checked = true;
+            document.getElementsByName('StartDate')[0].value='';
+            document.getElementsByName('EndDate')[0].value='';
+            document.getElementsByName('StartDate')[0].disabled = true;
+            document.getElementsByName('EndDate')[0].disabled = true;
+        }
     });
+
+    document.getElementById('unlimited').onchange = function() {
+        var x = document.getElementsByName('StartDate');
+        x[0].disabled = this.checked;
+        var y = document.getElementsByName('EndDate');
+        y[0].disabled = this.checked;
+    };
+
+    document.getElementById('unlimitedDonations').onchange = function() {
+        var x = document.getElementsByName('DonationTarget');
+        x[0].disabled = this.checked;
+        document.getElementById("DonationTarget").value='';
+    };
 
     Filevalidation = () => {
 		const fo = document.getElementById('Banner'); 

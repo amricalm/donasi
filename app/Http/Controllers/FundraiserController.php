@@ -19,7 +19,8 @@ class FundraiserController extends Controller
     {
         $app['donate'] = DB::table('donate')
                         ->join('donor','donate.FundraiserCode','=','donor.FundraiserCode')
-                        ->selectRaw('Hits, count(donate.FundraiserCode) as CountFormInput')
+                        ->join('mprogram','donor.ProgramID','=','mprogram.ID')
+                        ->selectRaw('Hits, count(donate.FundraiserCode) as CountFormInput, mprogram.Url as ProgramUrl,mprogram.Name as Program')
                         ->whereRaw("donor.FundraiserCode = '".Session::get('UserFundraiserCode')."'")
                         ->first();
         if(!empty(Session::get('UserID'))) {

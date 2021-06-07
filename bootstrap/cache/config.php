@@ -132,12 +132,12 @@
         array (
           'include' => 
           array (
-            0 => 'C:\\xampp\\htdocs\\donasi',
+            0 => 'D:\\xampp-7.3.2\\htdocs\\donasi',
           ),
           'exclude' => 
           array (
-            0 => 'C:\\xampp\\htdocs\\donasi\\vendor',
-            1 => 'C:\\xampp\\htdocs\\donasi\\node_modules',
+            0 => 'D:\\xampp-7.3.2\\htdocs\\donasi\\vendor',
+            1 => 'D:\\xampp-7.3.2\\htdocs\\donasi\\node_modules',
           ),
           'followLinks' => false,
         ),
@@ -155,7 +155,7 @@
           0 => 'local',
         ),
       ),
-      'temporary_directory' => 'C:\\xampp\\htdocs\\donasi\\storage\\app/backup-temp',
+      'temporary_directory' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\app/backup-temp',
     ),
     'notifications' => 
     array (
@@ -280,7 +280,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\donasi\\storage\\framework/cache/data',
+        'path' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -341,7 +341,7 @@
         'engine' => NULL,
         'dump' => 
         array (
-          'dump_binary_path' => 'C:/xampp/mysql/bin',
+          'dump_binary_path' => 'D:/xampp7/mysql/bin',
           0 => 'use_single_transaction',
           'timeout' => 600,
         ),
@@ -451,12 +451,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\donasi\\storage\\app',
+        'root' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\donasi\\storage\\app/public',
+        'root' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -592,13 +592,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\donasi\\storage\\logs/laravel.log',
+        'path' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\donasi\\storage\\logs/laravel.log',
+        'path' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -662,7 +662,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\donasi\\resources\\views/vendor/mail',
+        0 => 'D:\\xampp-7.3.2\\htdocs\\donasi\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -750,7 +750,7 @@
     'lifetime' => '120',
     'expire_on_close' => true,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\donasi\\storage\\framework/sessions',
+    'files' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -770,9 +770,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\donasi\\resources\\views',
+      0 => 'D:\\xampp-7.3.2\\htdocs\\donasi\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\donasi\\storage\\framework\\views',
+    'compiled' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -780,10 +780,10 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'font_dir' => 'C:\\xampp\\htdocs\\donasi\\storage\\fonts/',
-      'font_cache' => 'C:\\xampp\\htdocs\\donasi\\storage\\fonts/',
-      'temp_dir' => 'C:\\xampp\\tmp',
-      'chroot' => 'C:\\xampp\\htdocs\\donasi',
+      'font_dir' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\fonts/',
+      'font_cache' => 'D:\\xampp-7.3.2\\htdocs\\donasi\\storage\\fonts/',
+      'temp_dir' => 'D:\\xampp-7.3.2\\tmp',
+      'chroot' => 'D:\\xampp-7.3.2\\htdocs\\donasi',
       'enable_font_subsetting' => false,
       'pdf_backend' => 'CPDF',
       'default_media_type' => 'screen',
@@ -867,7 +867,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\tmp',
+      'local_path' => 'D:\\xampp-7.3.2\\tmp',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
     ),

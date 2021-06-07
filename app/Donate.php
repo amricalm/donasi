@@ -11,21 +11,4 @@ class Donate extends Model
     protected $table = "donate";
     protected $fillable = ['ID','Invoice','DonorID','AccountNumber','Amount','Name','Phone','Email','Message','ReferrerID','CreatedDate','Unique','AmountUnique'];
     protected $dates = ['dob'];
-
-    public function countVerifiedDonations($url='')
-    {
-        if($url == '')
-        {
-            $qry = DB::table('donate')
-            ->selectRaw("count(ID) as Donate, sum(AmountUnique) as AmountUnique")
-            ->first();
-        } else {
-            $qry = DB::table('donate')
-                ->selectRaw("count(donate.ID) as Donate, sum(AmountUnique) as AmountUnique")
-                ->join('mprogram','mprogram.ID','=','ProgramID')
-                ->whereRaw('mprogram.Url ="'.$url.'"')
-                ->first();
-        }
-        return $qry;
-    }
 }

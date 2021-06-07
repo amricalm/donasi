@@ -18,13 +18,18 @@ class DonateController extends Controller
         $varglobal = new VarGlobal();
         $this->global = $varglobal;
     }
-    public function index($url)
+    public function index($url='')
     {
         $app['amount']  = DB::table('mamount')->get()->toArray();
-        $app['program'] = DB::table('mprogram')
-                        ->selectRaw('ID, Name')
-                        ->whereRaw('Url ="'.$url.'"')
-                        ->first();
+        if(!empty($url)) {
+            $app['program'] = DB::table('mprogram')
+                                ->selectRaw('ID, Name')
+                                ->whereRaw('Url ="'.$url.'"')
+                                ->first();
+        } else {
+            $app['program'] = '';
+        }
+
         return view('pages.donate.index',$app);
     }
     public function paymentMethod(Request $request)

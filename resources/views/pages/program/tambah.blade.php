@@ -1,6 +1,7 @@
 @extends('templates.index')
 @include('templates.komponen.sweetalert')
 @include('templates.komponen.tinymce')
+@include('templates.komponen.tanggal')
 @section('body')
 <div class="loader-bg">
     <div class="loader-bar"></div>
@@ -75,11 +76,67 @@
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Url</label>
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-8">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input type="number" id="DonationTarget" name="DonationTarget" class="form-control" autocomplete="off">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Target Donasi</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="checkbox-fade fade-in-primary">
+                                                                <label>
+                                                                    <input type="checkbox" id="unlimitedDonations">
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                    </span>
+                                                                    <span>Donasi Tidak Terbatas</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input name="StartDate" id="dropper-animation" class="form-control tanggal" type="text" autocomplete="off" />
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Program Dimulai</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group form-primary form-static-label">
+                                                                <input name="EndDate" id="dropper-animation" class="form-control tanggal" type="text" autocomplete="off" />
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Program Ditutup</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="checkbox-fade fade-in-primary">
+                                                                <label>
+                                                                    <input type="checkbox" id="unlimited">
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                                                                    </span>
+                                                                    <span>Program tidak terbatas waktu</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group form-primary form-static-label">
                                                         <input type="file" name="Banner" id="Banner" class="form-control" accept="image/gif, image/jpeg, image/png" onchange="Filevalidation()">
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Banner</label>
                                                         <span><code id="fo_warning"></code></span>
+                                                    </div>
+                                                    <div class="form-group form-primary form-static-label">
+                                                        <select name="Active" class="form-control" autocomplete="off">
+                                                            <option value=""></option>
+                                                            <option value="1">Aktif</option>
+                                                            <option value="0">Tidak Aktif</option>
+                                                        </select>
+                                                        <span class="form-bar"></span>
+                                                        <label class="float-label">Status Program</label>
                                                     </div>
                                                     <div class="card-footer">
                                                         <button id="simpan" type="button" class="btn btn-primary float-right" data-toggle="tooltip" data-placement="bottom" title data-original-title="Simpan"><i class="icofont icofont-save"></i> | Simpan</button>
@@ -131,7 +188,25 @@
             });
             return false;
         });
+
+        $('.tanggal').datepicker({
+            autoclose: true,
+            format:"dd-mm-yyyy"
+        });
     });
+
+    document.getElementById('unlimited').onchange = function() {
+        var x = document.getElementsByName('StartDate');
+        x[0].disabled = this.checked;
+        var y = document.getElementsByName('EndDate');
+        y[0].disabled = this.checked;
+    };
+
+    document.getElementById('unlimitedDonations').onchange = function() {
+        var x = document.getElementsByName('DonationTarget');
+        x[0].disabled = this.checked;
+        document.getElementById("DonationTarget").value='';
+    };
 
     Filevalidation = () => {
         const fo = document.getElementById('Banner'); 

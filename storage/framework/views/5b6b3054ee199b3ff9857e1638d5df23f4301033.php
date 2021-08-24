@@ -66,17 +66,12 @@
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Ringkasan Program</label>
                                                     </div>
-                                                    <div class="form-group form-primary form-static-label">
-                                                        <input type="text" name="Description" class="form-control" value="<?php echo e($program->Description); ?>">
-                                                        <span class="form-bar"></span>
-                                                        <label class="float-label">Deskripsi</label>
-                                                    </div>
-                                                    <!-- <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <label>Deskripsi</label>
                                                         <div class="form-group form-editor-tinymce">
                                                         <textarea id="editor2" name="Description" class="form-control my-editor"><?php echo e($program->Description); ?></textarea>
                                                         </div>
-                                                    </div> -->
+                                                    </div>
                                                     <div class="form-group form-primary form-static-label">
                                                         <input type="text" name="Url" class="form-control" value="<?php echo e($program->Url); ?>">
                                                         <span class="form-bar"></span>
@@ -182,8 +177,9 @@
 <script type="text/javascript">
     $( document ).ready(function() {
         $(document).delegate("#simpan","click",function(){
+            tinymce.triggerSave(true, true); //Simpan isi editor tinymce
             var formData = new FormData($("#form")[0]);
-
+            
             $.ajax({
                 url:"<?php echo e(url('/program/update')); ?>",
                 type: "POST",
@@ -197,7 +193,7 @@
                         window.location = '<?php echo e(url('program')); ?>';
                     }else
                     {
-                        respon('error','Update Gagal');
+                        respon('error','Update Gagal',errors.message);
                     }
                 },
                 error: function (hasil)
@@ -207,6 +203,8 @@
                 }
             });
         });
+        
+        tinymce.init(editor_config); //Menampilkan Editor tinymce
 
         $('.tanggal').datepicker({
             autoclose: true,
@@ -243,40 +241,6 @@
         x[0].disabled = this.checked;
         document.getElementById("DonationTarget").value='';
     };
-
-    Filevalidation = () => {
-		const fo = document.getElementById('Banner'); 
-
-        // Check if any file banner is selected
-        if (fo.files.length > 0) { 
-			for (const i = 0; i <= fo.files.length - 1; i++) { 
-				const fsize = fo.files.item(i).size; 
-				const file = Math.round((fsize / 1024));
-                var fileExtension = ['jpeg', 'jpg', 'png', 'gif'];
-                var allowed = $.inArray($(fo).val().split('.').pop().toLowerCase(), fileExtension);
-
-				// The size of the file. 
-				if (file >= 50000) {
-                    document.getElementById('Banner').value = "";
-                    document.getElementById('Banner').style.border = "solid red 1px";
-                    if (allowed == -1) {
-                        document.getElementById('fo_warning').innerHTML = 'File terlalu besar, silakan pilih file kurang dari 50MB dan Format file yang yang diperbolehkan : '+fileExtension.join(', '); 
-                    } else {
-                        document.getElementById('fo_warning').innerHTML = 'File terlalu besar, silakan pilih file kurang dari 50MB'; 
-                    }
-                } else {
-                    if (allowed == -1) {
-                        document.getElementById('Banner').value = "";
-                        document.getElementById('Banner').style.border = "solid red 1px";
-                        document.getElementById('fo_warning').innerHTML = "Format file yang yang diperbolehkan : "+fileExtension.join(', '); 
-                    } else {
-                        document.getElementById('Banner').style.border = "none";
-                        document.getElementById('fo_warning').style.visibility = "hidden";
-                    }
-				}
-			} 
-		}
-	}
 </script>
 <?php $__env->stopSection(); ?>                 
 

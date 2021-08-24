@@ -52,7 +52,7 @@ class Program extends Model
         return $qry;
     }
 
-    public function GetProgram($url) 
+    public function GetProgramByUrl($url) 
     {
         $qry = DB::table('mprogram')
                 ->selectRaw('mprogram.ID, mprogram.Name,Summary,Description,Url,Banner, donate.AmountUnique, donate.CountDonate , ROUND(AmountUnique / mprogram.DonationTarget * 100,0) AS Percent, DATEDIFF(EndDate, CURRENT_DATE()) + 1 AS DaysLeft')
@@ -65,6 +65,14 @@ class Program extends Model
                 })
                 ->whereRaw('Url ="'.$url.'"')
                 ->orderByDesc('mprogram.CreatedDate')
+                ->first();
+        return $qry;
+    }
+
+    public function GetProgramByID($ID) {
+        $qry = DB::table('mprogram')
+                ->selectRaw('ID, Name')
+                ->whereRaw('ID ='.$ID)
                 ->first();
         return $qry;
     }
@@ -85,6 +93,23 @@ class Program extends Model
                 ->whereRaw('ProgramID ='.$programID)
                 ->orderByDesc('CreatedDate')
                 ->get()->toArray();
+        return $qry;
+    }
+
+    public function GetProgressProgram($programID) {
+        $qry = DB::table('progressprogram')
+                ->selectRaw('ID, ProgramID, DATE_FORMAT(ProgressDate, "%d %b %Y") AS ProgressDate, Summary, Description')
+                ->where('ProgramID', $programID)
+                ->orderBy('ProgressDate')
+                ->get()->toArray();
+        return $qry;
+    }
+
+    public function GetProgressProgramByID($ProgressID) {
+        $qry = DB::table('progressprogram')
+                ->selectRaw('ID, ProgramID, DATE_FORMAT(ProgressDate, "%d-%m-%Y") AS ProgressDate, Summary, Description')
+                ->where('ID', $ProgressID)
+                ->first();
         return $qry;
     }
 }

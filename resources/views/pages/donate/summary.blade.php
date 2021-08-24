@@ -16,7 +16,7 @@
                             $format_rupiah = "Rp ".number_format($donate->AmountUnique,0,',','.');
                             echo $format_rupiah;
                         @endphp    
-                        &nbsp;<a href="javascript:;" class="copy-amount text-blue-400 text-sm btn-copy" data-clipboard-text="{{ $donate->Amount }}">SALIN</a>
+                        &nbsp;<a href="javascript:();" class="copy-amount text-blue-400 text-sm btn-copy" data-clipboard-text="{{ $donate->AmountUnique }}">SALIN</a>
                     </h2>
                 </div>
                 <div class="flex items-center bg-gray-700 shadow text-white text-xs sm:text-sm font-bold p-2" role="alert">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full my-6">
+                <div class="w-full">
                     <p class="mb-2 text-sm">Silahkan Transfer ke:</p>
                     <div class="border rounded border-custom bg-gray-custom p-2 mb-2 text-center flex">
                         <div class="flex-none">
@@ -50,7 +50,7 @@
                             <span class="text-sm font-semibold text-black block">{{ $donate->AccountNumber }}</span>
                         </div>
                         <div class="flex-grow">
-                            <a href="javascript:;" class="copy-amount text-blue-600 font-bold text-sm btn-copy" data-clipboard-text="{{ $donate->AccountNumber }}">SALIN</a>
+                            <a href="javascript:();" class="copy-amount text-blue-600 font-bold text-sm btn-copy" data-clipboard-text="{{ $donate->AccountNumber }}">SALIN</a>
                         </div>
                     </div>
                     <span class="text-xs text-black">an. <strong>{{ $donate->AccountName }}</strong></span> - <span class="text-xs text-black">{{ $donate->BranchOffice }}</span>

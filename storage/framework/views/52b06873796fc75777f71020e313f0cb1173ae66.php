@@ -27,8 +27,8 @@
                                 </nav>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="<?php echo e(url('/login')); ?>">Masuk</a>
-                                        <a data-scroll-nav='1' href="<?php echo e(url('/register')); ?>">Daftar</a>
+                                        <a href="<?php echo e(url('/login')); ?>">Masuk</a>
+                                        <a href="<?php echo e(url('/register')); ?>">Daftar</a>
                                     </div>
                                 </div>
                             </div>

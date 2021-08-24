@@ -53,7 +53,7 @@
                                                                 <tr>
                                                                     <th width="21px">No</th>
                                                                     <th>Nama Program</th>
-                                                                    <th>Url</th>
+                                                                    <!-- <th>Url</th> -->
                                                                     <th>Status</th>
                                                                     <th width="120px">Opsi</th>
                                                                 </tr>
@@ -63,10 +63,11 @@
                                                                 <tr>
                                                                     <td><?php echo e($loop->iteration); ?></td>                                                                    
                                                                     <td><?php echo e($row->Name); ?></td>
-                                                                    <td><?php echo e(url('')); ?>/<?php echo e($row->Url); ?></td>
+                                                                    <!-- <td><?php echo e(url('')); ?>/<?php echo e($row->Url); ?></td> -->
                                                                     <td><?php echo e($row->Active == 1 ? 'Aktif' : 'Tidak Aktif'); ?></td>
                                                                     <td>
-                                                                        <a href="program/edit/<?php echo e($row->ID); ?>" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a>
+                                                                        <a href="<?php echo e(url('program/progresslist').'/'.$row->ID); ?>" class="btn btn-mini waves-effect waves-light btn-info" data-toggle="tooltip" data-placement="bottom" title data-original-title="Progres"><i class="icofont icofont-growth"></i> | Progres</a>
+                                                                        <a href="<?php echo e(url('program/edit').'/'.$row->ID); ?>" class="btn btn-mini waves-effect waves-light btn-warning" data-toggle="tooltip" data-placement="bottom" title data-original-title="Edit"><i class="icofont icofont-ui-edit"></i> | Edit</a>
                                                                         <button type="button" class="btn btn-mini waves-effect waves-light btn-danger" onclick="return checkdelete(<?php echo e($row->ID); ?>)" data-toggle="tooltip" data-placement="bottom" title data-original-title="Hapus"><i class="icofont icofont-ui-delete"></i> | Hapus</button>
                                                                     </td>
                                                                 </tr>
@@ -98,7 +99,7 @@ function checkdelete(ID)
 {   
     Swal.fire({
             title: 'Yakin?',
-            text: "Anda yakin ingin menghapus group ini?",
+            text: "Anda yakin ingin menghapus data ini?",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

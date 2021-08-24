@@ -1,5 +1,6 @@
 
 @extends('templates.indexprogram')
+@include('templates.komponen.clipboard')
 @section('body')
 <body class="detail-program">
     <div class="backdrop hidden"></div>
@@ -95,7 +96,7 @@
         <div class="form-group">
             <input class="bg-gray-custom border-custom p-5 text-center mb-3 w-full text-black" value="{{ url('/') }}/{{ $donate->ProgramUrl }}?ref={{ Session::get('UserFundraiserCode') }}" placeholder="" id="InputCopy" readonly="">
         </div>
-        <button type="button" onclick="CopytoClipboard()" class="block rounded bg-pink-900 py-5 text-white font-bold text-center text-base no-underline w-full">Salin Kode</button>
+        <button type="button" class="block rounded bg-pink-900 py-5 text-white font-bold text-center text-base no-underline w-full btn-copy" data-clipboard-target="#InputCopy">Salin Kode</button>
         <hr class="mt-12 mb-12">
         <h3 class="text-sm mb-5">Statistik Kode Referal</h3>
         <ul class="bg-gray-custom text-left text-sm border-custom">
@@ -153,25 +154,8 @@
     </div>
 </main>
 <footer class="container lg:max-w-5xl px-2 pb-4 md:px-4 md:pb-10 mx-auto text-center text-xs pt-10 ">
-    <p class="mb-4">© 2020</P>
+    <p class="mb-4">© 2021</P>
 </footer>
 @endsection
 @section('footer')
-<script type="text/javascript">
-    function CopytoClipboard(){
-        var copyText = document.getElementById("InputCopy");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-        /* Alert the copied text */
-        swal({
-            icon: 'success',
-            title: 'Berhasil Disalin',
-            text: 'Mulai sebarkan di facebook, WhatsApp, dan Instagram.',
-            button: false,
-            timer: 3000
-        })
-    }
-</script>
 @endsection

@@ -65,11 +65,11 @@
                                                         <span class="form-bar"></span>
                                                         <label class="float-label">Ringkasan Program</label>
                                                     </div>
-                                                    <div class="form-group form-editor-tinymce">
-                                                        <input type="text" name="Description" class="form-control" autocomplete="off">
-                                                        <span class="form-bar"></span>
-                                                        <label class="float-label">Deskripsi</label>
-                                                        <!-- <textarea id="editor2" name="Body" class="form-control my-editor"></textarea> -->
+                                                    <div class="col-md-12">
+                                                        <label>Deskripsi</label>
+                                                        <div class="form-group form-editor-tinymce">
+                                                        <textarea id="editor2" name="Description" class="form-control my-editor"></textarea>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group form-primary form-static-label">
                                                         <input type="text" name="Url" class="form-control" autocomplete="off">
@@ -164,7 +164,7 @@
 <script type="text/javascript">
     $( document ).ready(function() {
         $(document).delegate("#simpan","click",function(){
-            tinymce.triggerSave(true, true);
+            tinymce.triggerSave(true, true); //Simpan isi editor tinymce
             var formData = new FormData($("#form")[0]);
             
             $.ajax({
@@ -189,6 +189,8 @@
             return false;
         });
 
+        tinymce.init(editor_config); //Menampilkan editor tinymce
+
         $('.tanggal').datepicker({
             autoclose: true,
             format:"dd-mm-yyyy"
@@ -207,39 +209,6 @@
         x[0].disabled = this.checked;
         document.getElementById("DonationTarget").value='';
     };
-
-    Filevalidation = () => {
-        const fo = document.getElementById('Banner'); 
-
-        // Check if any file banner is selected
-        if (fo.files.length > 0) { 
-            for (const i = 0; i <= fo.files.length - 1; i++) { 
-                const fsize = fo.files.item(i).size; 
-                const file = Math.round((fsize / 1024));
-                var fileExtension = ['jpeg', 'jpg', 'png', 'gif'];
-                var allowed = $.inArray($(fo).val().split('.').pop().toLowerCase(), fileExtension);
-                // The size of the file. 
-                if (file >= 50000) {
-                    document.getElementById('Banner').value = "";
-                    document.getElementById('Banner').style.border = "solid red 1px";
-                    if (allowed == -1) {
-                        document.getElementById('fo_warning').innerHTML = 'File terlalu besar, silakan pilih file kurang dari 50MB dan Format file yang yang diperbolehkan : '+fileExtension.join(', '); 
-                    } else {
-                        document.getElementById('fo_warning').innerHTML = 'File terlalu besar, silakan pilih file kurang dari 50MB'; 
-                    }
-                } else {
-                    if (allowed == -1) {
-                        document.getElementById('Banner').value = "";
-                        document.getElementById('Banner').style.border = "solid red 1px";
-                        document.getElementById('fo_warning').innerHTML = "Format file yang yang diperbolehkan : "+fileExtension.join(', '); 
-                    } else {
-                        document.getElementById('Banner').style.border = "none";
-                        document.getElementById('fo_warning').style.visibility = "hidden";
-                    }
-                }
-            } 
-        }
-    }
 </script>
 <?php $__env->stopSection(); ?>                 
 

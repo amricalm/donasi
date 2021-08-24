@@ -1,9 +1,11 @@
 @extends('templates.indexprogram')
+@include('templates.komponen.clipboard')
 @section('body')
 <header id="header" class="bg-orange-900">
     <nav class="flex items-center px-4 md:px-16 py-4 text-center">
-    <a href="{{ url('/') }}" class="mx-auto">
-    <img class="h-6" src="{{ url('img/logo.png') }}"></a></nav>
+        <a href="{{ url('/') }}" class="mx-auto">
+            <img class="h-6" src="{{ url('img/logo.png') }}"></a>
+    </nav>
 </header>
 <main class="main-content">
     <div class="flex items-center py-4">
@@ -24,14 +26,14 @@
                     <div class="rounded-none p-4 border-t border-b border-l-0 border-r-0 sm:border sm:border-r sm:border-l bg-white">
                         <div id="amount" class="card-body">
                             <h3 class="text-gray-800 font-bold mb-4">Nominal Donasi</h3>
-                            @foreach($amount as $row)
-                            <a href="javascript:getPayment({{$row->ID}});" data-nominal="{{$row->Amount}}" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
+                            @foreach($amount as $key => $row)
+                            <a href="javascript:getPayment({{$key}});" data-nominal="{{$row->Amount}}" class="flex items-center justify-between border-custom p-2 sm:p-3 mb-4 fix-nominal hover:bg-blue-100 rounded">
                                 <div class="">
                                     <span class="text-xs block">{{$row->Information}}</span>
                                     <span class="text-black font-semibold">
                                         @php
-                                            $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
-                                            echo $format_rupiah;
+                                        $format_rupiah = "Rp " . number_format($row->Amount,0,',','.');
+                                        echo $format_rupiah;
                                         @endphp
                                     </span>
                                 </div>
@@ -59,12 +61,11 @@
         </div>
     </div>
 </main>
-<div id="popup" class="popper bg-green-200 fixed text-green-700 rounded border border-green-400 py-2 px-4" x-placement="top" style="position: absolute; display: none; will-change: transform; top: 0px; left: 0px;"><span>Berhasil disalin!</span></div>
 @endsection
 @section('footer')
 <script>
     $(document).ready(function() {
-        $(document).delegate("#save","click",function(){
+        $(document).delegate("#save", "click", function() {
             var formData = new FormData($("#form-conf")[0]);
             $.ajaxSetup({
                 headers: {
@@ -72,7 +73,7 @@
                 }
             });
             $.ajax({
-                url:"{{ url('/donate/save') }}",
+                url: "{{ url('/donate/save') }}",
                 type: "POST",
                 data: formData,
                 processData: false,
@@ -80,19 +81,19 @@
                 success: function(data) {
                     $('#blokDonasi').html(data);
                 },
-                error: function(req, err){
+                error: function(req, err) {
                     console.log('my message' + err);
                 }
             });
         });
     });
 
-    function getPayment(q){
-        if(q !== undefined) {
+    function getPayment(q) {
+        if (q !== undefined) {
             var getClassFix = document.getElementsByClassName('fix-nominal');
-            var amount      = getClassFix[q-1].getAttribute('data-nominal');
+            var amount = getClassFix[q].getAttribute('data-nominal');
         } else {
-            var amount      = document.getElementById('amount-input').value;
+            var amount = document.getElementById('amount-input').value;
         }
         var program = document.getElementById('program').value;
 
@@ -104,75 +105,87 @@
         // pisahkan parameter URL ke associative array
         var params = params.split("&");
         var queryStringList = {};
-        for(var i=0;i<params.length;i++)
-        {   var tmp = params[i].split("=");
+        for (var i = 0; i < params.length; i++) {
+            var tmp = params[i].split("=");
             queryStringList[tmp[0]] = unescape(tmp[1]);
         }
         // tampilkan isi associative array
-        for(var i in queryStringList)
-        {   
+        for (var i in queryStringList) {
             var ref = queryStringList[i].replace(/[+]/g, " ");
         }
-        
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         $.ajax({
-            url:"{{url('donate/payment-method')}}",
-            data: {'program':program,'amount':amount,'ref':ref},
+            url: "{{url('donate/payment-method')}}",
+            data: {
+                'program': program,
+                'amount': amount,
+                'ref': ref
+            },
             type: 'POST',
 
-            success: function(data){
+            success: function(data) {
                 $('#blokDonasi').html(data);
-            }, 
-            error: function(req, err){
+            },
+            error: function(req, err) {
                 console.log('my message' + err);
             }
         });
     }
-    function Confirmation(payID){
-        var program   = document.getElementById("program").value;
-        var amount    = document.getElementById("amount").value;
-        var ref       = document.getElementById("ref").value;
-        
+
+    function Confirmation(payID) {
+        var program = document.getElementById("program").value;
+        var amount = document.getElementById("amount").value;
+        var ref = document.getElementById("ref").value;
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         $.ajax({
-            url:"{{url('donate/confirmation')}}",
-            data: {'program':program,'payID':payID,'amount':amount,'ref':ref},
+            url: "{{url('donate/confirmation')}}",
+            data: {
+                'program': program,
+                'payID': payID,
+                'amount': amount,
+                'ref': ref
+            },
             type: 'POST',
 
-            success: function(data){
+            success: function(data) {
                 $('#blokDonasi').html(data);
-            }, error: function(req, err){ console.log('my message' + err); }
+            },
+            error: function(req, err) {
+                console.log('my message' + err);
+            }
         });
     }
 
     var rupiah = document.getElementById('amount-input');
-    rupiah.addEventListener('keyup', function(e){
+    rupiah.addEventListener('keyup', function(e) {
         rupiah.value = formatRupiah(this.value);
     });
 
     var rupiahLast = document.getElementById('amount-input-last');
-    rupiahLast.addEventListener('keyup', function(e){
+    rupiahLast.addEventListener('keyup', function(e) {
         rupiahLast.value = formatRupiah(this.value);
     });
 
     /* Fungsi formatRupiah */
-    function formatRupiah(angka){
+    function formatRupiah(angka) {
         var number_string = angka.replace(/[^,\d]/g, '').toString(),
-        split   		= number_string.split(','),
-        sisa     		= split[0].length % 3,
-        rupiah     		= split[0].substr(0, sisa),
-        ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
         // tambahkan titik jika yang di input sudah menjadi angka ribuan
-        if(ribuan){
+        if (ribuan) {
             separator = sisa ? '.' : '';
             rupiah += separator + ribuan.join('.');
         }
@@ -181,15 +194,7 @@
         return rupiah;
     }
 
-    var btnCopy = new ClipboardJS('.btn-copy');
-    var popup = $('#popup');
-    var popper = new Popper(btnCopy, popup,{placement: 'top',});
-    popup.hide();
-    btnCopy.on('success', function(e){
-        popup.show();
-        setTimeout(function(){popup.hide(); }, 2000);
-        e.clearSelection();
-    });
+
     /* function getStatus(){
         $.ajax({ url: "https://www.amalsholeh.com/status/GOMd536ZXoD7",})
         .done(function(data){if (data.status == 'paid'){// location.reload();

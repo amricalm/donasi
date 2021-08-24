@@ -6,7 +6,7 @@
         
         <script type="text/javascript">
             var editor_config = {
-                path_absolute : "/donasi/public/",
+                path_absolute : "/",
                 height:500,
                 // width:650,
                 selector: "textarea.my-editor",

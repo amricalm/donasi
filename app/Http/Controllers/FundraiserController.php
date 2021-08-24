@@ -18,15 +18,15 @@ class FundraiserController extends Controller
     public function index()
     {
         $app['donate'] = DB::table('donate')
-                        ->join('donor','donate.FundraiserCode','=','donor.FundraiserCode')
-                        ->join('mprogram','donor.ProgramID','=','mprogram.ID')
-                        ->selectRaw('Hits, count(donate.FundraiserCode) as CountFormInput, mprogram.Url as ProgramUrl,mprogram.Name as Program')
-                        ->whereRaw("donor.FundraiserCode = '".Session::get('UserFundraiserCode')."'")
-                        ->first();
-        if(!empty(Session::get('UserID'))) {
-            return view('pages.fundraiser.fundraiser',$app);
+            ->rightJoin('donor', 'donate.FundraiserCode', '=', 'donor.FundraiserCode')
+            ->join('mprogram', 'donor.ProgramID', '=', 'mprogram.ID')
+            ->selectRaw('Hits, count(donate.FundraiserCode) as CountFormInput, mprogram.Url as ProgramUrl,mprogram.Name as Program')
+            ->whereRaw("donor.FundraiserCode = '" . Session::get('UserFundraiserCode') . "'")
+            ->first();
+        if (!empty(Session::get('UserID'))) {
+            return view('pages.fundraiser.fundraiser', $app);
         } else {
-            return redirect()->route('login',$app);
+            return redirect()->route('login');
         }
     }
 }

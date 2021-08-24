@@ -49,8 +49,10 @@ class LandingPageController extends Controller
         $checkProgram           = $this->program->checkProgram($url);
         $app['Donor']           = $this->program->GetDonor($checkProgram->ID);
         $app['Fundraiser']      = $this->program->GetFundraiser($checkProgram->ID);
-        $app['Program']         = $this->program->GetProgram($url);
+        $app['Program']         = $this->program->GetProgramByUrl($url);
         $app['ProgramCounter']  = $this->program->ProgramCounter();
+        $app['Progress']        = $this->program->GetProgressProgram($checkProgram->ID);
+
                         
         if(session('ProgramID') != $app['Program']->ID) {
             session()->flush();

@@ -27,8 +27,8 @@
                                 </nav>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="{{ url('/login') }}">Masuk</a>
-                                        <a data-scroll-nav='1' href="{{ url('/register') }}">Daftar</a>
+                                        <a href="{{ url('/login') }}">Masuk</a>
+                                        <a href="{{ url('/register') }}">Daftar</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/adn.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('files/bower_components/sweetalert2/sweetalert2.css')); ?>">
 </head>
+
 <body>
     <div id="app" themebg-pattern="theme5">
         <header id="header" class="bg-header">
@@ -36,12 +38,13 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <form class="md-float-material form-material" method="POST" id="frm" action="<?php echo e(url('login/validasi')); ?>" role="form" onsubmit="return submited()">
-                            <?php echo csrf_field(); ?>
+                                <?php echo csrf_field(); ?>
                                 <div class="auth-box card">
                                     <div class="card-block">
                                         <div class="text-center pb-4 pt-2">
                                             <h4>LOGIN</h4>
                                         </div>
+                                        <input type="hidden" name="urlProgram" value="<?php echo e(URL::previous()); ?>">
                                         <div class="form-group form-primary <?php echo e($errors->has('email') ? ' has-error' : ''); ?> form-static-label">
                                             <input id="email" type="text" name="username" class="form-control" autocomplete="off" required>
                                             <?php if($errors->has('email')): ?>
@@ -92,19 +95,22 @@
     <script type="text/javascript" src="<?php echo e(asset('files/assets/js/common-pages.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('files/bower_components/sweetalert2/sweetalert2.all.js')); ?>"></script>
     <script type="text/javascript">
-        var msg = '<?php echo e(Session::get('alert')); ?>';
-        var exist = '<?php echo e(Session::has('alert')); ?>';
-        if(exist){
+        var msg = '<?php echo e(Session::get('
+        alert ')); ?>';
+        var exist = '<?php echo e(Session::has('
+        alert ')); ?>';
+        if (exist) {
             Swal.fire({
                 type: 'warning',
                 title: 'Oops...',
                 text: msg
             })
         }
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('#email').focus();
         });
-        function submited(){
+
+        function submited() {
             $('#btnSubmit').removeClass('btn-primary');
             $('#btnSubmit').addClass('btn-warning');
             $('#btnSubmit').html("<i class='fa fa-spinner fa-spin'></i> Sedang proses ...");
@@ -112,4 +118,5 @@
         }
     </script>
 </body>
+
 </html>

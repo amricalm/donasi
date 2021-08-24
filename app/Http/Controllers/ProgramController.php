@@ -13,10 +13,13 @@ use File;
 
 class ProgramController extends Controller
 {
-    var $global;
     public function __construct()
     {
-        
+        $varglobal      = new VarGlobal();
+        $program   = new Program();
+
+        $this->global   = $varglobal;
+        $this->program = $program;
     }
     public function index()
     {
@@ -86,6 +89,7 @@ class ProgramController extends Controller
 
         return view('pages.program.edit',$app);
     }
+
     public function update(Request $request)
     {   
         if (!empty($request->hasFile('Banner'))) {
@@ -117,12 +121,95 @@ class ProgramController extends Controller
         $arr = array('status' => 'true', 'msg' => 'Berhasil');
         return Response()->json($arr);
     }
+
     public function hapus($id)
     {
         $program       = Program::where('ID',$id)->first();
         File::delete('photos/program/'.$program->Banner);
 
         DB::table('mprogram')->where('ID', $id)->delete();
+        
+        $arr = array('status' => 'true', 'msg' => 'Berhasil');
+        return Response()->json($arr);
+    }
+
+    public function progresslist($id)
+    {
+        if(session('UserID')=='')
+        {
+            return redirect('admin-login')->with('alert','Silahkan login kembali!');
+        }
+        
+        $app['judul']       = 'Progres Program';
+        $app['aktif']       = 'Program';
+        $app['ProgramByID'] = $this->program->GetProgramByID($id);
+        $app['Progress']    = $this->program->GetProgressProgram($id);
+
+        return view('pages.program.progresslist',$app);
+    }
+
+    public function addprogress($id)
+    {
+        if(session('UserID')=='')
+        {
+            return redirect('admin-login')->with('alert','Silahkan login kembali!');
+        }
+        $app['judul']       = 'Tambah Perkembangan Program';
+        $app['aktif']       = 'Program';
+        $app['ProgramByID'] = $this->program->GetProgramByID($id);
+
+        return view('pages.program.addprogress',$app);
+    }
+
+    public function saveprogress(Request $request)
+    {
+        $validatedData1 = $request->validate([
+            'ProgressDate' => 'required',
+            'Summary' => 'required'
+        ]);
+
+        DB::table('progressprogram')->insert([
+            'ProgramID'    => $request->ProgramID,
+            'ProgressDate' => $request->ProgressDate != '' ? Carbon::createFromFormat('d-m-Y', $request->ProgressDate)->format('Y-m-d') : '',
+            'Summary'      => $request->Summary,
+            'Description'  => $request->Description,
+            'CreatedBy'    => Session::get("UserID"),
+            'CreatedDate'  => Carbon::now()->toDateTimeString(),
+            'UpdatedBy'    => Session::get("UserID"),
+            'UpdatedDate'  => Carbon::now()->toDateTimeString()
+        ]);
+
+        $arr = array('status' => 'true', 'msg' => 'Berhasil');
+        return Response()->json($arr);//redirect('surat/edit/'.$mail['ID']);
+    }
+
+    public function editprogress($id)
+    {
+        $app['judul']       = 'Edit Perkembangan Program';
+        $app['aktif']       = 'Program';
+        $app['Progress']    = $this->program->GetProgressProgramByID($id);
+        $app['ProgramByID'] = $this->program->GetProgramByID($app['Progress']->ProgramID);
+        
+        return view('pages.program.editprogress',$app);
+    }
+
+    public function updateprogress(Request $request)
+    {   
+        DB::table('progressprogram')->where('ID',$request->ID)->update([
+            'ProgressDate'  => $request->ProgressDate != '' ? Carbon::createFromFormat('d-m-Y', $request->ProgressDate)->format('Y-m-d') : '',
+            'Summary'       => $request->Summary,
+            'Description'   => $request->Description,
+            'UpdatedBy'     => Session::get("UserID"),
+            'UpdatedDate'   => Carbon::now(),
+        ]);
+
+        $arr = array('status' => 'true', 'msg' => 'Berhasil');
+        return Response()->json($arr);
+    }
+
+    public function deleteprogress($id)
+    {
+        DB::table('progressprogram')->where('ID', $id)->delete();
         
         $arr = array('status' => 'true', 'msg' => 'Berhasil');
         return Response()->json($arr);

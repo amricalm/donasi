@@ -22,9 +22,11 @@
     <link href="{{ asset('vendor/finwallapp/vendor/swiper/css/swiper.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('vendor/finwallapp/css/style.css')}}" rel="stylesheet" id="style">
+    <link rel="stylesheet" type="text/css" href="{{ asset('files/bower_components/sweetalert2/sweetalert2.css') }}">
 </head>
 
 <body class="body-scroll d-flex flex-column h-100 menu-overlay">
+    @if (!Session::has('alert'))
     <!-- screen loader -->
     <div class="container-fluid h-100 loader-display">
         <div class="row h-100">
@@ -45,7 +47,8 @@
             </div>
         </div>
     </div>
-    <form class="md-float-material form-material" method="POST" id="frm" action="{{ url('login/validasi') }}" role="form" onsubmit="return submited()">
+    @endif
+    <form class="md-float-material form-material" method="POST" id="frm" action="{{ url('login/validasi') }}" role="form" onsubmit="return submited()" autocomplete="off">
         @csrf
         <!-- Begin page content -->
         <main class="flex-shrink-0 main has-footer">
@@ -75,12 +78,20 @@
                                 <h2 class="font-weight-normal mb-5">Si Kesjaor</h2>
                                 <div class="form-group">
                                     <label class="text-white active">Username</label>
-                                    <input type="text" class="form-control" name="username" id="email">
+                                    <input type="text" class="form-control" name="username" id="email" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-white position-relative">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password">
+                                    <input type="password" class="form-control" name="password" id="password" autocomplete="off" required>
                                 </div>
+                                @if (Session::has('alert'))
+                                <div class="alert alert-danger" role="alert">
+                                    {{ Session::get('alert') }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -99,6 +110,7 @@
     </form>
     <!-- Required jquery and libraries -->
     <script src="{{ asset('vendor/finwallapp/js/jquery-3.3.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('files/bower_components/jquery-ui/js/jquery-ui.min.js')}}"></script>
     <script src="{{ asset('vendor/finwallapp/js/popper.min.js')}}"></script>
     <script src="{{ asset('vendor/finwallapp/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- cookie js -->
@@ -112,6 +124,10 @@
     <script src="{{ asset('vendor/finwallapp/js/app.js')}}"></script>
     <script type="text/javascript" src="{{ asset('files/bower_components/sweetalert2/sweetalert2.all.js')}}"></script>
     <script type="text/javascript">
+        $(document).ready(function() {
+            $('#email').focus();
+        });
+
         function submited() {
             $('#btnSubmit').removeClass('btn-primary');
             $('#btnSubmit').addClass('btn-warning');

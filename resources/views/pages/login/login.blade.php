@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Qoryah Qur'an - Login</title>
+    <title>Qoryah Qur'an - Admin Login</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -42,17 +42,16 @@
                                 <div class="auth-box card">
                                     <div class="card-block">
                                         <div class="text-center pb-4 pt-2">
-                                            <h4>LOGIN</h4>
+                                            ADMIN LOGIN
                                         </div>
-                                        <input type="hidden" name="urlProgram" value="{{ URL::previous() }}">
-                                        <div class="form-group form-primary {{ $errors->has('email') ? ' has-error' : '' }} form-static-label">
+                                        <div class="form-group form-primary{{ $errors->has('email') ? ' has-error' : '' }} form-static-label">
                                             <input id="email" type="text" name="username" class="form-control" autocomplete="off" required>
                                             @if ($errors->has('email'))
                                             <span class="form-bar">
                                                 <strong>{{ $errors->first('email') }}</strong>
                                             </span>
                                             @endif
-                                            <label class="float-label">No Handphone atau Alamat Email</label>
+                                            <label class="float-label">Username</label>
                                         </div>
                                         <div class="form-group form-primary{{ $errors->has('password') ? ' has-error' : '' }} form-static-label">
                                             <input id="password" type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required="">
@@ -66,13 +65,11 @@
                                         <div class="form-group">
                                             <div class="row m-t-30">
                                                 <div class="col-md-12">
-                                                    <button type="submit" id="btnSubmit" class="btn btn-primary btn-md btn-block text-center m-b-20" data-loading-text="Sedang Proses...">Masuk</button>
-                                                    <p class="text-center">Belum punya akun? <a class="text-primary" href="{{ url('/register') }}">Daftar segera.</a></p>
+                                                    <button type="submit" id="btnSubmit" class="btn btn-primary btn-md btn-block text-center m-b-20" data-loading-text="Sedang Proses...">Login</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </form>
                         </div>
                     </div>

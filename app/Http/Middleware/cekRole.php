@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Middleware;
+
 use Closure;
 use Illuminate\Support\Facades\DB;
+
 class cekRole
 {
     /**
@@ -14,48 +17,35 @@ class cekRole
     public function handle($request, Closure $next)
     {
         $cek = 0;
-        if(!empty(session('UserGroupID')))
-        {
+        if (!empty(session('UserGroupID'))) {
             $roles = DB::table('role')
-                ->where('GroupID',session('UserGroupID'))
-                ->join('sysmodule','ModuleID','=','sysmodule.ID')
+                ->where('GroupID', session('UserGroupID'))
+                ->join('sysmodule', 'ModuleID', '=', 'sysmodule.ID')
                 ->select('*')
                 ->get();
-            foreach($roles as $role)
-            {
-                if($role->Url == $request->path())
-                {
+            foreach ($roles as $role) {
+                if ($role->Url == $request->path()) {
                     $cek = 1;
-                }
-                else
-                {
-                    $path = explode('/',$request->path());
-                    if(count($path)>=3)
-                    {
-                        $cekpath = $path[0].'/'.$path[1];                        
-                        if($role->Url == $cekpath)
-                        {
+                } else {
+                    $path = explode('/', $request->path());
+                    if (count($path) >= 3) {
+                        $cekpath = $path[0] . '/' . $path[1];
+                        if ($role->Url == $cekpath) {
                             $cek = 1;
                         }
                     }
                 }
             }
+        } else {
+            return redirect('login')->with('Login', 'Silahkan login kembali!');
         }
-        else
-        {
-            return redirect('admin-login')->with('Login','Silahkan login kembali!');
-        }
-        if(session('UserGroupID')=='9')
-        {
+        if (session('UserGroupID') == '9') {
             $cek = 1;
         }
-        if($cek==1)
-        {
+        if ($cek == 1) {
             return $next($request);
-        }
-        else
-        {
-            return redirect('home')->with('alert','Tidak boleh akses halaman tsb! Cek ke Admin!');
+        } else {
+            return redirect('home')->with('alert', 'Tidak boleh akses halaman tsb! Cek ke Admin!');
         }
     }
 }

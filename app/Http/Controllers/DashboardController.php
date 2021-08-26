@@ -13,23 +13,16 @@ class DashboardController extends Controller
     var $global;
     public function __construct()
     {
-        
     }
     public function index()
     {
-        if(session('UserID')=='')
-        {
-            return redirect('admin-login')->with('alert','Silahkan login kembali!');
+        if (session('UserID') == '') {
+            return redirect('login')->with('alert', 'Silahkan login kembali!');
         }
-        
-        $app['judul'] = 'Dashboard';
-        $app['aktif'] = 'Dashboard';
 
-        $app['donate']  = DB::table('donate')
-                            ->selectRaw("count(Invoice) as CountInv")
-                            ->whereRaw('DonorID='.Session::get('UserID'))
-                            ->first();
-        return view('pages.dashboard.dashboard',$app);
+        $app['judul'] = 'Dashboardxx';
+        $app['aktif'] = 'Dashboard';
+        return view('pages.dashboard.dashboard', $app);
     }
 
     public function show(Request $request, $id)

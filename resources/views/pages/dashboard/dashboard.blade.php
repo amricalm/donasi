@@ -1,7 +1,6 @@
 @extends('templates.index')
 @include('templates.komponen.sweetalert')
 @include('templates.komponen.chart')
-@include('templates.komponen.widget')
 @section('body')
 <div class="loader-bg">
     <div class="loader-bar"></div>
@@ -47,26 +46,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="form-group">
-                                                                    <div class="row">
-                                                                        <div class="col-md-6 col-xl-6">
-                                                                            <div class="card bg-c-blue order-card">
-                                                                                <div class="card-block">
-                                                                                    <h2>{{ $donate->CountInv }}</h2>
-                                                                                    <h6>Donasi</h6>
-                                                                                    <i class="card-icon feather icon-heart"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6 col-xl-6">
-                                                                            <div class="card bg-c-green order-card">
-                                                                                <div class="card-block">
-                                                                                    <h2>Rp. 0</h2>
-                                                                                    <h6>Donasi disalurkan</h6>
-                                                                                    <i class="card-icon feather icon-users"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>

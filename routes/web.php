@@ -54,3 +54,14 @@ Route::group(['middleware' => 'cekUserSession'], function () {
     //===================== ROUTE END GROUP ===========================//
 });
 //===================== ROUTE END CEK USER SESSION ============================================================================//
+
+Route::get('task', 'IndividualTaskController@index')->name('individualtask.index');
+
+Route::get('task/create-step-one', 'IndividualTaskController@createStepOne')->name('individualtask.create.step.one');
+Route::post('task/create-step-one', 'IndividualTaskController@postCreateStepOne')->name('individualtask.create.step.one.post');
+
+Route::get('task/create-step-two', 'IndividualTaskController@createStepTwo')->name('individualtask.create.step.two');
+Route::post('task/create-step-two', 'IndividualTaskController@postCreateStepTwo')->name('individualtask.create.step.two.post');
+
+Route::get('task/create-step-three', 'IndividualTaskController@createStepThree')->name('individualtask.create.step.three');
+Route::post('task/create-step-three', 'IndividualTaskController@postCreateStepThree')->name('individualtask.create.step.three.post');

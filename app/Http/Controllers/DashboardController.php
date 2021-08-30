@@ -20,7 +20,7 @@ class DashboardController extends Controller
             return redirect('login')->with('alert', 'Silahkan login kembali!');
         }
 
-        $app['judul'] = 'Dashboardxx';
+        $app['judul'] = 'Dashboard';
         $app['aktif'] = 'Dashboard';
         return view('pages.dashboard.dashboard', $app);
     }

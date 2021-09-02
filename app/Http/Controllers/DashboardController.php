@@ -25,6 +25,17 @@ class DashboardController extends Controller
         return view('pages.dashboard.dashboard', $app);
     }
 
+    public function mobile()
+    {
+        if (session('UserID') == '') {
+            return redirect('login')->with('alert', 'Silahkan login kembali!');
+        }
+
+        $app['judul'] = 'Dashboard';
+        $app['aktif'] = 'Dashboard';
+        return view('pages.dashboard.dashboardmobile', $app);
+    }
+
     public function show(Request $request, $id)
     {
         $value = $request->session()->get('key');

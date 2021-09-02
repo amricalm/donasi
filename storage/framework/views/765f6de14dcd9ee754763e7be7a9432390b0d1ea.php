@@ -5,27 +5,9 @@
 	<?php echo $__env->make('layout/header', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 </head>
 
-<body <?php echo $__env->yieldContent('theme-pattern'); ?> class="body-scroll d-flex flex-column h-100 menu-overlay" data-page="homepage">
+<body <?php echo $__env->yieldContent('theme-pattern'); ?> class="body-scroll d-flex flex-column h-100 menu-overlay">
 	<!-- screen loader -->
-	<div class="container-fluid h-100 loader-display">
-		<div class="row h-100">
-			<div class="align-self-center col">
-				<div class="logo-loading">
-					<div class="icon icon-100 mb-4 rounded-circle">
-						<img src="img/favicon144.png" alt="" class="w-100">
-					</div>
-					<h4 class="text-default">Si Kesjaor</h4>
-					<p class="text-secondary">Mobile</p>
-					<div class="loader-ellipsis">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php echo $__env->make('layout/screenloader', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 	<!-- Begin page content -->
 	<main class="flex-shrink-0 main">
 		<!-- Fixed navbar -->
@@ -54,7 +36,7 @@
 		<!-- page content start -->
 
 		<div class="main-container">
-			<div class="container mb-4 text-center">
+			<div class="container">
 				<?php echo $__env->yieldContent('content'); ?>
 			</div>
 		</div>

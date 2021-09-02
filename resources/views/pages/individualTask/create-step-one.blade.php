@@ -1,7 +1,7 @@
-@extends('layout.mobile')
+@extends('templates.mobile.pageslayout')
 
 @section('content')
-<div class="card mb-4">
+<div class="card">
     <div class="card-header">
         <h6 class="mb-0">{{ $judul }}</h6>
     </div>
@@ -19,7 +19,7 @@
             @endif
             <div class="form-group mb-4">
                 <label>Nama :</label>
-                <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" value="{{ $data->NamaLengkap ?? '' }}" autocomplete="off">
+                <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" value="{{ session('UserEmployeeName') ?? '' }}" autocomplete="off" readonly>
             </div>
             <div class="form-group mb-4">
                 <label>Tanggal, bulan, tahun lahir :</label>

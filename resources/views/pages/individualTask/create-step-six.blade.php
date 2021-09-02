@@ -1,7 +1,7 @@
-@extends('layout.mobile')
+@extends('templates.mobile.pageslayout')
 
 @section('content')
-<div class="card mb-4">
+<div class="card">
     <div class="card-header">
         <h6 class="mb-0">{{ $judul }}</h6>
     </div>

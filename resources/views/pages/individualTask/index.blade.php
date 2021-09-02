@@ -1,4 +1,4 @@
-@extends('layout.mobile')
+@extends('templates.mobile.pageslayout')
 
 @section('content')
 <div class="container">

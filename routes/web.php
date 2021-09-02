@@ -28,8 +28,24 @@ Route::group(['middleware' => 'cekUserSession'], function () {
     //==== ROUTE END JANGAN DIHAPUS - ROUTE UNTUK TINYMCE - FILEMANAGER =====//
 
     //===================== ROUTE DASHBOARD ===========================//
-    Route::get('home', 'DashboardController@index')->name("home");
+    Route::get('home', 'DashboardController@mobile')->name("home");
     //===================== ROUTE END DASHBOARD ===========================//
+
+    //===================== ROUTE TASK ===========================//
+    Route::get('task', 'IndividualTaskController@index')->name('individualtask.index');
+    Route::get('task/create-step-one', 'IndividualTaskController@createStepOne')->name('individualtask.create.step.one');
+    Route::post('task/create-step-one', 'IndividualTaskController@postCreateStepOne')->name('individualtask.create.step.one.post');
+    Route::get('task/create-step-two', 'IndividualTaskController@createStepTwo')->name('individualtask.create.step.two');
+    Route::post('task/create-step-two', 'IndividualTaskController@postCreateStepTwo')->name('individualtask.create.step.two.post');
+    Route::get('task/create-step-three', 'IndividualTaskController@createStepThree')->name('individualtask.create.step.three');
+    Route::post('task/create-step-three', 'IndividualTaskController@postCreateStepThree')->name('individualtask.create.step.three.post');
+    Route::get('task/create-step-four', 'IndividualTaskController@createStepFour')->name('individualtask.create.step.four');
+    Route::post('task/create-step-four', 'IndividualTaskController@postCreateStepFour')->name('individualtask.create.step.four.post');
+    Route::get('task/create-step-five', 'IndividualTaskController@createStepFive')->name('individualtask.create.step.five');
+    Route::post('task/create-step-five', 'IndividualTaskController@postCreateStepFive')->name('individualtask.create.step.five.post');
+    Route::get('task/create-step-six', 'IndividualTaskController@createStepSix')->name('individualtask.create.step.six');
+    Route::post('task/create-step-six', 'IndividualTaskController@postCreateStepSix')->name('individualtask.create.step.six.post');
+    //===================== ROUTE END TASK ===========================//
 
     //===================== ROUTE USER ===========================//
     Route::get('user', ['middleware' => 'cekRole', 'uses' => 'UserController@index']);
@@ -54,23 +70,3 @@ Route::group(['middleware' => 'cekUserSession'], function () {
     //===================== ROUTE END GROUP ===========================//
 });
 //===================== ROUTE END CEK USER SESSION ============================================================================//
-
-Route::get('task', 'IndividualTaskController@index')->name('individualtask.index');
-
-Route::get('task/create-step-one', 'IndividualTaskController@createStepOne')->name('individualtask.create.step.one');
-Route::post('task/create-step-one', 'IndividualTaskController@postCreateStepOne')->name('individualtask.create.step.one.post');
-
-Route::get('task/create-step-two', 'IndividualTaskController@createStepTwo')->name('individualtask.create.step.two');
-Route::post('task/create-step-two', 'IndividualTaskController@postCreateStepTwo')->name('individualtask.create.step.two.post');
-
-Route::get('task/create-step-three', 'IndividualTaskController@createStepThree')->name('individualtask.create.step.three');
-Route::post('task/create-step-three', 'IndividualTaskController@postCreateStepThree')->name('individualtask.create.step.three.post');
-
-Route::get('task/create-step-four', 'IndividualTaskController@createStepFour')->name('individualtask.create.step.four');
-Route::post('task/create-step-four', 'IndividualTaskController@postCreateStepFour')->name('individualtask.create.step.four.post');
-
-Route::get('task/create-step-five', 'IndividualTaskController@createStepFive')->name('individualtask.create.step.five');
-Route::post('task/create-step-five', 'IndividualTaskController@postCreateStepFive')->name('individualtask.create.step.five.post');
-
-Route::get('task/create-step-six', 'IndividualTaskController@createStepSix')->name('individualtask.create.step.six');
-Route::post('task/create-step-six', 'IndividualTaskController@postCreateStepSix')->name('individualtask.create.step.six.post');

@@ -65,3 +65,12 @@ Route::post('task/create-step-two', 'IndividualTaskController@postCreateStepTwo'
 
 Route::get('task/create-step-three', 'IndividualTaskController@createStepThree')->name('individualtask.create.step.three');
 Route::post('task/create-step-three', 'IndividualTaskController@postCreateStepThree')->name('individualtask.create.step.three.post');
+
+Route::get('task/create-step-four', 'IndividualTaskController@createStepFour')->name('individualtask.create.step.four');
+Route::post('task/create-step-four', 'IndividualTaskController@postCreateStepFour')->name('individualtask.create.step.four.post');
+
+Route::get('task/create-step-five', 'IndividualTaskController@createStepFive')->name('individualtask.create.step.five');
+Route::post('task/create-step-five', 'IndividualTaskController@postCreateStepFive')->name('individualtask.create.step.five.post');
+
+Route::get('task/create-step-six', 'IndividualTaskController@createStepSix')->name('individualtask.create.step.six');
+Route::post('task/create-step-six', 'IndividualTaskController@postCreateStepSix')->name('individualtask.create.step.six.post');

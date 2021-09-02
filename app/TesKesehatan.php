@@ -11,7 +11,7 @@ class TesKesehatan extends Model
 
     protected $table = "teskesehatan";
     protected $fillable = [
-        'ID', 'IDKaryawan', 'TglTes', 'TglInput', 'Usia', 'TinggiBadan', 'BeratBadan', 'MassaTubuh', 'LemakTotal', 'LemakViseral',
+        'ID', 'Usia', 'TinggiBadan', 'BeratBadan', 'MassaTubuh', 'LemakTotal', 'LemakViseral',
         'Sistol', 'Diastol', 'GulaDarah', 'HbDarah', 'CreatedBy', 'UpdatedBy'
     ];
 }

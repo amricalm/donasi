@@ -17,40 +17,40 @@
                 </ul>
             </div>
             @endif
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Nama :</label>
-                <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" value="{{ $data->NamaLengkap ?? '' }}">
+                <input type="text" id="NamaLengkap" name="NamaLengkap" class="form-control" value="{{ $data->NamaLengkap ?? '' }}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tanggal, bulan, tahun lahir :</label>
-                <input type="date" id="TglLahir" name="TglLahir" class="form-control" value="{{{ $data->TglLahir ?? '' }}}">
+                <input type="date" id="TglLahir" name="TglLahir" class="form-control" value="{{{ $data->TglLahir ?? '' }}}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Unit/Sub unit kerja :</label>
-                <input type="text" id="UnitKerja" name="UnitKerja" class="form-control" value="{{ $data->UnitKerja ?? '' }}">
+                <input type="text" id="UnitKerja" name="UnitKerja" class="form-control" value="{{ $data->UnitKerja ?? '' }}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tahun mulai kerja di perusahaan :</label>
-                <input type="text" id="TglMasuk" name="TglMasuk" class="form-control" value="{{ $data->TglMasuk ?? '' }}">
+                <input type="text" id="TglMasuk" name="TglMasuk" class="form-control" value="{{ $data->TglMasuk ?? '' }}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tahun mulai kerja di sub unit :</label>
-                <input type="text" id="TglMasukUnit" name="TglMasukUnit" class="form-control" value="{{ $data->TglMasukUnit ?? '' }}">
+                <input type="text" id="TglMasukUnit" name="TglMasukUnit" class="form-control" value="{{ $data->TglMasukUnit ?? '' }}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Mengalami shift kerja :</label>
-                <input type="text" id="Shift" name="Shift" class="form-control" value="{{ $data->Shift ?? '' }}">
+                {!! Form::select('Shift', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->Shift ?? '', ['class' => 'form-control']); !!}
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tanggal pengumpulan data :</label>
-                <input type="date" id="TglInput" name="TglInput" class="form-control" value="{{ $data->TglInput ?? '' }}">
+                <input type="date" id="TglInput" name="TglInput" class="form-control" value="{{ $tesdata->TglInput ?? '' }}" autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Nama/No hp petugas :</label>
-                <input type="text" id="" name="" class="form-control" value="{{ $data->name ?? '' }}">
+                <input type="text" id="Petugas" name="Petugas" class="form-control" value="{{ $tesdata->Petugas ?? '' }}" autocomplete="off">
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="submit" class="btn btn-default rounded">Next</button>
+                <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
             </div>
         </form>
     </div>

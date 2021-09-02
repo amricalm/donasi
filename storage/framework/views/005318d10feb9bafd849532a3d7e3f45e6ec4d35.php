@@ -1,51 +1,61 @@
 <?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <form action="<?php echo e(route('individualtask.create.step.three.post')); ?>" method="post">
-                <?php echo e(csrf_field()); ?>
+<div class="card mb-4">
+    <div class="card-header">
+        <h6 class="mb-0"><?php echo e($judul); ?></h6>
+    </div>
+    <div class="card-body">
+        <form action="<?php echo e(route('individualtask.create.step.three.post')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
+            <?php if($errors->any()): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+            <?php endif; ?>
+            <div class="form-group mb-4">
+                <label>Apakah anda pernah merokok? </label>
+                <?php echo Form::select('Rokok', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->Rokok ?? '', ['class' => 'form-control']);; ?>
 
-                <div class="card">
-                    <div class="card-header">Step 3: Review Details</div>
-
-                    <div class="card-body">
-
-                        <table class="table">
-                            <tr>
-                                <td>Product Name:</td>
-                                <td><strong><?php echo e($product->name); ?></strong></td>
-                            </tr>
-                            <tr>
-                                <td>Product Amount:</td>
-                                <td><strong><?php echo e($product->amount); ?></strong></td>
-                            </tr>
-                            <tr>
-                                <td>Product status:</td>
-                                <td><strong><?php echo e($product->status ? 'Active' : 'DeActive'); ?></strong></td>
-                            </tr>
-                            <tr>
-                                <td>Product Description:</td>
-                                <td><strong><?php echo e($product->description); ?></strong></td>
-                            </tr>
-                            <tr>
-                                <td>Product Stock:</td>
-                                <td><strong><?php echo e($product->stock); ?></strong></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-md-6 text-left">
-                                <a href="<?php echo e(route('individualtask.create.step.two')); ?>" class="btn btn-danger pull-right">Previous</a>
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
+            </div>
+            <div class="form-group mb-4">
+                <label>Sudah berapa lama anda merokok?</label>
+                <div class="input-group">
+                    <input type="number" id="LamaRokok" name="LamaRokok" class="form-control" value="<?php echo e($data->LamaRokok ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Tahun</span>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="form-group mb-4">
+                <label>Berapa banyak rokok yang anda habiskan setiap hari (rata-rata)?</label>
+                <div class="input-group">
+                    <input type="number" id="BanyakRokok" name="BanyakRokok" class="form-control" value="<?php echo e($data->BanyakRokok ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Batang</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="form-group mb-4">
+                <label>Indek keparahan merokok</label>
+                <input type="text" id="IndexRokok" name="IndexRokok" class="form-control" value="<?php echo e($data->IndexRokok ?? ''); ?>" readonly>
+            </div> -->
+            <div class="form-group mb-4">
+                <label>Dimana biasanya anda merokok?</label>
+                <?php echo Form::select('TempatRokok', ['' => '', 'Di rumah' => 'Di rumah', 'Di tempat kerja' => 'Di tempat kerja', 'Lainnya' => 'Lainnya'], $data->TempatRokok ?? '', ['class' => 'form-control']);; ?>
+
+            </div>
+            <div class="form-group mb-4">
+                <label>Sebutkan</label>
+                <input type="text" id="" name="" class="form-control" value="">
+            </div>
+            <div class="col-auto align-self-center  pl-0">
+                <button type="button" onclick="window.location='<?php echo e(route("individualtask.create.step.two")); ?>'" class="btn btn-danger rounded">Kembali</button>
+                <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
+            </div>
+        </form>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

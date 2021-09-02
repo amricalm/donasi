@@ -15,52 +15,99 @@
                 </ul>
             </div>
             <?php endif; ?>
-            <input type="hidden" id="ID" name="ID" class="form-control" value="<?php echo e($data->ID ?? ''); ?>">
-            <input type="hidden" id="IDKaryawan" name="IDKaryawan" class="form-control" value="<?php echo e($dataKaryawan->id ?? ''); ?>">
-            <input type="hidden" id="TglInput" name="TglInput" class="form-control" value="<?php echo e($dataKaryawan->TglInput ?? ''); ?>">
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Usia :</label>
-                <input type="text" id="Usia" name="Usia" class="form-control" value="<?php echo e($data->Usia ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="Usia" name="Usia" class="form-control" value="<?php echo e($data->Usia ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">tahun</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tinggi badan :</label>
-                <input type="text" id="TinggiBadan" name="TinggiBadan" class="form-control" value="<?php echo e($data->TinggiBadan ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="TinggiBadan" name="TinggiBadan" class="form-control" value="<?php echo e($data->TinggiBadan ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">m</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Berat badan :</label>
-                <input type="text" id="BeratBadan" name="BeratBadan" class="form-control" value="<?php echo e($data->BeratBadan ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="BeratBadan" name="BeratBadan" class="form-control" value="<?php echo e($data->BeratBadan ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">kg</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>IMT: Berat Badan/tinggi badan<sup>2</sup> :</label>
-                <input type="text" id="MassaTubuh" name="MassaTubuh" class="form-control" value="<?php echo e($data->MassaTubuh ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="MassaTubuh" name="MassaTubuh" class="form-control" value="<?php echo e($data->MassaTubuh ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Kg/m<sup>2</sup></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Lemak tubuh total :</label>
-                <input type="text" id="LemakTotal" name="LemakTotal" class="form-control" value="<?php echo e($data->LemakTotal ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="LemakTotal" name="LemakTotal" class="form-control" value="<?php echo e($data->LemakTotal ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Lemak viseral :</label>
-                <input type="text" id="LemakViseral" name="LemakViseral" class="form-control" value="<?php echo e($data->LemakViseral ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="LemakViseral" name="LemakViseral" class="form-control" value="<?php echo e($data->LemakViseral ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tekanan darah sistol :</label>
-                <input type="text" id="Sistol" name="Sistol" class="form-control" value="<?php echo e($data->Sistol ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="Sistol" name="Sistol" class="form-control" value="<?php echo e($data->Sistol ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">MmHg</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Tekanan darah diastol :</label>
-                <input type="text" id="Diastol" name="Diastol" class="form-control" value="<?php echo e($data->Diastol ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="Diastol" name="Diastol" class="form-control" value="<?php echo e($data->Diastol ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">MmHg</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Kadar gula darah sesaat (setelah makan) :</label>
-                <input type="text" id="GulaDarah" name="GulaDarah" class="form-control" value="<?php echo e($data->GulaDarah ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="GulaDarah" name="GulaDarah" class="form-control" value="<?php echo e($data->GulaDarah ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">mg/dL</span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-4">
                 <label>Kadar Hb darah :</label>
-                <input type="text" id="HbDarah" name="HbDarah" class="form-control" value="<?php echo e($data->HbDarah ?? ''); ?>">
+                <div class="input-group">
+                    <input type="text" id="HbDarah" name="HbDarah" class="form-control" value="<?php echo e($data->HbDarah ?? ''); ?>" autocomplete="off">
+                    <div class="input-group-append">
+                        <span class="input-group-text">g/dL</span>
+                    </div>
+                </div>
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="button" onclick="window.location='<?php echo e(route("individualtask.create.step.one")); ?>'" class="btn btn-danger rounded">Previous</button>
-                <button type="submit" class="btn btn-default rounded">Next</button>
+                <button type="button" onclick="window.location='<?php echo e(route("individualtask.create.step.one")); ?>'" class="btn btn-danger rounded">Kembali</button>
+                <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
             </div>
         </form>
     </div>

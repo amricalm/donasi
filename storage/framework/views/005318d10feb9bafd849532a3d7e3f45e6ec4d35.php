@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-<div class="card mb-4">
+<div class="card">
     <div class="card-header">
         <h6 class="mb-0"><?php echo e($judul); ?></h6>
     </div>
@@ -75,4 +75,4 @@
     });
 </script> -->
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.mobile', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('templates.mobile.pageslayout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -294,3 +294,72 @@
 #61 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\server.php(21): require_once('D:\\\\xampp-7.3.2\\\\...')
 #62 {main}
 "} 
+[2021-09-02 17:33:04] local.ERROR: Unable to prepare route [api/user] for serialization. Uses Closure. {"exception":"[object] (LogicException(code: 0): Unable to prepare route [api/user] for serialization. Uses Closure. at D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php:917)
+[stacktrace]
+#0 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteCacheCommand.php(62): Illuminate\\Routing\\Route->prepareForSerialization()
+#1 [internal function]: Illuminate\\Foundation\\Console\\RouteCacheCommand->handle()
+#2 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#3 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#7 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(908): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(269): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteCacheCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-09-02 17:33:36] local.ERROR: Command "event:clear" is not defined.
+
+Did you mean one of these?
+    auth:clear-resets
+    backup:clean
+    cache:clear
+    config:clear
+    event:generate
+    optimize:clear
+    route:clear
+    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"event:clear\" is not defined.
+
+Did you mean one of these?
+    auth:clear-resets
+    backup:clean
+    cache:clear
+    config:clear
+    event:generate
+    optimize:clear
+    route:clear
+    view:clear at D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php:639)
+[stacktrace]
+#0 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(233): Symfony\\Component\\Console\\Application->find('event:clear')
+#1 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2021-09-02 17:33:52] local.ERROR: Command "event:cache" is not defined.
+
+Did you mean one of these?
+    config:cache
+    event:generate
+    route:cache
+    view:cache {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"event:cache\" is not defined.
+
+Did you mean one of these?
+    config:cache
+    event:generate
+    route:cache
+    view:cache at D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php:639)
+[stacktrace]
+#0 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(233): Symfony\\Component\\Console\\Application->find('event:cache')
+#1 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 D:\\xampp-7.3.2\\htdocs\\sikesjaor\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 

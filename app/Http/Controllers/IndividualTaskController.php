@@ -120,13 +120,7 @@ class IndividualTaskController extends Controller
 
     public function postCreateStepThree(Request $request)
     {
-        $validatedData = $request->validate([
-            'Rokok' => 'required',
-            'LamaRokok' => 'required',
-            'BanyakRokok' => 'required',
-            'TempatRokok' => 'required'
-        ]);
-
+        $validatedData = $request->except(['_token']);
         if (empty(Session::get('teskespro'))) {
             $teskespro = new TesKesPro();
             $teskespro->fill($validatedData);

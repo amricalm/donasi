@@ -49,9 +49,9 @@
                     <label>Dimana biasanya anda merokok?</label>
                     {!! Form::select('TempatRokok', ['' => '', 'Di rumah' => 'Di rumah', 'Di tempat kerja' => 'Di tempat kerja', 'Lainnya' => 'Lainnya'], $data->TempatRokok ?? '', ['class' => 'form-control dtl', 'id' => 'TempatRokok']); !!}
                 </div>
-                <div class="form-group mb-4">
+                <div class="form-group mb-4 dtl2">
                     <label for="TempatRokokLain">Sebutkan</label>
-                    <input type="text" id="TempatRokokLain" name="TempatRokokLain" class="form-control" value="{{ $data->TempatRokok ?? '' }}">
+                    <input type="text" id="TempatRokokLain" name="TempatRokokLain" class="form-control" value="{{ $data->TempatRokok ?? '' }}" autocomplete="off">
                 </div>
             </div>
             <div class="col-auto align-self-center  pl-0">
@@ -85,7 +85,7 @@
         });
 
         //Pilih salah satu opsi jika value tidak sama dengan opsi
-        var isi = "{{$data->TempatRokok}}";
+        var isi = "{{!empty($data->TempatRokok) ? $data->TempatRokok : ''}}";
         switch (isi) {
             case "":
                 opt = "";
@@ -107,21 +107,23 @@
 
         //Menampilkan detail pertanyaan jika tempat merokok lainnya
         if ($('#TempatRokok option').filter(':selected').text() === "Lainnya") {
-            $("#TempatRokokLain").show();
+            $(".dtl2").show();
             $('#TempatRokokLain').prop('required', true);
+            $('#TempatRokokLain').attr('name', 'TempatRokok');
+            $('#TempatRokok').prop('required', false);
         } else {
-            $("#TempatRokokLain").hide();
+            $(".dtl2").hide();
             $("#TempatRokokLain").val("");
         }
         $("#TempatRokok").change(function() {
             if ($(this).val() == "Lainnya") {
-                $("#TempatRokokLain").show();
+                $(".dtl2").show();
                 $('#TempatRokokLain').prop('required', true);
                 $('#TempatRokokLain').attr('name', 'TempatRokok');
                 $('#TempatRokok').prop('required', false);
                 $('#TempatRokok').attr('name', '');
             } else {
-                $("#TempatRokokLain").hide();
+                $(".dtl2").hide();
                 $('#TempatRokokLain').prop('required', false);
                 $('#TempatRokokLain').attr('name', '');
                 $("#TempatRokokLain").val("");

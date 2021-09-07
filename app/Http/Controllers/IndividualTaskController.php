@@ -147,27 +147,7 @@ class IndividualTaskController extends Controller
 
     public function postCreateStepFour(Request $request)
     {
-        $validatedData = $request->validate([
-            'BebanKerjaHaid' => 'required',
-            'CutiHaid' => 'required',
-            'JumlahAnak' => 'required',
-            'Baduta' => 'required',
-            'UsiaBaduta' => 'required',
-            'AsiBaduta' => 'required',
-            'LamaAsiBaduta' => 'required',
-            'MemerahAsi' => 'required',
-            'TempatMemerahAsi' => 'required',
-            'IzinMemerahAsi' => 'required',
-            'HambatanMemerahAsi' => 'required',
-            'AsiEkslusif' => 'required',
-            'UsiaDiberiSusu' => 'required',
-            'AlasanDiberiSusu' => 'required',
-            'HambatanAsi' => 'required',
-            'UsiaMpAsi' => 'required',
-            'JenisMpAsi' => 'required',
-            'HambatanMpAsi' => 'required'
-        ]);
-
+        $validatedData = $request->except(['_token']);
         $teskespro = Session::get('teskespro');
         $teskespro->fill($validatedData);
         Session::put('teskespro', $teskespro);
@@ -187,17 +167,7 @@ class IndividualTaskController extends Controller
 
     public function postCreateStepFive(Request $request)
     {
-        $validatedData = $request->validate([
-            'BeratHamil' => 'required',
-            'PeriksaHamil' => 'required',
-            'TempatPeriksa' => 'required',
-            'JumlahPeriksa' => 'required',
-            'HambatanPeriksa' => 'required',
-            'BebanKerjaHamil' => 'required',
-            'CutiUsiaHamil' => 'required',
-            'LamaCutiHamil' => 'required'
-        ]);
-
+        $validatedData = $request->except(['_token']);
         $teskespro = Session::get('teskespro');
         $teskespro->fill($validatedData);
         Session::put('teskespro', $teskespro);
@@ -217,16 +187,7 @@ class IndividualTaskController extends Controller
 
     public function postCreateStepSix(Request $request)
     {
-        $validatedData = $request->validate([
-            'YankesNifas' => 'required',
-            'YankesNifasDari' => 'required',
-            'JumlahYankes' => 'required',
-            'BebanKerjaNifas' => 'required',
-            'Kb' => 'required',
-            'JenisKb' => 'required',
-            'YankesKb' => 'required'
-        ]);
-
+        $validatedData = $request->except(['_token']);
         $teskespro = Session::get('teskespro');
         $teskespro->fill($validatedData);
         Session::put('teskespro', $teskespro);

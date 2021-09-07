@@ -31,11 +31,11 @@
             </div>
             <div class="form-group mb-4">
                 <label>Tahun mulai kerja di perusahaan :</label>
-                <input type="text" id="TglMasuk" name="TglMasuk" class="form-control" value="{{ $data->TglMasuk ?? '' }}" autocomplete="off">
+                <input type="number" id="TglMasuk" name="TglMasuk" class="form-control" value="{{ $data->TglMasuk ?? '' }}" autocomplete="off">
             </div>
             <div class="form-group mb-4">
                 <label>Tahun mulai kerja di sub unit :</label>
-                <input type="text" id="TglMasukUnit" name="TglMasukUnit" class="form-control" value="{{ $data->TglMasukUnit ?? '' }}" autocomplete="off">
+                <input type="number" id="TglMasukUnit" name="TglMasukUnit" class="form-control" value="{{ $data->TglMasukUnit ?? '' }}" autocomplete="off">
             </div>
             <div class="form-group mb-4">
                 <label>Mengalami shift kerja :</label>

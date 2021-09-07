@@ -8,15 +8,6 @@
     <div class="card-body">
         <form action="{{ route('individualtask.create.step.three.post') }}" method="POST">
             @csrf
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <div class="form-group mb-4">
                 <label for="Rokok">Apakah anda pernah merokok? </label>
                 {!! Form::select('Rokok', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->Rokok ?? '', ['class' => 'form-control', 'id' => 'Rokok']); !!}

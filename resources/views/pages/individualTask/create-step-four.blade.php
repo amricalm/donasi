@@ -8,15 +8,6 @@
     <div class="card-body">
         <form action="{{ route('individualtask.create.step.four.post') }}" method="POST">
             @csrf
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <div class="form-group mb-4">
                 <label>Apakah terdapat pengurangan beban kerja di perusahaan saat masa haid?</label>
                 {!! Form::select('BebanKerjaHaid', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->BebanKerjaHaid ?? '', ['class' => 'form-control', 'required']); !!}

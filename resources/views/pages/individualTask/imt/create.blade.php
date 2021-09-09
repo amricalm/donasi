@@ -6,7 +6,7 @@
         <h6 class="mb-0">{{ $judul }}</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('individualtask.create.step.two.post') }}" method="POST">
+        <form action="{{ route('imt.create.post') }}" method="POST">
             @csrf
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -108,8 +108,7 @@
                 </div>
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="button" onclick="window.location='{{ route("individualtask.create.step.one") }}'" class="btn btn-danger rounded">Kembali</button>
-                <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
+                <button type="submit" class="btn btn-default rounded">Selesai</button>
             </div>
         </form>
     </div>

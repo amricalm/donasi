@@ -64,8 +64,8 @@
 
                     </div>
                     <div class="ml-auto col-auto align-self-center">
-                        <a href="{{ url('registration') }}" class="text-white">
-                            Registrasi
+                        <a href="{{ url('login') }}" class="text-white">
+                            Masuk
                         </a>
                     </div>
                 </div>
@@ -75,27 +75,46 @@
                     <div class="col-12 align-self-center mb-4">
                         <div class="row justify-content-center">
                             <div class="col-11 col-sm-7 col-md-6 col-lg-5 col-xl-4">
-                                <h2 class="font-weight-normal mb-5">Si Kesjaor</h2>
+                                <h2 class="font-weight-normal mb-5">Registrasi</h2>
+                                <div class="form-group">
+                                    <label class="text-white active">Nama Lengkap</label>
+                                    <input type="text" id="Name" name="Name" class="form-control" autocomplete="off" value="{{ old('Name') }}" required>
+                                    @if ($errors->has('Name'))
+                                    <span class="text-danger">{{ $errors->first('Name') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-white active">Nomor Handphone</label>
+                                    <input type="number" id="Hp" name="Hp" class="form-control" autocomplete="off" value="{{ old('Hp') }}" required>
+                                    @if ($errors->has('Hp'))
+                                    <span class="text-danger">{{ $errors->first('Hp') }}</span>
+                                    @endif
+                                </div>
                                 <div class="form-group">
                                     <label class="text-white active">Username</label>
-                                    <input type="text" class="form-control" name="Login" id="Login" autocomplete="off" required>
+                                    <input type=" text" id="Login" name="Login" class="form-control" autocomplete="off" value="{{ old('Login') }}" required>
+                                    @if ($errors->has('Login'))
+                                    <span class="text-danger">{{ $errors->first('Login') }}</span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label class="text-white position-relative">Password</label>
-                                    <input type="password" class="form-control" name="Password" id="Password" autocomplete="off" required>
+                                    <input type="password" id="Password" name="Password" class="form-control" autocomplete="off" required>
+                                    @if ($errors->has('Password'))
+                                    <span class="text-danger">{{ $errors->first('Password') }}</span>
+                                    @endif
                                 </div>
-                                @if (Session::has('alert'))
-                                <div class="alert alert-danger" role="alert">
-                                    {{ Session::get('alert') }}
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
+                                <div class="form-group">
+                                    <label class="text-white position-relative">Konfirmasi Password</label>
+                                    <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" autocomplete="off" required>
+                                    @if ($errors->has('ConfirmPassword'))
+                                    <span class="text-danger">{{ $errors->first('ConfirmPassword') }}</span>
+                                    @endif
                                 </div>
-                                @endif
+                                <input type="hidden" name="FormType" value="registration">
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>
@@ -103,7 +122,7 @@
         <div class="footer no-bg-shadow py-3">
             <div class="row justify-content-center">
                 <div class="col">
-                    <button type="submit" id="btnSubmit" class="btn btn-default rounded btn-block" data-loading-text="Sedang Proses...">Login</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-default rounded btn-block" data-loading-text="Sedang Proses...">Registrasi</button>
                 </div>
             </div>
         </div>
@@ -125,7 +144,7 @@
     <script type="text/javascript" src="{{ asset('files/bower_components/sweetalert2/sweetalert2.all.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#Loin').focus();
+            $('#email').focus();
         });
 
         function submited() {

@@ -64,8 +64,8 @@
 
                     </div>
                     <div class="ml-auto col-auto align-self-center">
-                        <a href="<?php echo e(url('registration')); ?>" class="text-white">
-                            Registrasi
+                        <a href="<?php echo e(url('login')); ?>" class="text-white">
+                            Masuk
                         </a>
                     </div>
                 </div>
@@ -75,15 +75,43 @@
                     <div class="col-12 align-self-center mb-4">
                         <div class="row justify-content-center">
                             <div class="col-11 col-sm-7 col-md-6 col-lg-5 col-xl-4">
-                                <h2 class="font-weight-normal mb-5">Si Kesjaor</h2>
+                                <h2 class="font-weight-normal mb-5">Registrasi</h2>
+                                <div class="form-group">
+                                    <label class="text-white active">Nama Lengkap</label>
+                                    <input type="text" id="Name" name="Name" class="form-control" autocomplete="off" value="<?php echo e(old('Name')); ?>" required>
+                                    <?php if($errors->has('Name')): ?>
+                                    <span class="text-danger"><?php echo e($errors->first('Name')); ?></span>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-white active">Nomor Handphone</label>
+                                    <input type="number" id="Hp" name="Hp" class="form-control" autocomplete="off" value="<?php echo e(old('Hp')); ?>" required>
+                                    <?php if($errors->has('Hp')): ?>
+                                    <span class="text-danger"><?php echo e($errors->first('Hp')); ?></span>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="form-group">
                                     <label class="text-white active">Username</label>
-                                    <input type="text" class="form-control" name="Login" id="Login" autocomplete="off" required>
+                                    <input type=" text" id="Login" name="Login" class="form-control" autocomplete="off" value="<?php echo e(old('Login')); ?>" required>
+                                    <?php if($errors->has('Login')): ?>
+                                    <span class="text-danger"><?php echo e($errors->first('Login')); ?></span>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-white position-relative">Password</label>
-                                    <input type="password" class="form-control" name="Password" id="Password" autocomplete="off" required>
+                                    <input type="password" id="Password" name="Password" class="form-control" autocomplete="off" required>
+                                    <?php if($errors->has('Password')): ?>
+                                    <span class="text-danger"><?php echo e($errors->first('Password')); ?></span>
+                                    <?php endif; ?>
                                 </div>
+                                <div class="form-group">
+                                    <label class="text-white position-relative">Konfirmasi Password</label>
+                                    <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" autocomplete="off" required>
+                                    <?php if($errors->has('ConfirmPassword')): ?>
+                                    <span class="text-danger"><?php echo e($errors->first('ConfirmPassword')); ?></span>
+                                    <?php endif; ?>
+                                </div>
+                                <input type="hidden" name="FormType" value="registration">
                                 <?php if(Session::has('alert')): ?>
                                 <div class="alert alert-danger" role="alert">
                                     <?php echo e(Session::get('alert')); ?>
@@ -96,7 +124,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>
@@ -126,11 +153,11 @@
     <script type="text/javascript" src="<?php echo e(asset('files/bower_components/sweetalert2/sweetalert2.all.js')); ?>"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#Loin').focus();
+            $('#email').focus();
         });
 
         function submited() {
-            $('#btnSubmit').removeClass('btn-default');
+            $('#btnSubmit').removeClass('btn-primary');
             $('#btnSubmit').addClass('btn-warning');
             $('#btnSubmit').html("<i class='fa fa-spinner fa-spin'></i> Sedang proses ...");
             return true;

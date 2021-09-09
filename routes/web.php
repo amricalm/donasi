@@ -9,8 +9,7 @@ Route::get('/', 'LoginController@index')->name("login");
 //===================== ROUTE LOGIN ===========================//
 Route::get('login', 'LoginController@index')->name('login');
 Route::post('login/validasi', 'LoginController@validasi');
-Route::get('register', 'LoginController@register')->name('register');
-Route::post('register/validation', 'LoginController@regValidation');
+Route::get('registration', 'LoginController@registration')->name('registration');
 Route::get('ceksesi', 'LoginController@ceksesi')->name('ceksesi');
 //===================== ROUTE END LOGIN ===========================//
 
@@ -33,18 +32,41 @@ Route::group(['middleware' => 'cekUserSession'], function () {
 
     //===================== ROUTE TASK ===========================//
     Route::get('task', 'IndividualTaskController@index')->name('individualtask.index');
+    //Data Diri
     Route::get('task/create-step-one', 'IndividualTaskController@createStepOne')->name('individualtask.create.step.one');
     Route::post('task/create-step-one', 'IndividualTaskController@postCreateStepOne')->name('individualtask.create.step.one.post');
-    Route::get('task/create-step-two', 'IndividualTaskController@createStepTwo')->name('individualtask.create.step.two');
-    Route::post('task/create-step-two', 'IndividualTaskController@postCreateStepTwo')->name('individualtask.create.step.two.post');
-    Route::get('task/create-step-three', 'IndividualTaskController@createStepThree')->name('individualtask.create.step.three');
-    Route::post('task/create-step-three', 'IndividualTaskController@postCreateStepThree')->name('individualtask.create.step.three.post');
-    Route::get('task/create-step-four', 'IndividualTaskController@createStepFour')->name('individualtask.create.step.four');
-    Route::post('task/create-step-four', 'IndividualTaskController@postCreateStepFour')->name('individualtask.create.step.four.post');
-    Route::get('task/create-step-five', 'IndividualTaskController@createStepFive')->name('individualtask.create.step.five');
-    Route::post('task/create-step-five', 'IndividualTaskController@postCreateStepFive')->name('individualtask.create.step.five.post');
-    Route::get('task/create-step-six', 'IndividualTaskController@createStepSix')->name('individualtask.create.step.six');
-    Route::post('task/create-step-six', 'IndividualTaskController@postCreateStepSix')->name('individualtask.create.step.six.post');
+
+    //Tes Kesehatan
+    Route::get('imt/create', 'IndividualTaskController@imtCreate')->name('imt.create');
+    Route::post('imt/create', 'IndividualTaskController@imtCreatePost')->name('imt.create.post');
+
+    //Kespro
+    Route::get('kespro/create-step-one', 'IndividualTaskController@kesproCreateStepOne')->name('kespro.create.step.one');
+    Route::post('kespro/create-step-one', 'IndividualTaskController@kesproCreateStepOnePost')->name('kespro.create.step.one.post');
+    Route::get('kespro/create-step-two', 'IndividualTaskController@kesproCreateStepTwo')->name('kespro.create.step.two');
+    Route::post('kespro/create-step-two', 'IndividualTaskController@kesproCreateStepTwoPost')->name('kespro.create.step.two.post');
+    Route::get('kespro/create-step-three', 'IndividualTaskController@kesproCreateStepThree')->name('kespro.create.step.three');
+    Route::post('kespro/create-step-three', 'IndividualTaskController@kesproCreateStepThreePost')->name('kespro.create.step.three.post');
+    Route::get('kespro/create-step-four', 'IndividualTaskController@kesproCreateStepFour')->name('kespro.create.step.four');
+    Route::post('kespro/create-step-four', 'IndividualTaskController@kesproCreateStepFourPost')->name('kespro.create.step.four.post');
+
+    //Tes Pola Makan
+    Route::get('pola-makan/create-step-one', 'IndividualTaskController@polaMakanCreateStepOne')->name('polamakan.create.step.one');
+    Route::post('pola-makan/create-step-one', 'IndividualTaskController@polaMakanCreateStepOnePost')->name('polamakan.create.step.one.post');
+    Route::get('pola-makan/create-step-two', 'IndividualTaskController@polaMakanCreateStepTwo')->name('polamakan.create.step.two');
+    Route::post('pola-makan/create-step-two', 'IndividualTaskController@polaMakanCreateStepTwoPost')->name('polamakan.create.step.two.post');
+    Route::get('pola-makan/create-step-three', 'IndividualTaskController@polaMakanCreateStepThree')->name('polamakan.create.step.three');
+    Route::post('pola-makan/create-step-three', 'IndividualTaskController@polaMakanCreateStepThreePost')->name('polamakan.create.step.three.post');
+    Route::get('pola-makan/create-step-four', 'IndividualTaskController@polaMakanCreateStepFour')->name('polamakan.create.step.four');
+    Route::post('pola-makan/create-step-four', 'IndividualTaskController@polaMakanCreateStepFourPost')->name('polamakan.create.step.four.post');
+
+    //Tes Kesehatan
+    Route::get('aktivitas-fisik/create', 'IndividualTaskController@fisikCreate')->name('fisik.create');
+    Route::post('aktifitas-fisik/create', 'IndividualTaskController@fisikCreatePost')->name('fisik.create.post');
+
+    //Tes Stress Kerja
+    Route::get('stress-kerja/create', 'IndividualTaskController@stressCreate')->name('stress.create');
+    Route::post('stress-kerja/create', 'IndividualTaskController@stressCreatePost')->name('stress.create.post');
     //===================== ROUTE END TASK ===========================//
 
     //===================== ROUTE USER ===========================//

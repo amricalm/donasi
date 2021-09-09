@@ -6,7 +6,7 @@
         <h6 class="mb-0">{{ $judul }}</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('individualtask.create.step.four.post') }}" method="POST">
+        <form action="{{ route('kespro.create.step.two.post') }}" method="POST">
             @csrf
             <div class="form-group mb-4">
                 <label>Apakah terdapat pengurangan beban kerja di perusahaan saat masa haid?</label>
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="button" onclick="window.location='{{ route("individualtask.create.step.three") }}'" class="btn btn-danger rounded">Kembali</button>
+                <button type="button" onclick="window.location='{{ route("kespro.create.step.one") }}'" class="btn btn-danger rounded">Kembali</button>
                 <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
             </div>
         </form>

@@ -6,7 +6,7 @@
         <h6 class="mb-0">{{ $judul }}</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('individualtask.create.step.five.post') }}" method="POST">
+        <form action="{{ route('kespro.create.step.three.post') }}" method="POST">
             @csrf
             <div class="form-group mb-4">
                 <label>Pemambahan BB selama hamil</label>
@@ -57,7 +57,7 @@
                 <input type="text" id="LamaCutiHamil" name="LamaCutiHamil" class="form-control" value="{{ $data->LamaCutiHamil ?? '' }}" autocomplete="off">
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="button" onclick="window.location='{{ route("individualtask.create.step.four") }}'" class="btn btn-danger rounded">Kembali</button>
+                <button type="button" onclick="window.location='{{ route("kespro.create.step.two") }}'" class="btn btn-danger rounded">Kembali</button>
                 <button type="submit" class="btn btn-default rounded">Selanjutnya</button>
             </div>
         </form>
@@ -118,6 +118,7 @@
             $('#TempatPeriksa').prop('required', false);
         } else {
             $(".dtl2").hide();
+            $('#TempatPeriksaLain').attr('name', '');
             $("#TempatPeriksaLain").val("");
         }
         $("#TempatPeriksa").change(function() {

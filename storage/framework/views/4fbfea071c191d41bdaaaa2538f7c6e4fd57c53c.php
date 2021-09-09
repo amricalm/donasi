@@ -1,31 +1,31 @@
-@extends('templates.mobile.pageslayout')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="card">
     <div class="card-header">
-        <h6 class="mb-0">{{ $judul }}</h6>
+        <h6 class="mb-0"><?php echo e($judul); ?></h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('individualtask.create.step.six.post') }}" method="POST">
-            @csrf
+        <form action="<?php echo e(route('kespro.create.step.four.post')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
             <div class="form-group mb-4">
                 <label>Pada saat nifas (Dalam masa 40 Hari setelah melahirkan) apakah anda mendapatkan pelayanan kesehatan dari tenaga kesehatan</label>
-                {!! Form::select('YankesNifas', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->YankesNifas ?? '', ['class' => 'form-control', 'id' => 'YankesNifas']); !!}
+                <?php echo Form::select('YankesNifas', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->YankesNifas ?? '', ['class' => 'form-control', 'id' => 'YankesNifas']);; ?>
+
             </div>
             <div id="nifasdtl">
                 <div class="form-group mb-4">
                     <label>Dari mana anda memperoleh pelayanan tersebut?</label>
-                    {!! Form::select('YankesNifasDari', ['' => '', 'Klinik Perusahaan' => 'Klinik Perusahaan', 'Puskesmas' => 'Puskesmas','Rumah Sakit' => 'Rumah Sakit', 'Lainnya' => 'Lainnya'], $data->YankesNifasDari ?? '', ['class' => 'form-control dtl', 'id' => 'YankesNifasDari']); !!}
+                    <?php echo Form::select('YankesNifasDari', ['' => '', 'Klinik Perusahaan' => 'Klinik Perusahaan', 'Puskesmas' => 'Puskesmas','Rumah Sakit' => 'Rumah Sakit', 'Lainnya' => 'Lainnya'], $data->YankesNifasDari ?? '', ['class' => 'form-control dtl', 'id' => 'YankesNifasDari']);; ?>
+
                 </div>
                 <div class="form-group mb-4 dtl2">
                     <label for="YankesNifasDariLain">Sebutkan</label>
-                    <input type="text" id="YankesNifasDariLain" name="YankesNifasDariLain" class="form-control" value="{{ $data->YankesNifasDari ?? '' }}" autocomplete="off">
+                    <input type="text" id="YankesNifasDariLain" name="YankesNifasDariLain" class="form-control" value="<?php echo e($data->YankesNifasDari ?? ''); ?>" autocomplete="off">
                 </div>
             </div>
             <div class="form-group mb-4">
                 <label>Berapa kali anda mendapatkan pelayanan kesehatan setelah melahirkan?</label>
                 <div class="input-group">
-                    <input type="number" id="JumlahYankes" name="JumlahYankes" class="form-control" value="{{ $data->JumlahYankes ?? '' }}" autocomplete="off">
+                    <input type="number" id="JumlahYankes" name="JumlahYankes" class="form-control" value="<?php echo e($data->JumlahYankes ?? ''); ?>" autocomplete="off">
                     <div class="input-group-append">
                         <span class="input-group-text">kali</span>
                     </div>
@@ -33,31 +33,34 @@
             </div>
             <div class="form-group mb-4">
                 <label>Apakah saat nifas anda pernah diberikan perkerjaan yang mengharuskan anda untuk masuk kantor</label>
-                {!! Form::select('BebanKerjaNifas', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->BebanKerjaNifas ?? '', ['class' => 'form-control', 'required']); !!}
+                <?php echo Form::select('BebanKerjaNifas', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->BebanKerjaNifas ?? '', ['class' => 'form-control', 'required']);; ?>
+
             </div>
             <div class="form-group mb-4">
                 <label>Apakah anda menggunakan fasilitas pelayanan KB</label>
-                {!! Form::select('Kb', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->Kb ?? '', ['class' => 'form-control', 'id' => 'Kb', 'required']); !!}
+                <?php echo Form::select('Kb', ['' => '', 'Ya' => 'Ya', 'Tidak' => 'Tidak'], $data->Kb ?? '', ['class' => 'form-control', 'id' => 'Kb', 'required']);; ?>
+
             </div>
             <div id="kbdtl">
                 <div class="form-group mb-4">
                     <label>Jenis KB yang digunakan:</label>
-                    {!! Form::select('JenisKb', ['' => '', 'Suntik' => 'Suntik', 'Pil' => 'Pil', 'IUD' => 'IUD', 'Implant' => 'Implant', 'Tubektomi' => 'Tubektomi'], $data->JenisKb ?? '', ['class' => 'form-control dtl3']); !!}
+                    <?php echo Form::select('JenisKb', ['' => '', 'Suntik' => 'Suntik', 'Pil' => 'Pil', 'IUD' => 'IUD', 'Implant' => 'Implant', 'Tubektomi' => 'Tubektomi'], $data->JenisKb ?? '', ['class' => 'form-control dtl3']);; ?>
+
                 </div>
                 <div class="form-group mb-4">
                     <label>Dimana anda mendapatkan fasilitas pelayanan KB</label>
-                    <input type="text" id="YankesKb" name="YankesKb" class="form-control dtl3" value="{{ $data->YankesKb ?? '' }}" autocomplete="off">
+                    <input type="text" id="YankesKb" name="YankesKb" class="form-control dtl3" value="<?php echo e($data->YankesKb ?? ''); ?>" autocomplete="off">
                 </div>
             </div>
             <div class="col-auto align-self-center  pl-0">
-                <button type="button" onclick="window.location='{{ route("individualtask.create.step.five") }}'" class="btn btn-danger rounded">Kembali</button>
+                <button type="button" onclick="window.location='<?php echo e(route("kespro.create.step.three")); ?>'" class="btn btn-danger rounded">Kembali</button>
                 <button type="submit" class="btn btn-default rounded">Selesai</button>
             </div>
         </form>
     </div>
 </div>
-@endsection
-@section('footer')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
 <script>
     $(document).ready(function() {
         //Menampilkan detail pertanyaan mendapatkan pelayanan kesehatan pada saat nifas
@@ -80,7 +83,7 @@
         });
 
         //Pilih salah satu opsi jika value tidak sama dengan opsi
-        var isi = "{{!empty($data->YankesNifasDari) ? $data->YankesNifasDari : ''}}";
+        var isi = "<?php echo e(!empty($data->YankesNifasDari) ? $data->YankesNifasDari : ''); ?>";
         switch (isi) {
             case "":
                 opt = "";
@@ -148,4 +151,5 @@
         });
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.mobile.pageslayout', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

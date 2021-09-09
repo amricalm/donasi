@@ -9,7 +9,10 @@ use App\Http\Controllers\Controller;
 use App\Donasi\VarGlobal;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 use App\User;
+use App\Karyawan;
 use Exception;
 
 // use Redirect;
@@ -30,16 +33,52 @@ class LoginController extends Controller
         session()->flush();
         return redirect()->route('login');
     }
+    public function registration(Request $request)
+    {
+        return view('pages.login.registration');
+    }
     public function validasi(Request $request)
     {
-        $username = $request->username;
-        $password = $request->password;
+        if ($request->FormType == 'registration') {
+            request()->validate([
+                'Name' => 'required|min:2|max:50|unique:user',
+                'Hp' => 'required|numeric|unique:user',
+                'Login' => 'required|min:6|max:50|alpha_dash|unique:user',
+                'Password' => 'required',
+                'ConfirmPassword' => 'same:Password',
+            ], [
+                'Name.min' => 'Nama minimal 2 karakter',
+                'Name.max' => 'Nama maksimal 50 karakter',
+                'Name.unique' => 'Nama sudah terdaftar',
+                'Hp.unique' => 'Nomor handphone sudah terdaftar',
+                'Login.min' => 'Nama minimal 6 karakter',
+                'Login.max' => 'Nama maksimal 50 karakter',
+                'Login.unique' => 'Username sudah terdaftar',
+                'ConfirmPassword.same' => 'Password tidak cocok',
+            ]);
+
+            $app['NamaLengkap'] = $request->input('Name');
+            $employeeID = Karyawan::insertGetId($app);
+
+            $app                = new User();
+            $app['Name']        = $request->input('Name');
+            $app['Hp']          = $request->input('Hp');
+            $app['Login']       = $request->input('Login');
+            $app['Password']    = bcrypt($request->Password);
+            $app['EmployeeID']  = $employeeID;
+            $app['GroupID']     = 4;
+            $app->save();
+        }
+        $username = $request->Login;
+        $password = $request->Password;
+
+
         $user = DB::table('user')
             ->where('Login', $username)
             ->whereRaw('(user.Deleted != 1 OR user.Deleted IS null)')
             ->get()->toArray();
         if (count($user) > 0) {
-            if (($user[0]->Login == $request->username) && ($user[0]->Password == $request->password)) {
+            if (($user[0]->Login == $username) && Hash::check($password, $user[0]->Password)) {
                 $semuamenu = array();
                 $menus = DB::table('role')
                     ->select('*')
@@ -100,7 +139,7 @@ class LoginController extends Controller
                 $sess['UserID'] = $user[0]->ID;
                 $sess['UserLogin'] = $user[0]->Login;
                 $sess['UserName'] = $user[0]->Name;
-                $sess['UserEmployeeName'] = $user[0]->EmployeeName;
+                $sess['UserEmployeeID'] = $user[0]->EmployeeID;
                 $sess['UserGroupID'] = $user[0]->GroupID;
                 $sess['UserHP'] = $user[0]->Hp;
                 $sess['UserEmail'] = $user[0]->Email;

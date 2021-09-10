@@ -11,6 +11,7 @@ class TesData extends Model
 
     protected $table = "tesdata";
     protected $fillable = [
-        'ID', 'TglInput', 'Petugas', 'IDKaryawan', 'IDTesKesehatan', 'IDTesKespro', 'IDTesFisik', 'IDTesPolaMakan', 'CreatedBy', 'UpdatedBy'
+        'ID', 'TglInput', 'Petugas', 'IDKaryawan', 'IDTesKesehatan', 'IDTesKespro', 'IDTesFisik', 'IDTesPolaMakan'
     ];
+    use Blameable;
 }

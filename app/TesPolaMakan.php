@@ -15,6 +15,7 @@ class TesPolaMakan extends Model
         'SelainNasiHari', 'SelainNasiMinggu', 'MakananPokok', 'PorsiMakananPokok', 'CemilanManisHari', 'CemilanManisMinggu',
         'MinumanManisHari', 'MinumanManisMinggu', 'MinumanKemasanHari', 'MinumanKemasanMinggu', 'CemilanAsin',
         'Gorengan', 'Sarapan', 'AirPutih', 'LabelKemasan', 'CuciTanganMakan', 'CuciTanganSiapMakan',
-        'CuciTanganBab', 'CuciTanganBak', 'CuciTanganPopok', 'TimbangBeratBadan', 'CreatedBy', 'UpdatedBy'
+        'CuciTanganBab', 'CuciTanganBak', 'CuciTanganPopok', 'TimbangBeratBadan'
     ];
+    use Blameable;
 }

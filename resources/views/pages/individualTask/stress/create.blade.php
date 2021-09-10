@@ -12,7 +12,7 @@
                 <label for="TidakAmanKerja">Kondisi di tempat kerja tidak menyenangkan atau kadang-kadang bahkan tidak aman</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="TidakAmanKerja" value="1" {{($data->TidakAmanKerja ?? '') == '1' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="TidakAmanKerja" value="1" {{($data->TidakAmanKerja ?? '') == '1' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -40,7 +40,7 @@
                 <label for="PengaruhNegatif">Saya merasa pekerjaan saya memberi pengaruh negatif pada fisik atau emosi saya</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="PengaruhNegatif" value="1" {{($data->PengaruhNegatif ?? '') == '1' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="PengaruhNegatif" value="1" {{($data->PengaruhNegatif ?? '') == '1' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -68,7 +68,7 @@
                 <label for="BanyakKerja">Saya memiliki terlalu banyak pekerjaan yang harus dilakukan dan/atau terlalu banyak yang tidak masuk akal tenggat waktunya.</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="BanyakKerja" value="1" {{($data->BanyakKerja ?? '') == '1' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="BanyakKerja" value="1" {{($data->BanyakKerja ?? '') == '1' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -96,7 +96,7 @@
                 <label for="SulitBeraspirasi">Saya merasa sulit untuk menyampaikan pendapat atau perasaan tentang kondisi kerja saya kepada atasan saya.</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="SulitBeraspirasi" value="1" {{($data->SulitBeraspirasi ?? '') == '1' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="SulitBeraspirasi" value="1" {{($data->SulitBeraspirasi ?? '') == '1' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -124,8 +124,7 @@
                 <label for="Tertekan">Saya merasa tekanan pekerjaan saya telah mengganggu keluarga atau kehidupan pribadi saya</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="Tertekan" value="1" {{($data->Tertekan ?? '') == '1' ? 'checked' : ''}}>
-                        Tidak pernah
+                        <input type="radio" class="m-2" name="Tertekan" value="1" {{($data->Tertekan ?? '') == '1' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -153,7 +152,7 @@
                 <label for="Beraspirasi">Saya memiliki cukup kontrol atau keleluasaan memberikan masukan terhadap tugas pekerjaan saya</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="Beraspirasi" value="5" {{($data->Beraspirasi ?? '') == '5' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="Beraspirasi" value="5" {{($data->Beraspirasi ?? '') == '5' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -181,7 +180,7 @@
                 <label for="Penghargaan">Saya menerima pengakuan atau penghargaan yang sesuai untuk performa kerja saya yang baik.</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="Penghargaan" value="5" {{($data->Penghargaan ?? '') == '5' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="Penghargaan" value="5" {{($data->Penghargaan ?? '') == '5' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">
@@ -209,7 +208,7 @@
                 <label for="MaanfaatBakat">Saya dapat memanfaatkan keterampilan dan bakat saya sepenuhnya pada pekerjaan di perusahaan.</label>
                 <div class="input-group">
                     <label class="m-2">
-                        <input type="radio" class="m-2" name="MaanfaatBakat" value="5" {{($data->MaanfaatBakat ?? '') == '5' ? 'checked' : ''}}>Tidak pernah
+                        <input type="radio" class="m-2" name="MaanfaatBakat" value="5" {{($data->MaanfaatBakat ?? '') == '5' ? 'checked' : ''}} required>Tidak pernah
                     </label>
                 </div>
                 <div class="input-group">

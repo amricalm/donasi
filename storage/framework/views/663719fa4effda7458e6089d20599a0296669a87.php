@@ -20,7 +20,6 @@
                             <span class="input-group-text">Tahun</span>
                         </div>
                     </div>
-                    <div class="form-text invalid-feedback">Please enter correct password</div>
                 </div>
                 <div class="form-group mb-4">
                     <label>Berapa banyak rokok yang anda habiskan setiap hari (rata-rata)?</label>

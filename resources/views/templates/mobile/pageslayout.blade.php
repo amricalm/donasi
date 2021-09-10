@@ -13,9 +13,9 @@
 		<!-- Fixed navbar -->
 		<header class="header">
 			<div class="row">
-				<a href="{{ url()->previous() }}">
+				<a href="{{ url('home') }}">
 					<div class="col-auto px-0">
-						<button class="btn btn-40 btn-link back-btn" type="button">
+						<button class="btn btn-40 btn-link" type="button">
 							<span class="material-icons">keyboard_arrow_left</span>
 						</button>
 					</div>

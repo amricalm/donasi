@@ -11,6 +11,7 @@ class Karyawan extends Model
 
     protected $table = "mskaryawan";
     protected $fillable = [
-        'ID', 'NamaLengkap', 'TglLahir', 'UnitKerja', 'TglMasuk', 'TglMasukUnit', 'Shift', 'CreatedBy', 'UpdatedBy'
+        'ID', 'NamaLengkap', 'TglLahir', 'UnitKerja', 'TglMasuk', 'TglMasukUnit', 'Shift'
     ];
+    use Blameable;
 }

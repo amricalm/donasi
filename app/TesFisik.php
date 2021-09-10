@@ -11,6 +11,7 @@ class TesFisik extends Model
 
     protected $table = "tesfisik";
     protected $fillable = [
-        'ID', 'PosisiKerja', 'TipeKerja', 'CreatedBy', 'UpdatedBy'
+        'ID', 'PosisiKerja', 'TipeKerja'
     ];
+    use Blameable;
 }

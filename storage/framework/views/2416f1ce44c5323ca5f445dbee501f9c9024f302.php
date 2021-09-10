@@ -5,7 +5,7 @@
     <div class="menu-container">
         <ul class="nav nav-pills flex-column ">
             <li class="nav-item">
-                <a class="nav-link active" href="index.html">
+                <a class="nav-link active" href="<?php echo e(url('home')); ?>">
                     <div>
                         <span class="material-icons icon">account_balance</span>
                         Home

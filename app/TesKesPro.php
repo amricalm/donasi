@@ -18,6 +18,7 @@ class TesKesPro extends Model
         'AlasanDiberiSusu', 'HambatanAsi', 'UsiaMpAsi', 'JenisMpAsi', 'HambatanMpAsi',
         'BeratHamil', 'PeriksaHamil', 'TempatPeriksa', 'JumlahPeriksa', 'HambatanPeriksa',
         'BebanKerjaHamil', 'CutiUsiaHamil', 'LamaCutiHamil', 'YankesNifas', 'YankesNifasDari',
-        'JumlahYankes', 'BebanKerjaNifas', 'Kb', 'JenisKb', 'YankesKb', 'CreatedBy', 'UpdatedBy'
+        'JumlahYankes', 'BebanKerjaNifas', 'Kb', 'JenisKb', 'YankesKb'
     ];
+    use Blameable;
 }
